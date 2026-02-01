@@ -21,18 +21,19 @@ export const Modal = ({ isOpen, onClose, children, title }: ModalProps) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-obsidian/80 backdrop-blur-md z-[60]"
+            className="fixed inset-0 bg-zinc-900/60 backdrop-blur-sm z-50"
           />
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-xl z-[70] px-4"
+            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-xl z-50 px-4"
           >
-            <div className="glass rounded-[2rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
+            <div className="bg-white rounded-4xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
               <button 
                 onClick={onClose}
-                className="absolute top-6 right-6 p-2 hover:bg-white/5 rounded-full transition-base"
+                className="absolute top-6 right-6 p-2 text-zinc-400 hover:text-zinc-900 rounded-full transition-all"
+                title="Schließen"
               >
                 <X className="w-6 h-6" />
               </button>

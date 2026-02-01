@@ -1,122 +1,78 @@
-'use client';
+"use client";
 
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { MessageCircle, CheckCircle2, ArrowUpRight } from 'lucide-react';
+import React from 'react';
 import { Section, Button } from './ui/Layout';
+import { MessageCircle, CheckCircle2, QrCode } from 'lucide-react';
 
 const benefits = [
-  "Erfahrenes & zuverlässiges Team",
-  "Moderne Fahrzeugflotte",
-  "NRW-weites Einsatzgebiet",
-  "Strukturierte Arbeitsabläufe"
+  "Faire Bezahlung",
+  "Flexible Arbeitszeiten",
+  "Neuer Fuhrpark",
+  "Junges, dynamisches Team",
+  "Pünktliche Auszahlung"
 ];
 
 export const CareerSection = () => {
-  const containerRef = useRef<HTMLElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const visualRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(contentRef.current, {
-        x: -40,
-        opacity: 0,
-        duration: 0.18,
-        ease: "power4.out",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 70%",
-        }
-      });
-      gsap.from(visualRef.current, {
-        scale: 0.95,
-        opacity: 0,
-        duration: 0.18,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 60%",
-        }
-      });
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <Section 
-      ref={containerRef}
-      id="career" 
-      className="bg-background"
-    >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-32 items-center">
-        <div ref={contentRef}>
-          <span className="inline-block text-[10px] font-bold tracking-[0.3em] uppercase text-accent mb-8">
-            Growth • Opportunity
+    <Section id="karriere" className="bg-white">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div>
+          <span className="inline-block px-3 py-1 bg-[#FBBF24]/10 text-[#f59e0b] rounded-lg text-sm font-bold mb-6 uppercase tracking-wider">
+            Karriere
           </span>
-          
-          <h2 className="text-5xl md:text-7xl font-black mb-10 leading-[1] tracking-tighter text-emerald-deep">
-            KOMMEN SIE <br />
-            <span className="italic font-light">INS TEAM.</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-8 tracking-tight">
+            Fahrer (m/w/d) gesucht – <br />
+            Jetzt bewerben
           </h2>
-          
-          <p className="text-xl text-emerald-deep/50 mb-12 leading-relaxed font-medium max-w-lg">
-            Wir suchen Macher. Werde Teil unseres Elite-Teams und steuere die Zukunft der Logistik in NRW. Faire Konditionen, moderne Technik, echtes Wachstum.
+          <p className="text-lg text-zinc-600 mb-8 leading-relaxed max-w-lg font-medium">
+            Wir suchen zuverlässige Fahrer für Liefer- und Kurierdienste. 
+            Wir bieten ein professionelles Umfeld und modernste Logistik-Infrastruktur.
           </p>
           
-          <div className="space-y-6 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
             {benefits.map((benefit, i) => (
-              <div 
-                key={i}
-                className="flex items-center gap-5 text-emerald-deep font-bold text-lg"
-              >
-                <div className="w-6 h-6 rounded-lg bg-accent flex items-center justify-center shrink-0">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-deep" />
-                </div>
+              <div key={i} className="flex items-center gap-3 text-zinc-700 font-semibold">
+                <CheckCircle2 className="w-5 h-5 text-[#059669]" />
                 {benefit}
               </div>
             ))}
           </div>
-
-          <div className="flex flex-col sm:flex-row items-center gap-8">
+          
+          <div className="flex flex-col sm:flex-row gap-6 items-center">
             <Button 
-              size="lg" 
-              variant="secondary"
-              className="w-full sm:w-auto bg-[#25D366] hover:bg-[#25D366]/90 border-none text-white px-10"
+              className="bg-[#25D366] hover:bg-[#20bd5a] text-white border-none w-full sm:w-auto"
               onClick={() => window.open('https://wa.me/4922346808219', '_blank')}
             >
               <MessageCircle className="w-6 h-6 mr-3 fill-current" />
               WHATSAPP BEWERBUNG
             </Button>
-            <a href="tel:022346808219" className="text-emerald-deep/40 hover:text-emerald-deep transition-base font-bold text-sm tracking-widest flex items-center gap-2">
-              02234 6808219 <ArrowUpRight className="w-4 h-4" />
-            </a>
+            <p className="text-zinc-400 text-sm font-bold uppercase tracking-widest">
+              Oder: <span className="text-zinc-900 border-b border-zinc-200">02234 6808219</span>
+            </p>
           </div>
         </div>
-
-        <div ref={visualRef} className="relative">
-          <div className="aspect-[4/5] bg-secondary rounded-2xl overflow-hidden flex items-center justify-center p-12 relative border border-border">
-            <div className="absolute inset-0 bg-linear-to-br from-accent/5 via-transparent to-emerald-deep/5" />
+        
+        <div className="relative">
+          <div className="aspect-4/3 bg-zinc-50 rounded-4xl border border-zinc-100 p-12 flex flex-col justify-between overflow-hidden relative">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#FBBF24]/10 blur-[60px] rounded-full" />
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#059669]/10 blur-[80px] rounded-full" />
             
-            <div className="relative z-10 text-center">
-              <div className="text-[12rem] font-black text-emerald-deep/5 tracking-tighter absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none">
-                NRW
-              </div>
-              <div className="w-32 h-32 rounded-2xl bg-emerald-deep flex items-center justify-center shadow-2xl mx-auto mb-8">
-                <ArrowUpRight className="w-16 h-16 text-white" />
-              </div>
-              <p className="text-emerald-deep font-black text-3xl tracking-tight">CAREER PORTAL</p>
-              <p className="text-[10px] uppercase font-bold tracking-[0.4em] text-emerald-deep/30 mt-4">Freeways GmbH Excellence</p>
+            <div className="relative z-10 flex justify-between items-start">
+               <div>
+                  <p className="text-xs font-bold text-zinc-400 uppercase tracking-[0.3em] mb-2">Join the Fleet</p>
+                  <p className="text-3xl font-bold text-zinc-900 tracking-tight">Einfach & <br />Schnell</p>
+               </div>
+               <div className="w-16 h-16 bg-white rounded-2xl border border-zinc-100 flex items-center justify-center shadow-lg">
+                  <QrCode className="w-8 h-8 text-zinc-900" />
+               </div>
             </div>
-
-            {/* Float Badge */}
-            <div className="absolute bottom-10 left-10 right-10 p-8 bg-background border border-border rounded-xl shadow-2xl flex items-center justify-between">
-              <div>
-                <p className="text-3xl font-black text-emerald-deep leading-none">NRW</p>
-                <p className="text-[9px] uppercase font-bold tracking-widest text-emerald-deep/40 mt-2">Homebase Köln</p>
+            
+            <div className="relative z-10 p-8 bg-zinc-900 rounded-2xl shadow-2xl">
+              <div className="flex items-center gap-4 text-white">
+                <div className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
+                <p className="text-sm font-bold uppercase tracking-widest opacity-60">Status</p>
+                <p className="text-sm font-bold">HIRING NOW IN NRW</p>
               </div>
-              <div className="w-10 h-1 bg-accent" />
             </div>
           </div>
         </div>

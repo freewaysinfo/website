@@ -21,64 +21,53 @@ export const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Leistungen', href: '#services' },
-    { name: 'Karriere', href: '#career' },
-    { name: 'Impressum', href: '/impressum' },
-    { name: 'Kontakt', href: '#contact' },
+    { name: 'Leistungen', href: '#leistungen' },
+    { name: 'Karriere', href: '#karriere' },
+    { name: 'Kontakt', href: '#kontakt' },
   ];
 
   return (
     <nav 
       className={cn(
-        "fixed top-0 left-0 right-0 z-100 transition-base",
-        isScrolled ? "h-16 bg-background/80 backdrop-blur-md border-b border-border" : "h-[72px] md:h-20 bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        isScrolled ? "h-16 bg-white/90 backdrop-blur-md border-b border-zinc-100 shadow-sm" : "h-20 bg-transparent"
       )}
     >
-      <div className="max-w-max-width mx-auto px-px-safe flex items-center justify-between h-full">
+      <div className="container-custom flex items-center justify-between h-full">
         {/* Brand */}
-        <div className="flex items-center gap-4">
-          <Link href="/" className="flex items-center gap-4 group">
-            <div className="relative w-10 h-10 flex items-center justify-center shrink-0">
-              <Image 
-                src="/images/freeways-logo.png" 
-                alt="Freeways Logo" 
-                fill 
-                className="object-contain"
-                priority
-              />
-            </div>
-            <div className="flex flex-col leading-none">
-              <span className="font-black text-xl tracking-tighter uppercase text-primary group-hover:text-accent transition-base">Freeways</span>
-              <span className="font-bold text-[8px] tracking-[0.4em] uppercase text-primary/60">GmbH</span>
-            </div>
-          </Link>
-        </div>
+        <Link href="/" className="flex items-center gap-2 group">
+          <span className="font-bold text-2xl tracking-tighter text-zinc-900">
+            FREEWAYS<span className="text-[#059669]">.</span>
+          </span>
+          <span className="bg-zinc-100 text-zinc-500 text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-widest">
+            GmbH
+          </span>
+        </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-12">
+        <div className="hidden md:flex items-center gap-10">
           <div className="flex items-center gap-8">
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
                 href={link.href}
-                className="text-[10px] font-bold uppercase tracking-[0.25em] text-primary/60 hover:text-primary transition-base"
+                className="text-sm font-bold text-zinc-600 hover:text-[#059669] transition-colors"
               >
                 {link.name}
               </a>
             ))}
           </div>
-          <Button size="sm" variant="primary">
+          <Link href="#kontakt" className="bg-[#059669] text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-[#057a55] transition-all">
             ANFRAGEN
-          </Button>
+          </Link>
         </div>
 
+        {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-primary p-2 hover:bg-primary/5 rounded-full transition-base"
-          title={isMobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
-          aria-label="Navigation umschalten"
+          className="md:hidden text-zinc-900 p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
@@ -89,32 +78,26 @@ export const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 bg-background z-90 flex flex-col justify-center px-safe"
+            className="fixed inset-0 top-16 bg-white z-40 flex flex-col p-8 md:hidden"
           >
             <div className="flex flex-col gap-6">
-              {navLinks.map((link, index) => (
-                  <motion.a 
-                    key={link.name} 
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 * index }}
-                    href={link.href}
-                    className="text-4xl font-black uppercase tracking-tighter text-primary hover:text-accent transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {link.name}
-                  </motion.a>
+              {navLinks.map((link) => (
+                <a 
+                  key={link.name} 
+                  href={link.href}
+                  className="text-2xl font-bold text-zinc-900 border-b border-zinc-100 pb-4"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
               ))}
-              <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-                className="mt-8"
+              <Link 
+                href="#kontakt" 
+                className="bg-[#059669] text-white px-6 py-4 rounded-xl text-lg font-bold text-center mt-4"
+                onClick={() => setIsMobileMenuOpen(false)}
               >
-                <Button size="lg" className="w-full">
-                  ANFRAGEN
-                </Button>
-              </motion.div>
+                ANFRAGEN
+              </Link>
             </div>
           </motion.div>
         )}

@@ -1,63 +1,72 @@
 import React from 'react';
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 
-export default function Impressum() {
+export default function ImpressumPage() {
   return (
-    <div className="min-h-screen pt-40 pb-24 px-safe max-w-4xl mx-auto">
-      <h1 className="text-5xl md:text-7xl font-black mb-16 tracking-tighter text-emerald-deep">Impressum</h1>
-      
-      <div className="space-y-16 text-emerald-deep/60 leading-relaxed font-medium">
-        <section>
-          <h2 className="text-xs font-bold text-emerald-deep mb-6 uppercase tracking-[0.3em] opacity-40">Angaben gemäß § 5 TMG</h2>
-          <div className="space-y-1">
-            <p className="text-emerald-deep text-lg font-bold">Freeways GmbH</p>
-            <p>Wipperfürther Str. 29–31</p>
-            <p>51103 Köln, Deutschland</p>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-xs font-bold text-emerald-deep mb-6 uppercase tracking-[0.3em] opacity-40">Vertreten durch</h2>
-          <p className="text-emerald-deep text-lg font-bold">Mohamad Hasan</p>
-        </section>
-
-        <section>
-          <h2 className="text-xs font-bold text-emerald-deep mb-6 uppercase tracking-[0.3em] opacity-40">Kontakt</h2>
-          <div className="space-y-1">
-            <p>Telefon: <span className="text-emerald-deep">02234 6808219</span></p>
-            <p>E-Mail: <span className="text-emerald-deep">info@freeways.de</span></p>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-xs font-bold text-emerald-deep mb-6 uppercase tracking-[0.3em] opacity-40">Registereintrag</h2>
-          <div className="space-y-1">
-            <p>Eintragung im Handelsregister.</p>
-            <p>Registergericht: Amtsgericht Köln</p>
-            <p>Registernummer: HRB 112389</p>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-xs font-bold text-emerald-deep mb-6 uppercase tracking-[0.3em] opacity-40">Umsatzsteuer-ID</h2>
-          <div className="space-y-1">
-            <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:</p>
-            <p className="text-emerald-deep font-bold italic">DE 123456789</p>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-xs font-bold text-emerald-deep mb-6 uppercase tracking-[0.3em] opacity-40">Redaktionell verantwortlich</h2>
-          <div className="space-y-1">
-            <p className="text-emerald-deep text-lg font-bold">Mohamad Hasan</p>
-            <p>Wipperfürther Str. 29–31</p>
-            <p>51103 Köln</p>
-          </div>
-        </section>
-
-        <section className="pt-12 border-t border-border">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-30">Quelle: <a href="https://www.e-recht24.de" className="hover:text-gold-premium transition-base">e-recht24.de</a></p>
-        </section>
+    <main className="min-h-screen bg-white">
+      <Navbar />
+      <div className="container-custom pt-32 pb-20">
+        <h1 className="text-4xl font-bold text-zinc-900 mb-12">Impressum</h1>
+        
+        <div className="space-y-8 text-zinc-600 leading-relaxed">
+          <section>
+            <h2 className="text-xl font-bold text-zinc-900 mb-4 uppercase tracking-wider text-sm">Angaben gemäß § 5 TMG</h2>
+            <p>
+              Freeways GmbH<br />
+              Wipperfürther Str. 29–31<br />
+              51103 Köln
+            </p>
+          </section>
+          
+          <section>
+            <h2 className="text-xl font-bold text-zinc-900 mb-4 uppercase tracking-wider text-sm">Vertreten durch</h2>
+            <p>Geschäftsführung: [Name einfügen]</p>
+          </section>
+          
+          <section>
+            <h2 className="text-xl font-bold text-zinc-900 mb-4 uppercase tracking-wider text-sm">Kontakt</h2>
+            <p>
+              Telefon: 02234 6808219<br />
+              E-Mail: info@freeways.de
+            </p>
+          </section>
+          
+          <section>
+            <h2 className="text-xl font-bold text-zinc-900 mb-4 uppercase tracking-wider text-sm">Registereintrag</h2>
+            <p>
+              Eintragung im Handelsregister.<br />
+              Registergericht: Amtsgericht Köln<br />
+              Registernummer: [Nummer einfügen]
+            </p>
+          </section>
+          
+          <section>
+            <h2 className="text-xl font-bold text-zinc-900 mb-4 uppercase tracking-wider text-sm">Umsatzsteuer-ID</h2>
+            <p>
+              Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
+              [ID einfügen]
+            </p>
+          </section>
+          
+          <section>
+            <h2 className="text-xl font-bold text-zinc-900 mb-4 uppercase tracking-wider text-sm">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+            <p>
+              [Name einfügen]<br />
+              Wipperfürther Str. 29–31<br />
+              51103 Köln
+            </p>
+          </section>
+          
+          <section className="pt-8 border-t border-zinc-100">
+             <p className="text-sm">
+                Hinweis: Die Freeways GmbH übernimmt keine Haftung für die Inhalte externer Links. 
+                Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
+             </p>
+          </section>
+        </div>
       </div>
-    </div>
+      <Footer />
+    </main>
   );
 }

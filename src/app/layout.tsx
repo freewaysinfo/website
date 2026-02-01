@@ -15,7 +15,6 @@ export const metadata: Metadata = {
 };
 
 import { SmoothScroll } from "@/components/ui/SmoothScroll";
-import { ConciergeBot } from "@/components/ConciergeBot";
 
 export default function RootLayout({
   children,
@@ -29,9 +28,8 @@ export default function RootLayout({
       >
         <SmoothScroll>
           <Navbar />
-          <main>{children}</main>
+          {children}
           <Footer />
-          <ConciergeBot />
         </SmoothScroll>
       </body>
     </html>

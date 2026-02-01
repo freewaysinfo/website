@@ -1,17 +1,17 @@
 import { Hero } from "@/components/Hero";
-import { ServiceNav } from "@/components/ServiceNav";
 import { ServiceGrid } from "@/components/ServiceGrid";
+import { NRWMap } from "@/components/NRWMap";
 import { CareerSection } from "@/components/CareerSection";
-import { NRWFokus } from "@/components/NRWFokus";
+import { ContactSection } from "@/components/ContactSection";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Hero />
-      <ServiceNav />
       <ServiceGrid />
-      <NRWFokus />
+      <NRWMap />
       <CareerSection />
+      <ContactSection />
     </main>
   );
 }

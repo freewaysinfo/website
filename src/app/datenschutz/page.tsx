@@ -1,59 +1,65 @@
 import React from 'react';
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 
-export default function Datenschutz() {
+export default function DatenschutzPage() {
   return (
-    <div className="min-h-screen pt-40 pb-24 px-safe max-w-4xl mx-auto">
-      <h1 className="text-5xl md:text-7xl font-black mb-16 tracking-tighter text-emerald-deep uppercase">Datenschutz</h1>
-      
-      <div className="space-y-16 text-emerald-deep/60 leading-relaxed font-medium">
-        <section>
-          <h2 className="text-xs font-bold text-emerald-deep mb-6 uppercase tracking-[0.3em] opacity-40">1. Datenschutz auf einen Blick</h2>
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-emerald-deep font-bold mb-2">Allgemeine Hinweise</h3>
-              <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen.</p>
-            </div>
-            
-            <div>
-              <h3 className="text-emerald-deep font-bold mb-2">Verantwortliche Stelle</h3>
-              <p className="text-emerald-deep">
-                Freeways GmbH<br />
-                Mohamad Hasan<br />
-                Wipperfürther Str. 29–31<br />
-                D-51103 Köln<br />
-                E-Mail: info@freeways.de
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-xs font-bold text-emerald-deep mb-6 uppercase tracking-[0.3em] opacity-40">2. Hosting & Infrastructure</h2>
-          <p>Wir hosten die Inhalte unserer Website bei folgendem Anbieter:</p>
-          <p className="text-emerald-deep font-bold mt-4">Vercel Inc.</p>
-          <p className="text-sm">440 N Barranca Ave #4133, Covina, CA 91723, USA.</p>
-        </section>
-
-        <section>
-          <h2 className="text-xs font-bold text-emerald-deep mb-6 uppercase tracking-[0.3em] opacity-40">3. Allgemeine Pflichtinformationen</h2>
-          <div className="space-y-4">
-            <h3 className="text-emerald-deep font-bold mb-2">Datenschutz</h3>
-            <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften.</p>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-xs font-bold text-emerald-deep mb-6 uppercase tracking-[0.3em] opacity-40">4. Datenerfassung</h2>
-          <div className="space-y-4">
-            <h3 className="text-emerald-deep font-bold mb-2">Technologie</h3>
-            <p>Unsere Internetseiten verwenden moderne Web-Technologien zur Bereitstellung einer optimalen User Experience. Dabei werden technisch notwendige Daten verarbeitet.</p>
-          </div>
-        </section>
-
-        <section className="pt-12 border-t border-border">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-30">Hinweis: Dies ist eine verkürzte Darstellung für Demonstrationszwecke.</p>
-        </section>
+    <main className="min-h-screen bg-white">
+      <Navbar />
+      <div className="container-custom pt-32 pb-20">
+        <h1 className="text-4xl font-bold text-zinc-900 mb-12">Datenschutzerklärung</h1>
+        
+        <div className="space-y-8 text-zinc-600 leading-relaxed max-w-4xl">
+          <section>
+            <h2 className="text-xl font-bold text-zinc-900 mb-4 uppercase tracking-wider text-sm">1. Datenschutz auf einen Blick</h2>
+            <p>
+              Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. 
+              Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen 
+              Datenschutzvorschriften sowie dieser Datenschutzerklärung.
+            </p>
+          </section>
+          
+          <section>
+            <h2 className="text-xl font-bold text-zinc-900 mb-4 uppercase tracking-wider text-sm">2. Datenerfassung auf unserer Website</h2>
+            <p>
+              Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. 
+              Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen.
+            </p>
+            <p className="mt-4">
+              Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. 
+              Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.
+            </p>
+          </section>
+          
+          <section>
+            <h2 className="text-xl font-bold text-zinc-900 mb-4 uppercase tracking-wider text-sm">3. Ihre Rechte</h2>
+            <p>
+              Sie haben jederzeit das Recht unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer 
+              gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die 
+              Berichtigung, Sperrung oder Löschung dieser Daten zu verlangen.
+            </p>
+          </section>
+          
+          <section>
+            <h2 className="text-xl font-bold text-zinc-900 mb-4 uppercase tracking-wider text-sm">4. Analyse-Tools und Tools von Drittanbietern</h2>
+            <p>
+              Beim Besuch unserer Website kann Ihr Surf-Verhalten statistisch ausgewertet werden. 
+              Das erfolgt vor allem mit Cookies und mit sogenannten Analyseprogrammen.
+            </p>
+          </section>
+          
+          <section>
+             <h2 className="text-xl font-bold text-zinc-900 mb-4 uppercase tracking-wider text-sm">5. Kontaktformular</h2>
+             <p>
+                Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem 
+                Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung 
+                der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben 
+                wir nicht ohne Ihre Einwilligung weiter.
+             </p>
+          </section>
+        </div>
       </div>
-    </div>
+      <Footer />
+    </main>
   );
 }
