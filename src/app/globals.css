@@ -19,16 +19,16 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #050505;
+  --foreground: #022c22;
   --primary: #facc15;
-  --secondary: #050505;
+  --secondary: #022c22;
   --accent: #facc15;
-  --border: rgba(0, 0, 0, 0.08);
+  --border: rgba(2, 44, 34, 0.08);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #050505;
+    --background: #022c22;
     --foreground: #ffffff;
     --primary: #facc15;
     --secondary: #ffffff;
