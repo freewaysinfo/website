@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { motion, HTMLMotionProps } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
@@ -9,20 +9,25 @@ interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   container?: boolean;
 }
 
-export const Section = ({ children, className, container = true, ...props }: SectionProps) => {
-  return (
-    <section 
-      className={cn("py-[var(--spacing-section)] relative", className)} 
-      {...props}
-    >
-      {container ? (
-        <div className="px-[var(--spacing-container)] max-w-7xl mx-auto">
-          {children}
-        </div>
-      ) : children}
-    </section>
-  );
-};
+export const Section = forwardRef<HTMLElement, SectionProps>(
+  ({ children, className, container = true, ...props }, ref) => {
+    return (
+      <section 
+        ref={ref}
+        className={cn("py-section relative", className)} 
+        {...props}
+      >
+        {container ? (
+          <div className="px-safe max-w-max-width mx-auto w-full">
+            {children}
+          </div>
+        ) : children}
+      </section>
+    );
+  }
+);
+
+Section.displayName = "Section";
 
 interface ButtonProps extends HTMLMotionProps<"button"> {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
@@ -38,16 +43,16 @@ export const Button = ({
   ...props 
 }: ButtonProps) => {
   const variants = {
-    primary: "bg-primary text-obsidian hover:bg-primary/90",
-    secondary: "bg-white text-obsidian hover:bg-white/90",
-    outline: "border border-border text-foreground hover:bg-white/5",
-    ghost: "text-foreground hover:bg-white/5"
+    primary: "bg-accent text-emerald-deep hover:opacity-90",
+    secondary: "bg-emerald-deep text-white hover:opacity-90",
+    outline: "border-2 border-emerald-deep text-emerald-deep hover:bg-emerald-deep hover:text-white",
+    ghost: "text-emerald-deep hover:bg-emerald-deep/5"
   };
 
   const sizes = {
-    sm: "px-4 py-2 text-sm",
-    md: "px-6 py-3 text-base",
-    lg: "px-8 py-4 text-lg"
+    sm: "px-spacing-s py-spacing-xs text-sm",
+    md: "px-spacing-m py-spacing-s text-base",
+    lg: "px-spacing-l py-spacing-m text-lg"
   };
 
   return (
@@ -55,7 +60,7 @@ export const Button = ({
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className={cn(
-        "rounded-full font-bold transition-base inline-flex items-center justify-center whitespace-nowrap",
+        "rounded-xl font-bold transition-base inline-flex items-center justify-center whitespace-nowrap",
         variants[variant],
         sizes[size],
         className

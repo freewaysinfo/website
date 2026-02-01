@@ -1,74 +1,86 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Zap } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { Button } from './ui/Layout';
+import gsap from 'gsap';
+import { Section, Button } from './ui/Layout';
 
 export const Hero = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(titleRef.current, {
+        y: 40,
+        opacity: 0,
+        duration: 1,
+        ease: "power4.out",
+        delay: 0.2
+      });
+      gsap.from(".hero-content", {
+        y: 20,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.1,
+        delay: 0.5
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-obsidian">
-      {/* Background with subtle animation */}
-      <div className="absolute inset-0 z-0">
+    <Section 
+      ref={containerRef}
+      className="pt-40 pb-24 md:pt-[160px] md:pb-[120px] bg-background overflow-hidden relative"
+    >
+      {/* Background Visual */}
+      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
         <Image 
           src="/images/hero_crew.png" 
-          alt="Freeways Crew" 
+          alt="" 
           fill 
-          className="object-cover object-center brightness-[0.4] scale-105" 
+          className="object-cover grayscale"
           priority
         />
-        <div className="absolute inset-0 bg-linear-to-b from-obsidian/60 via-obsidian/20 to-obsidian pointer-events-none" />
       </div>
 
-      <div className="relative z-10 w-full px-[var(--spacing-container)] max-w-7xl mx-auto pt-20">
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-4xl"
+      <div className="relative z-10 flex flex-col items-center text-center max-w-5xl mx-auto">
+        <span className="hero-content inline-block text-[11px] font-bold tracking-[0.3em] uppercase text-accent mb-8">
+          NRW • Logistik • Exzellenz
+        </span>
+        
+        <h1 
+          ref={titleRef}
+          className="text-6xl md:text-[clamp(4.5rem,8vw,6.5rem)] font-black leading-[0.95] tracking-tight text-emerald-deep mb-10"
         >
-          <motion.span 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5 }}
-            className="inline-block text-primary font-bold tracking-[0.2em] uppercase text-sm mb-6"
-          >
-            Premium Logistik-Partner
-          </motion.span>
-          
-          <h1 className="text-5xl md:text-8xl font-black mb-8 leading-[0.9] tracking-tighter text-white">
-            ZUVERLÄSSIGER <br />
-            <span className="text-primary italic">LIEFER-SERVICE</span> <br />
-            IN GANZ NRW
-          </h1>
+          PRÄZISION TRIFFT <br />
+          <span className="italic font-light">BEWEGUNG.</span> <br />
+          IHR PARTNER FÜR NRW.
+        </h1>
 
-          <p className="text-xl md:text-2xl text-white/60 mb-12 max-w-2xl font-medium leading-relaxed">
-            Wir definieren Logistik neu. Freeways GmbH kombiniert modernste Technik mit hanseatischer Zuverlässigkeit für Ihre Express-Zustellung.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center gap-6">
-            <Button size="lg" className="w-full sm:w-auto">
-              <Zap className="w-5 h-5 mr-3 fill-current" />
-              JETZT ANFRAGEN
-            </Button>
-            <Button variant="outline" size="lg" className="w-full sm:w-auto">
-              UNSERE LEISTUNGEN
-            </Button>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Decorative Elements */}
-      <div className="absolute bottom-12 right-[var(--spacing-container)] hidden md:block">
-        <div className="flex items-center gap-8 text-white/20 text-xs font-bold tracking-[0.3em] uppercase">
-          <span>Köln</span>
-          <span>•</span>
-          <span>Düsseldorf</span>
-          <span>•</span>
-          <span>Essen</span>
+        <p className="hero-content text-xl md:text-2xl text-emerald-deep/60 mb-12 max-w-2xl font-medium leading-relaxed">
+          Freeways GmbH definiert Logistik neu: <br className="hidden md:block" />
+          Kompakt, zuverlässig und technologisch führend.
+        </p>
+        
+        <div className="hero-content flex flex-col sm:flex-row items-center gap-4">
+          <Button size="lg" variant="secondary">
+            KOOPERATION STARTEN
+          </Button>
+          <Button variant="ghost" size="lg">
+            UNSER NETZWERK
+          </Button>
         </div>
       </div>
-    </section>
+
+      {/* Subtle indicator */}
+      <div className="relative z-10 hero-content mt-32 md:mt-48 flex flex-col items-center gap-4 text-emerald-deep/20">
+        <div className="w-px h-16 bg-emerald-deep/20" />
+        <span className="text-[9px] font-bold uppercase tracking-[0.4em]">Scroll</span>
+      </div>
+    </Section>
   );
 };

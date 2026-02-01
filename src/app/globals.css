@@ -1,37 +1,52 @@
 @import "tailwindcss";
 
 @theme inline {
+  /* Color Palette - 2026 spec */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
-  --color-gold: #D4AF37;
-  --color-emerald: #10B981;
-  --color-obsidian: #050505;
   
+  /* Brand Specifics */
+  --color-emerald-deep: #022c22;
+  --color-gold-premium: #facc15;
+  --color-off-white: #fcfcfc;
+
+  /* Global Container Tokens */
+  --container-max-width: 1280px;
+  --safe-inset-mobile: 24px;
+  --safe-inset-tablet: 32px;
+  --safe-inset-desktop: 64px;
+
+  /* 8-pt Spacing System */
+  --spacing-xs: 8px;
+  --spacing-s: 16px;
+  --spacing-m: 32px;
+  --spacing-l: 64px;
+  --spacing-xl: clamp(96px, 12vw, 160px);
+  --spacing-section: var(--spacing-xl);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-
-  --spacing-section: clamp(4rem, 10vw, 8rem);
-  --spacing-container: clamp(1rem, 5vw, 4rem);
 }
 
 :root {
-  --background: #ffffff;
+  /* Light Mode - Default for Editorial Premium */
+  --background: #fcfcfc;
   --foreground: #022c22;
-  --primary: #facc15;
-  --secondary: #022c22;
-  --accent: #facc15;
+  --primary: #022c22; /* Green for headlines/structure */
+  --secondary: #ffffff;
+  --accent: #facc15; /* Yellow only for CTA/Highlights */
   --border: rgba(2, 44, 34, 0.08);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #022c22;
-    --foreground: #ffffff;
-    --primary: #facc15;
-    --secondary: #ffffff;
+    --foreground: #fcfcfc;
+    --primary: #fcfcfc;
+    --secondary: #022c22;
     --accent: #facc15;
     --border: rgba(255, 255, 255, 0.08);
   }

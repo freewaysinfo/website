@@ -19,6 +19,8 @@ export const metadata: Metadata = {
   description: "Ihr professioneller Partner für Essenslieferung, Kurier- und Logistikdienstleistungen in Nordrhein-Westfalen.",
 };
 
+import { SmoothScroll } from "@/components/ui/SmoothScroll";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,11 +29,13 @@ export default function RootLayout({
   return (
     <html lang="de" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-secondary selection:text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-accent selection:text-emerald-deep`}
       >
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <SmoothScroll>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );
