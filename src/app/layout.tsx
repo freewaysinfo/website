@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="de" className="scroll-smooth">
       <body
-        className={`${inter.variable} antialiased selection:bg-accent selection:text-white`}
+        className={`${outfit.variable} antialiased selection:bg-emerald-500/30 selection:text-white font-sans`}
       >
         <SmoothScroll>
           {children}
