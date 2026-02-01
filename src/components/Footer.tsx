@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Section } from './ui/Layout';
+import { FreewaysLogoIcon } from './ui/FreewaysLogo';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,8 +14,8 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
           <div className="md:col-span-2">
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 bg-primary flex items-center justify-center">
-                <span className="text-obsidian font-black text-2xl italic">F</span>
+              <div className="w-12 h-12 flex items-center justify-center">
+                <FreewaysLogoIcon className="w-full h-full" />
               </div>
               <div className="flex flex-col leading-none">
                 <span className="font-black text-3xl tracking-tighter uppercase text-white">Freeways</span>

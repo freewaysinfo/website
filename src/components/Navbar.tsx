@@ -1,10 +1,12 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from './ui/Layout';
+import { FreewaysLogoIcon } from './ui/FreewaysLogo';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,13 +37,15 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-[var(--spacing-container)] flex items-center justify-between">
         {/* Brand */}
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 bg-primary flex items-center justify-center shrink-0">
-            <span className="text-obsidian font-black text-2xl italic">F</span>
-          </div>
-          <div className="flex flex-col leading-none">
-            <span className="font-black text-2xl tracking-tighter uppercase text-white">Freeways</span>
-            <span className="font-bold text-[10px] tracking-[0.3em] uppercase text-primary">GmbH</span>
-          </div>
+          <Link href="/" className="flex items-center gap-4 group">
+            <div className="w-12 h-12 flex items-center justify-center shrink-0">
+              <FreewaysLogoIcon className="w-full h-full drop-shadow-lg" />
+            </div>
+            <div className="flex flex-col leading-none">
+              <span className="font-black text-2xl tracking-tighter uppercase text-white group-hover:text-primary transition-base">Freeways</span>
+              <span className="font-bold text-[10px] tracking-[0.3em] uppercase text-primary">GmbH</span>
+            </div>
+          </Link>
         </div>
 
         {/* Desktop Navigation */}

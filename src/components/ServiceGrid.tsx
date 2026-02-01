@@ -2,27 +2,27 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Truck, Users, Zap, ArrowRight } from 'lucide-react';
+import { Utensils, Box, ShieldCheck, ArrowRight } from 'lucide-react';
 import { Section } from './ui/Layout';
 
 const services = [
   {
     id: "01",
-    title: "Essenslieferung",
-    description: "Professionelle und pünktliche Lieferung von warmen Speisen direkt zum Kunden. Wir garantieren Frische und Zuverlässigkeit für Ihre gastronomischen Partner.",
-    icon: Truck,
+    title: "Gastronomie-Logistik",
+    description: "Spezialisierte Auslieferung für Restaurants und Ghost-Kitchens. Wir garantieren temperaturgeführte Pünktlichkeit und höchste Hygiene-Standards.",
+    icon: Utensils,
   },
   {
     id: "02",
-    title: "Expressdienste",
-    description: "Flexible Kurierlösungen für Unternehmen in ganz NRW. Von Dokumenten bis zu Großbestellungen – wir liefern sicher und termingerecht.",
-    icon: Zap,
+    title: "Express-Kurier",
+    description: "Time-critical Delivery für Dokumente und Waren in ganz NRW. Unser Express-Netzwerk sichert Ihre geschäftskritischen Termine ab.",
+    icon: Box,
   },
   {
     id: "03",
-    title: "Logistik-Support",
-    description: "Bereitstellung von geschulten Fahrern und moderner Flotte für E-Commerce und Großkunden. Skalierbare Lösungen für Ihre Peak-Phasen.",
-    icon: Users,
+    title: "Logistik-Management",
+    description: "Ganzheitliche Steuerung Ihrer Lieferflotte. Wir stellen nicht nur Fahrer, sondern optimieren Ihre gesamte Last-Mile-Performance.",
+    icon: ShieldCheck,
   }
 ];
 
