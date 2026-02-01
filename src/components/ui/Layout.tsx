@@ -43,10 +43,10 @@ export const Button = ({
   ...props 
 }: ButtonProps) => {
   const variants = {
-    primary: "bg-accent text-emerald-deep hover:opacity-90",
-    secondary: "bg-emerald-deep text-white hover:opacity-90",
-    outline: "border-2 border-emerald-deep text-emerald-deep hover:bg-emerald-deep hover:text-white",
-    ghost: "text-emerald-deep hover:bg-emerald-deep/5"
+    primary: "bg-accent text-zinc-900 hover:opacity-90 shadow-lg shadow-accent/20",
+    secondary: "bg-primary text-white hover:opacity-90",
+    outline: "border-2 border-primary text-primary hover:bg-primary hover:text-white",
+    ghost: "text-primary hover:bg-primary/5"
   };
 
   const sizes = {

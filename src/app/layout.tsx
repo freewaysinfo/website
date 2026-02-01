@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -20,6 +15,7 @@ export const metadata: Metadata = {
 };
 
 import { SmoothScroll } from "@/components/ui/SmoothScroll";
+import { ConciergeBot } from "@/components/ConciergeBot";
 
 export default function RootLayout({
   children,
@@ -29,12 +25,13 @@ export default function RootLayout({
   return (
     <html lang="de" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-accent selection:text-emerald-deep`}
+        className={`${inter.variable} antialiased selection:bg-accent selection:text-white`}
       >
         <SmoothScroll>
           <Navbar />
           <main>{children}</main>
           <Footer />
+          <ConciergeBot />
         </SmoothScroll>
       </body>
     </html>

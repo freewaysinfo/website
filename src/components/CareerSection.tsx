@@ -22,7 +22,7 @@ export const CareerSection = () => {
       gsap.from(contentRef.current, {
         x: -40,
         opacity: 0,
-        duration: 1.2,
+        duration: 0.18,
         ease: "power4.out",
         scrollTrigger: {
           trigger: containerRef.current,
@@ -32,7 +32,7 @@ export const CareerSection = () => {
       gsap.from(visualRef.current, {
         scale: 0.95,
         opacity: 0,
-        duration: 1.5,
+        duration: 0.18,
         ease: "power3.out",
         scrollTrigger: {
           trigger: containerRef.current,
