@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Button } from './ui/Layout';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,63 +14,60 @@ export const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Services', href: '#services' },
-    { name: 'Solutions', href: '#solutions' },
-    { name: 'Company', href: '#company' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Leistungen', href: '#services' },
+    { name: 'Karriere', href: '#career' },
+    { name: 'Impressum', href: '/impressum' },
+    { name: 'Kontakt', href: '#contact' },
   ];
 
   return (
     <nav 
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
-        isScrolled ? "py-2 glass border-b border-white/10" : "bg-transparent"
+        "fixed top-0 left-0 right-0 z-[100] transition-all duration-500",
+        isScrolled ? "py-4 bg-obsidian/80 backdrop-blur-xl border-b border-white/5" : "py-8 bg-transparent"
       )}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center shrink-0">
-              <span className="text-black font-black text-2xl italic">F</span>
-            </div>
-            <div className="flex flex-col leading-none">
-              <span className="font-black text-xl tracking-tighter uppercase text-white">Freeways</span>
-              <span className="font-bold text-[10px] tracking-[0.2em] uppercase text-primary -mt-0.5">GmbH</span>
-            </div>
+      <div className="max-w-7xl mx-auto px-[var(--spacing-container)] flex items-center justify-between">
+        {/* Brand */}
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 bg-primary flex items-center justify-center shrink-0">
+            <span className="text-obsidian font-black text-2xl italic">F</span>
           </div>
-          <div className="hidden lg:block h-8 w-px bg-white/10 mx-2" />
-          <span className="hidden lg:block text-[11px] uppercase tracking-widest text-secondary/80 font-medium">
-            Liefern - Fahren - Arbeiten
-          </span>
+          <div className="flex flex-col leading-none">
+            <span className="font-black text-2xl tracking-tighter uppercase text-white">Freeways</span>
+            <span className="font-bold text-[10px] tracking-[0.3em] uppercase text-primary">GmbH</span>
+          </div>
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href}
-              className="text-xs font-bold uppercase tracking-widest text-secondary hover:text-white transition-colors"
-            >
-              {link.name}
-            </a>
-          ))}
-          <button className="px-6 py-2.5 bg-secondary text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-secondary/80 transition-base shadow-lg shadow-secondary/20">
-            Jetzt anfragen
-          </button>
+        <div className="hidden md:flex items-center gap-12">
+          <div className="flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a 
+                key={link.name} 
+                href={link.href}
+                className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/50 hover:text-white transition-base"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+          <Button size="sm">
+            JETZT ANFRAGEN
+          </Button>
         </div>
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-white p-2"
+          className="md:hidden text-white p-2 hover:bg-white/5 rounded-full transition-base"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X /> : <Menu />}
+          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
@@ -77,26 +75,36 @@ export const Navbar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="md:hidden glass absolute top-full left-0 right-0 border-b border-white/10 overflow-hidden"
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="fixed inset-0 bg-obsidian z-[90] flex flex-col justify-center px-12"
           >
-            <div className="flex flex-col p-6 gap-6">
-              {navLinks.map((link) => (
-                <a 
+            <div className="flex flex-col gap-8">
+              {navLinks.map((link, index) => (
+                <motion.a 
                   key={link.name} 
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 * index }}
                   href={link.href}
-                  className="text-xl font-bold uppercase tracking-tighter text-white hover:text-primary transition-colors"
+                  className="text-5xl font-black uppercase tracking-tighter text-white hover:text-primary transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
-                </a>
+                </motion.a>
               ))}
-              <div className="h-px bg-white/10 w-full" />
-              <button className="w-full py-4 bg-secondary text-white font-bold uppercase tracking-widest rounded-xl shadow-lg shadow-secondary/20">
-                Jetzt anfragen
-              </button>
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="mt-12"
+              >
+                <Button size="lg" className="w-full">
+                  JETZT ANFRAGEN
+                </Button>
+              </motion.div>
             </div>
           </motion.div>
         )}
