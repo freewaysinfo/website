@@ -1,82 +1,69 @@
 "use client";
 
 import React from 'react';
-import { Section, Button } from './ui/Layout';
-import { MessageCircle, CheckCircle2, QrCode } from 'lucide-react';
+import { MessageCircle, CheckCircle2 } from 'lucide-react';
 
-const benefits = [
-  "Faire Bezahlung",
-  "Flexible Arbeitszeiten",
-  "Neuer Fuhrpark",
-  "Junges, dynamisches Team",
-  "Pünktliche Auszahlung"
-];
-
-export const CareerSection = () => {
+export const CareerSection: React.FC = () => {
   return (
-    <Section id="karriere" className="bg-white">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-        <div>
-          <span className="inline-block px-3 py-1 bg-[#FBBF24]/10 text-[#f59e0b] rounded-lg text-sm font-bold mb-6 uppercase tracking-wider">
-            Karriere
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-8 tracking-tight">
-            Fahrer (m/w/d) gesucht – <br />
-            Jetzt bewerben
-          </h2>
-          <p className="text-lg text-zinc-600 mb-8 leading-relaxed max-w-lg font-medium">
-            Wir suchen zuverlässige Fahrer für Liefer- und Kurierdienste. 
-            Wir bieten ein professionelles Umfeld und modernste Logistik-Infrastruktur.
-          </p>
+    <div id="karriere" className="py-24 bg-zinc-50/50">
+      <div className="container mx-auto px-6">
+        <div className="bg-emerald-600 rounded-[3.5rem] p-8 lg:p-20 text-white overflow-hidden relative">
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 -skew-x-12 translate-x-1/2"></div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-            {benefits.map((benefit, i) => (
-              <div key={i} className="flex items-center gap-3 text-zinc-700 font-semibold">
-                <CheckCircle2 className="w-5 h-5 text-[#059669]" />
-                {benefit}
+          <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
+            <div>
+              <h2 className="text-4xl lg:text-6xl font-black mb-8 leading-tight">
+                Fahrer (m/w/d) gesucht – <br />
+                <span className="text-amber-400">Jetzt bewerben.</span>
+              </h2>
+              <p className="text-emerald-50 text-xl mb-10 font-medium">
+                Wir suchen zuverlässige Fahrer für Liefer- und Kurierdienste. Werden Sie Teil unseres dynamischen Teams in Köln und Umgebung.
+              </p>
+              
+              <div className="space-y-4 mb-12">
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 className="text-amber-400" size={24} />
+                  <span className="font-bold">Faire Bezahlung</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 className="text-amber-400" size={24} />
+                  <span className="font-bold">Flexible Arbeitszeiten</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 className="text-amber-400" size={24} />
+                  <span className="font-bold">Professionelles Arbeitsumfeld</span>
+                </div>
               </div>
-            ))}
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-6 items-center">
-            <Button 
-              className="bg-[#25D366] hover:bg-[#20bd5a] text-white border-none w-full sm:w-auto"
-              onClick={() => window.open('https://wa.me/4922346808219', '_blank')}
-            >
-              <MessageCircle className="w-6 h-6 mr-3 fill-current" />
-              WHATSAPP BEWERBUNG
-            </Button>
-            <p className="text-zinc-400 text-sm font-bold uppercase tracking-widest">
-              Oder: <span className="text-zinc-900 border-b border-zinc-200">02234 6808219</span>
-            </p>
-          </div>
-        </div>
-        
-        <div className="relative">
-          <div className="aspect-4/3 bg-zinc-50 rounded-4xl border border-zinc-100 p-12 flex flex-col justify-between overflow-hidden relative">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#FBBF24]/10 blur-[60px] rounded-full" />
-            <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#059669]/10 blur-[80px] rounded-full" />
-            
-            <div className="relative z-10 flex justify-between items-start">
-               <div>
-                  <p className="text-xs font-bold text-zinc-400 uppercase tracking-[0.3em] mb-2">Join the Fleet</p>
-                  <p className="text-3xl font-bold text-zinc-900 tracking-tight">Einfach & <br />Schnell</p>
-               </div>
-               <div className="w-16 h-16 bg-white rounded-2xl border border-zinc-100 flex items-center justify-center shadow-lg">
-                  <QrCode className="w-8 h-8 text-zinc-900" />
-               </div>
+
+              <a 
+                href="https://wa.me/4922346808219" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-4 bg-white text-emerald-900 px-10 py-5 rounded-2xl font-black text-xl hover:bg-zinc-100 transition-all shadow-2xl shadow-black/10"
+              >
+                <MessageCircle size={28} />
+                Jetzt bewerben per WhatsApp
+              </a>
+              <p className="mt-4 text-emerald-100/70 text-sm font-bold">Oder telefonisch: 02234 6808219</p>
             </div>
-            
-            <div className="relative z-10 p-8 bg-zinc-900 rounded-2xl shadow-2xl">
-              <div className="flex items-center gap-4 text-white">
-                <div className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
-                <p className="text-sm font-bold uppercase tracking-widest opacity-60">Status</p>
-                <p className="text-sm font-bold">HIRING NOW IN NRW</p>
+
+            <div className="hidden lg:block">
+              <div className="relative">
+                <div className="w-full h-[500px] rounded-[3rem] overflow-hidden border-8 border-emerald-500 shadow-2xl rotate-3 translate-x-8">
+                  <img 
+                    src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&q=80&w=1200" 
+                    alt="Happy Logistics Driver" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-8 -left-8 bg-amber-400 p-8 rounded-3xl shadow-xl -rotate-6">
+                  <span className="text-emerald-900 font-black text-2xl">BE JOINED!</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </Section>
+    </div>
   );
 };

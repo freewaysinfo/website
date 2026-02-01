@@ -3,10 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Button } from './ui/Layout';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,13 +33,14 @@ export const Navbar = () => {
     >
       <div className="container-custom flex items-center justify-between h-full">
         {/* Brand */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <span className="font-bold text-2xl tracking-tighter text-zinc-900">
-            FREEWAYS<span className="text-[#059669]">.</span>
-          </span>
-          <span className="bg-zinc-100 text-zinc-500 text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-widest">
-            GmbH
-          </span>
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="w-10 h-10 bg-[#059669] flex items-center justify-center rounded-xl shadow-lg shadow-emerald-600/20">
+            <span className="text-white font-black text-2xl">F</span>
+          </div>
+          <div className="flex flex-col leading-none">
+            <span className="text-xl font-extrabold tracking-tighter uppercase text-zinc-900 group-hover:text-[#059669] transition-colors">Freeways</span>
+            <span className="text-[10px] text-[#FBBF24] font-bold tracking-[0.2em] uppercase">GmbH Logistik</span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
@@ -57,8 +56,11 @@ export const Navbar = () => {
               </a>
             ))}
           </div>
-          <Link href="#kontakt" className="bg-[#059669] text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-[#057a55] transition-all">
-            ANFRAGEN
+          <Link 
+            href="#kontakt" 
+            className="bg-[#059669] hover:bg-[#057a55] text-white px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 transition-all transform hover:scale-105 shadow-md shadow-emerald-600/10"
+          >
+            Anfrage <ChevronRight size={16} />
           </Link>
         </div>
 
@@ -67,7 +69,7 @@ export const Navbar = () => {
           className="md:hidden text-zinc-900 p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
         </button>
       </div>
 
@@ -78,7 +80,7 @@ export const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 top-16 bg-white z-40 flex flex-col p-8 md:hidden"
+            className="fixed inset-0 top-16 bg-white z-40 flex flex-col p-8 md:hidden shadow-xl"
           >
             <div className="flex flex-col gap-6">
               {navLinks.map((link) => (
@@ -93,10 +95,10 @@ export const Navbar = () => {
               ))}
               <Link 
                 href="#kontakt" 
-                className="bg-[#059669] text-white px-6 py-4 rounded-xl text-lg font-bold text-center mt-4"
+                className="bg-[#059669] text-white p-5 rounded-2xl text-center font-bold text-lg shadow-lg"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                ANFRAGEN
+                Jetzt anfragen
               </Link>
             </div>
           </motion.div>

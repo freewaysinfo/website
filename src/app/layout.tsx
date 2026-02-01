@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -10,8 +9,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Freeways GmbH | Logistik- & Lieferdienst in NRW",
-  description: "Ihr professioneller Partner für Essenslieferung, Kurier- und Logistikdienstleistungen in Nordrhein-Westfalen.",
+  title: "Freeways GmbH | Premium Kurierdienst NRW",
+  description: "Ihre erste Wahl für professionelle Logistik. Essenslieferung & Kurierdienst in Nordrhein-Westfalen.",
 };
 
 import { SmoothScroll } from "@/components/ui/SmoothScroll";
@@ -27,9 +26,7 @@ export default function RootLayout({
         className={`${inter.variable} antialiased selection:bg-accent selection:text-white`}
       >
         <SmoothScroll>
-          <Navbar />
           {children}
-          <Footer />
         </SmoothScroll>
       </body>
     </html>

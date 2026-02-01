@@ -1,69 +1,61 @@
-"use client";
-
 import React from 'react';
-import { Utensils, Zap, Users, CheckCircle2 } from 'lucide-react';
+import { Zap, Utensils, Users, LucideIcon } from 'lucide-react';
 
-const services = [
+interface ServiceItem {
+  title: string;
+  desc: string;
+  Icon: LucideIcon;
+  color: string;
+}
+
+const serviceList: ServiceItem[] = [
   {
-    id: "gastronomie",
-    title: "Essenslieferung",
-    description: "Professionelle und pünktliche Lieferung warmer Speisen. Wir sind der zuverlässige Partner für Gastronomie, Plattformen und Ghost Kitchens in NRW.",
-    icon: Utensils,
-    bullets: ["HACCP-konform", "Pünktlichkeitsgarantie", "Erfahrene Fahrer"]
+    title: 'Essenslieferung',
+    desc: 'Professionelle und pünktliche Lieferung von warmen Speisen direkt zum Kunden – zuverlässig und effizient.',
+    Icon: Utensils,
+    color: 'bg-emerald-50 text-emerald-600'
   },
   {
-    id: "express",
-    title: "Kurier- & Expressdienste",
-    description: "Zeitkritische Lieferungen für Dokumente und Waren. Wir führen Expressfahrten in ganz Nordrhein-Westfalen zuverlässig und schnell aus.",
-    icon: Zap,
-    bullets: ["Sofort-Einsatz", "NRW-weite Abdeckung", "Dokumentensicher"]
+    title: 'Kurier- & Expressdienste',
+    desc: 'Flexible Kurierlösungen für Unternehmen und Partner in ganz NRW – schnell, sicher und termingerecht.',
+    Icon: Zap,
+    color: 'bg-amber-50 text-amber-600'
   },
   {
-    id: "logistik",
-    title: "Logistik & Fahrerbereitstellung",
-    description: "Wir stellen professionelle Fahrer und moderne Fahrzeuge für Plattformen, Unternehmen und Großkunden zur Verfügung.",
-    icon: Users,
-    bullets: ["Flexibel skalierbar", "Moderner Fuhrpark", "Full-Service"]
+    title: 'Logistik & Fahrerbereitstellung',
+    desc: 'Bereitstellung geschulter Fahrer und geeigneter Fahrzeuge für Plattformen, Unternehmen und Großkunden.',
+    Icon: Users,
+    color: 'bg-blue-50 text-blue-600'
   }
 ];
 
-export const ServiceGrid = () => {
+export const ServiceGrid: React.FC = () => {
   return (
-    <section id="leistungen" className="section-padding bg-zinc-50">
-      <div className="container-custom">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">Unsere Leistungen</h2>
-          <p className="text-lg text-zinc-600">
-            Klare Prozesse, zuverlässige Durchführung. Entdecken Sie unsere Kernkompetenzen in der NRW-Logistik.
-          </p>
-        </div>
+    <section id="leistungen" className="container mx-auto px-6 py-24">
+      <div className="text-center mb-20">
+        <h2 className="text-amber-500 font-black uppercase tracking-[0.3em] text-xs mb-4">Was wir tun</h2>
+        <h3 className="text-4xl lg:text-5xl font-black mb-6 text-zinc-900">Unsere <span className="text-emerald-600">Kernkompetenzen.</span></h3>
+        <p className="text-zinc-500 max-w-2xl mx-auto text-lg font-medium">
+          Wir decken das gesamte Spektrum der modernen Last-Mile-Logistik ab.
+        </p>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <div 
-              key={service.id} 
-              className="bg-white p-8 rounded-2xl border border-zinc-200 shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="w-12 h-12 bg-zinc-100 rounded-xl flex items-center justify-center mb-6 text-zinc-900">
-                <service.icon className="w-6 h-6" />
-              </div>
-              
-              <h3 className="text-xl font-bold text-zinc-900 mb-4">{service.title}</h3>
-              <p className="text-zinc-600 mb-6 leading-relaxed">
-                {service.description}
-              </p>
-              
-              <ul className="space-y-3">
-                {service.bullets.map((bullet, idx) => (
-                  <li key={idx} className="flex items-center gap-2 text-sm text-zinc-500 font-medium">
-                    <CheckCircle2 className="w-4 h-4 text-zinc-400" />
-                    {bullet}
-                  </li>
-                ))}
-              </ul>
+      <div className="grid md:grid-cols-3 gap-10">
+        {serviceList.map((service, idx) => (
+          <div 
+            key={idx} 
+            className="group p-10 rounded-[2.5rem] bg-white border border-zinc-100 hover:border-emerald-200 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-600/5 cursor-default flex flex-col items-center text-center"
+          >
+            <div className={`w-20 h-20 rounded-[2rem] flex items-center justify-center mb-8 ${service.color} transition-all group-hover:scale-110 shadow-sm`}>
+              {/* Fix: Render the Icon component directly with the size prop to resolve TypeScript overload mismatch in cloneElement */}
+              <service.Icon size={36} />
             </div>
-          ))}
-        </div>
+            <h4 className="text-2xl font-black mb-4 text-zinc-900 group-hover:text-emerald-600 transition-colors">{service.title}</h4>
+            <p className="text-zinc-500 leading-relaxed font-medium">
+              {service.desc}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );

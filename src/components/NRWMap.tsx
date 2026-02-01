@@ -1,69 +1,60 @@
 "use client";
 
-import { Section } from './ui/Layout';
+import React from 'react';
+
+const cities = [
+  'Düsseldorf', 'Köln', 'Dortmund', 'Essen', 'Duisburg', 'Bochum', 
+  'Wuppertal', 'Bielefeld', 'Bonn', 'Münster', 'Gelsenkirchen', 'Mönchengladbach'
+];
 
 export const NRWMap = () => {
   return (
-    <Section className="bg-white overflow-hidden">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <span className="inline-block px-3 py-1 bg-[#FBBF24]/10 text-[#f59e0b] rounded-lg text-sm font-bold mb-6 uppercase tracking-wider">
-            Regionale Stärke
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-6 tracking-tight">
-            Präsenz in ganz Nordrhein-Westfalen
+    <section id="leistungen" className="py-24 bg-white overflow-hidden">
+      <div className="container-custom grid lg:grid-cols-2 gap-20 items-center">
+        <div className="order-2 lg:order-1">
+          <h2 className="text-4xl lg:text-5xl font-black mb-8 text-zinc-900 leading-tight">
+            Grenzenlose Präsenz <br />
+            <span className="text-[#059669]">in ganz NRW.</span>
           </h2>
-          <p className="text-lg text-zinc-600 mb-8 leading-relaxed max-w-xl">
-            Freeways GmbH ist tief in NRW verwurzelt. Mit unserer Zentrale in Köln 
-            decken wir alle wichtigen Knotenpunkte ab – von Düsseldorf bis ins Ruhrgebiet.
+          <p className="text-zinc-600 text-lg mb-10 leading-relaxed font-medium">
+            Von der Rheinschiene bis ins Ruhrgebiet – Freeways GmbH ist dort, wo Sie uns brauchen. 
+            Wir vernetzen die Wirtschaftszentren des Landes mit präziser Logistik.
           </p>
           
-          <div className="grid grid-cols-2 gap-6">
-            <div className="p-6 bg-zinc-50 rounded-2xl border border-zinc-100">
-              <p className="text-2xl font-bold text-[#059669]">Köln</p>
-              <p className="text-sm text-zinc-500 font-medium uppercase tracking-widest mt-1">Zentrale & Hub</p>
-            </div>
-            <div className="p-6 bg-zinc-50 rounded-2xl border border-zinc-100">
-              <p className="text-2xl font-bold text-zinc-900">Düsseldorf</p>
-              <p className="text-sm text-zinc-500 font-medium uppercase tracking-widest mt-1">Express-Knoten</p>
-            </div>
-            <div className="p-6 bg-zinc-50 rounded-2xl border border-zinc-100">
-              <p className="text-2xl font-bold text-zinc-900">Ruhrgebiet</p>
-              <p className="text-sm text-zinc-500 font-medium uppercase tracking-widest mt-1">Last-Mile Fokus</p>
-            </div>
-            <div className="p-6 bg-zinc-50 rounded-2xl border border-zinc-100">
-              <p className="text-2xl font-bold text-zinc-900">Bonn / Rhein-Sieg</p>
-              <p className="text-sm text-zinc-500 font-medium uppercase tracking-widest mt-1">Gastronomie-Netz</p>
-            </div>
+          <div className="flex flex-wrap gap-4">
+            {cities.map(city => (
+              <span 
+                key={city} 
+                className="px-5 py-2.5 rounded-2xl bg-white border border-zinc-100 text-sm font-bold text-zinc-700 hover:border-[#059669] hover:text-[#059669] transition-all cursor-default flex items-center gap-2 shadow-sm"
+              >
+                <div className="w-1.5 h-1.5 rounded-full bg-[#FBBF24]"></div> {city}
+              </span>
+            ))}
           </div>
         </div>
         
-        <div className="relative">
-          {/* Abstract SVG Map of NRW representing regional strength */}
-          <div className="aspect-square bg-zinc-50 rounded-3xl flex items-center justify-center p-12 relative border border-zinc-100 overflow-hidden">
-             <div className="absolute inset-0 opacity-10">
-                <svg className="w-full h-full" viewBox="0 0 100 100">
-                  <path d="M20,40 Q30,20 50,30 T80,40 T70,80 T30,70 Z" fill="none" stroke="currentColor" strokeWidth="0.5" />
-                  <circle cx="50" cy="50" r="1" fill="currentColor" />
-                  <path d="M0,0 L100,100 M100,0 L0,100" stroke="currentColor" strokeWidth="0.1" strokeDasharray="2,2" />
-                </svg>
-             </div>
-             
-             <div className="relative z-10 text-center">
-                <div className="w-24 h-24 bg-[#059669] rounded-2xl flex items-center justify-center shadow-2xl mx-auto mb-6 transform rotate-3">
-                   <span className="text-white font-black text-4xl">NRW</span>
-                </div>
-                <p className="text-xl font-bold text-zinc-900">100% Gebietsabdeckung</p>
-                <p className="text-sm text-zinc-500 mt-2 font-medium">Zwischen Rhein und Ruhr</p>
-             </div>
-
-             {/* Animated "Pings" for major cities */}
-             <div className="absolute top-1/3 left-1/4 w-3 h-3 bg-[#059669] rounded-full animate-ping" />
-             <div className="absolute bottom-1/4 right-1/3 w-3 h-3 bg-[#FBBF24] rounded-full animate-ping delay-700" />
-             <div className="absolute top-1/2 right-1/4 w-3 h-3 bg-[#059669] rounded-full animate-ping delay-1000" />
+        <div className="order-1 lg:order-2 relative aspect-square">
+          <div className="absolute inset-0 bg-emerald-50/50 rounded-[3rem] border border-emerald-100 flex items-center justify-center overflow-hidden premium-shadow">
+            <svg viewBox="0 0 400 400" className="w-4/5 h-4/5 text-[#059669]/10">
+              <path d="M100,100 Q150,50 200,100 T300,100 Q350,150 300,200 T300,300 Q250,350 200,300 T100,300 Q50,250 100,200 T100,100" fill="currentColor" />
+              
+              {/* Pulsing Dots for Cities */}
+              <circle cx="200" cy="200" r="6" fill="#059669">
+                <animate attributeName="r" values="6;10;6" dur="3s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="1;0.4;1" dur="3s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="150" cy="150" r="5" fill="#FBBF24" />
+              <circle cx="250" cy="250" r="5" fill="#FBBF24" />
+              <circle cx="120" cy="280" r="5" fill="#059669" opacity="0.5" />
+              <circle cx="280" cy="120" r="5" fill="#059669" opacity="0.5" />
+            </svg>
+            
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="text-8xl font-black text-[#059669]/5 select-none rotate-12">NRW</div>
+            </div>
           </div>
         </div>
       </div>
-    </Section>
+    </section>
   );
 };
