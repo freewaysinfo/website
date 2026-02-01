@@ -10,6 +10,15 @@ export default function Datenschutz() {
           <h2 className="text-xl font-bold text-white mb-4 uppercase tracking-wider">1. Datenschutz auf einen Blick</h2>
           <h3 className="font-bold text-white mt-4 mb-2">Allgemeine Hinweise</h3>
           <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen.</p>
+          
+          <h3 className="font-bold text-white mt-6 mb-2">Verantwortliche Stelle</h3>
+          <p>
+            Freeways GmbH<br />
+            Mohamad Hasan<br />
+            Wipperfürther Str. 29–31<br />
+            D-51103 Köln<br />
+            E-Mail: info@freeways.de
+          </p>
         </section>
 
         <section>

@@ -9,26 +9,26 @@ export default function Impressum() {
         <section>
           <h2 className="text-xl font-bold text-white mb-4 uppercase tracking-wider">Angaben gemäß § 5 TMG</h2>
           <p>Freeways GmbH</p>
-          <p>Musterstraße 123</p>
-          <p>12345 Musterstadt</p>
+          <p>Wipperfürther Str. 29–31</p>
+          <p>51103 Köln, Deutschland</p>
         </section>
 
         <section>
           <h2 className="text-xl font-bold text-white mb-4 uppercase tracking-wider">Vertreten durch</h2>
-          <p>Max Mustermann (Geschäftsführer)</p>
+          <p>Mohamad Hasan</p>
         </section>
 
         <section>
           <h2 className="text-xl font-bold text-white mb-4 uppercase tracking-wider">Kontakt</h2>
-          <p>Telefon: +49 (0) 123 456789</p>
+          <p>Telefon: 02234 6808219</p>
           <p>E-Mail: info@freeways.de</p>
         </section>
 
         <section>
           <h2 className="text-xl font-bold text-white mb-4 uppercase tracking-wider">Registereintrag</h2>
           <p>Eintragung im Handelsregister.</p>
-          <p>Registergericht: Amtsgericht Musterstadt</p>
-          <p>Registernummer: HRB 123456</p>
+          <p>Registergericht: Amtsgericht Köln</p>
+          <p>Registernummer: HRB 112389</p>
         </section>
 
         <section>
@@ -39,9 +39,9 @@ export default function Impressum() {
 
         <section>
           <h2 className="text-xl font-bold text-white mb-4 uppercase tracking-wider">Redaktionell verantwortlich</h2>
-          <p>Max Mustermann</p>
-          <p>Musterstraße 123</p>
-          <p>12345 Musterstadt</p>
+          <p>Mohamad Hasan</p>
+          <p>Wipperfürther Str. 29–31</p>
+          <p>51103 Köln</p>
         </section>
 
         <section className="pt-8 border-t border-white/10 text-xs">
