@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronRight, Phone } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -37,12 +38,14 @@ export const Navbar = () => {
         <div className="flex items-center justify-between gap-12">
           {/* Brand */}
           <Link href="/" className="flex items-center gap-3 group relative z-10">
-            <div className="w-10 h-10 bg-emerald-600 flex items-center justify-center rounded-xl shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform duration-300">
-              <span className="text-white font-extrabold text-xl">F</span>
-            </div>
-            <div className={`flex flex-col leading-none transition-colors duration-300 ${isScrolled ? 'text-white' : 'text-zinc-900'}`}>
-              <span className="text-lg font-bold tracking-tight uppercase">Freeways</span>
-              <span className="text-[10px] text-amber-500 font-bold tracking-[0.2em] uppercase">GmbH Logistik</span>
+            <div className="relative w-40 h-12 transition-transform duration-300 group-hover:scale-105">
+              <Image 
+                src="/images/freeways-logo.png" 
+                alt="Freeways GmbH" 
+                fill
+                className={`object-contain object-left transition-all duration-300 ${isScrolled ? 'brightness-0 invert' : ''}`}
+                priority
+              />
             </div>
           </Link>
 

@@ -28,6 +28,10 @@
     @apply backdrop-blur-xl bg-black/60 border border-white/10 shadow-2xl;
   }
 
+  .glass-button {
+    @apply bg-white/20 backdrop-blur-lg border border-white/30;
+  }
+
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-br from-emerald-800 to-emerald-600;
   }

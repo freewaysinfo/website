@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const Footer = () => {
   return (
@@ -9,8 +10,13 @@ export const Footer = () => {
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
-            <Link href="/" className="text-white font-bold text-2xl tracking-tighter mb-6 block">
-              FREEWAYS<span className="text-[#059669]">.</span>
+            <Link href="/" className="inline-block mb-6 relative w-48 h-14 opacity-90 hover:opacity-100 transition-opacity">
+              <Image 
+                src="/images/freeways-logo.png" 
+                alt="Freeways GmbH" 
+                fill
+                className="object-contain object-left invert brightness-0"
+              />
             </Link>
             <p className="max-w-sm mb-8 leading-relaxed">
               Ihr professioneller Partner für Logistik- & Lieferdienste in Nordrhein-Westfalen. 
