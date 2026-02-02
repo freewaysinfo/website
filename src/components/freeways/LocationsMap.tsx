@@ -107,7 +107,7 @@ export function LocationsMap() {
   const activeLocation = locations.find((l) => l.id === activeId);
 
   return (
-    <Section id="standorte" className="bg-white overflow-hidden py-24">
+    <Section id="standorte" className="bg-(--brand-anthracite) overflow-hidden py-24">
       <Container>
         <Stack gap={16}>
           <div className="flex flex-col lg:flex-row items-end justify-between gap-8">
@@ -115,31 +115,31 @@ export function LocationsMap() {
               <span className="text-(--brand-green) font-bold text-sm uppercase tracking-widest block mb-4">
                 Regionale Präsenz
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-(--brand-dark)">
-                Ihre Experten für <span className="text-(--brand-green)">NRW</span>
+              <h2 className="text-4xl md:text-5xl font-bold text-white">
+                Ihre Experten für <span className="text-(--brand-green) text-glow-green">NRW</span>
               </h2>
-              <p className="text-(--brand-gray) text-lg md:text-xl mt-6">
+              <p className="text-gray-400 text-lg md:text-xl mt-6 font-medium">
                 Wir decken die wichtigsten Wirtschaftszentren in Nordrhein-Westfalen ab. Mit lokalen Teams garantieren wir maximale Geschwindigkeit und Flexibilität.
               </p>
             </div>
             <div className="flex gap-4">
-              <div className="px-6 py-4 bg-(--brand-light) rounded-2xl border border-(--brand-border)">
-                <div className="text-3xl font-bold text-(--brand-dark)">8+</div>
-                <div className="text-sm text-(--brand-gray)">Standorte</div>
+              <div className="px-8 py-5 bg-white/5 rounded-2xl border border-white/10 ring-1 ring-white/5">
+                <div className="text-4xl font-bold text-white tracking-tight">8+</div>
+                <div className="text-xs text-gray-400 font-bold uppercase tracking-widest mt-1">Standorte</div>
               </div>
-              <div className="px-6 py-4 bg-(--brand-light) rounded-2xl border border-(--brand-border)">
-                <div className="text-3xl font-bold text-(--brand-green)">24/7</div>
-                <div className="text-sm text-(--brand-gray)">Einsatzbereit</div>
+              <div className="px-8 py-5 bg-white/5 rounded-2xl border border-white/10 ring-1 ring-white/5 glow-green">
+                <div className="text-4xl font-bold text-(--brand-green) tracking-tight">24/7</div>
+                <div className="text-xs text-gray-400 font-bold uppercase tracking-widest mt-1">Einsatzbereit</div>
               </div>
             </div>
           </div>
 
           <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Map Container */}
-            <div className="lg:col-span-7 relative aspect-4/3 bg-(--brand-light)/30 rounded-[3rem] p-8 border border-(--brand-border)/50">
+            <div className="lg:col-span-7 relative aspect-4/3 bg-white/5 rounded-[3.5rem] p-10 border border-white/10 shadow-2xl backdrop-blur-md">
               {/* Simplified NRW SVG Placeholder/Shape */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
-                <svg viewBox="0 0 500 400" className="w-full h-full fill-current text-(--brand-dark)">
+              <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
+                <svg viewBox="0 0 500 400" className="w-[80%] h-[80%] fill-current text-white">
                   <path d="M150,50 L350,30 L450,150 L420,300 L250,380 L100,350 L50,200 Z" />
                 </svg>
               </div>
@@ -168,7 +168,7 @@ export function LocationsMap() {
                     />
                     
                     {/* Label */}
-                    <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white/90 backdrop-blur-sm px-2 py-0.5 rounded text-[10px] font-bold text-(--brand-dark) shadow-sm border border-gray-100 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 whitespace-nowrap bg-(--brand-anthracite) backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold text-white shadow-2xl border border-white/10 opacity-0 group-hover:opacity-100 transition-all scale-90 group-hover:scale-100">
                       {loc.name}
                     </div>
                   </div>
