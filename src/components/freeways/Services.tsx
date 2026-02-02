@@ -58,7 +58,7 @@ const services = [
 
 export function Services() {
   return (
-    <Section id="services" className="bg-white">
+    <Section id="services" className="bg-white overflow-hidden">
       <Container>
         <Stack gap={16}>
           <div className="flex flex-col lg:flex-row items-center gap-12">
