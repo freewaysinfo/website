@@ -65,6 +65,7 @@ export function ServiceShowcase() {
                 fill
                 className="object-cover"
                 priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
               />
               {/* Overlay Gradient */}
               <div className="absolute inset-0 bg-linear-to-t from-(--brand-dark)/90 via-(--brand-dark)/20 to-transparent" />
