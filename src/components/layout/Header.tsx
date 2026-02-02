@@ -30,8 +30,8 @@ export const Header: React.FC = () => {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-background/90 backdrop-blur-md shadow-sm'
-          : 'bg-transparent'
+          ? 'bg-background/95 backdrop-blur-md border-b border-border'
+          : 'bg-background/95 backdrop-blur-md border-b border-border'
       }`}
     >
       <Container>
@@ -46,7 +46,7 @@ export const Header: React.FC = () => {
               className="h-9 w-9"
               priority
             />
-            <div className="text-lg sm:text-xl font-black text-foreground">
+            <div className="text-lg sm:text-xl font-semibold text-foreground">
               Freeways GmbH
             </div>
           </Link>

@@ -30,7 +30,7 @@ export const WhyUsSection: React.FC = () => {
   ];
 
   return (
-    <section id="vorteile" className="py-sectionMobile md:py-sectionDesktop bg-muted scroll-mt-24">
+    <section id="vorteile" className="py-sectionMobile md:py-sectionDesktop bg-background scroll-mt-24 section-frame">
       <Container>
         <div className="text-center mb-12">
           <span className="section-badge">Vorteile</span>
@@ -49,7 +49,7 @@ export const WhyUsSection: React.FC = () => {
               Wir kombinieren erfahrene Teams, moderne Fahrzeuge und klare Prozesse, damit Ihre Sendungen termingerecht und zuverlässig ankommen. Freeways ist Ihr Partner für skalierbare Logistiklösungen in NRW.
             </p>
           </div>
-          <div className="grid gap-6">
+          <div className="grid gap-4">
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
               return (
@@ -59,7 +59,7 @@ export const WhyUsSection: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="premium-card flex items-start space-x-4 p-6"
+                  className="premium-card flex items-start space-x-4 p-5"
                 >
                   <div className="w-12 h-12 bg-muted rounded-xl flex items-center justify-center flex-shrink-0">
                     <Icon className="w-6 h-6 text-primary" />

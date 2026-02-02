@@ -13,7 +13,7 @@ export const StatsSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-muted scroll-mt-24">
+    <section className="py-12 md:py-16 bg-muted scroll-mt-24 section-frame">
       <Container>
         <div className="rounded-2xl border border-border bg-background px-6 py-8 md:px-10 md:py-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 md:divide-x md:divide-border">

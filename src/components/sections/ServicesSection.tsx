@@ -30,9 +30,9 @@ export const ServicesSection: React.FC = () => {
   ];
 
   return (
-    <section id="leistungen" className="py-sectionMobile md:py-sectionDesktop bg-background scroll-mt-24">
+    <section id="leistungen" className="py-sectionMobile md:py-sectionDesktop bg-muted scroll-mt-24 section-frame">
       <Container>
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <span className="section-badge">Leistungen</span>
           <h2 className="section-title">Unsere Leistungen</h2>
           <p className="section-subtitle">
@@ -51,7 +51,7 @@ export const ServicesSection: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="premium-card overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-primary/30">
+                <Card className="premium-card overflow-hidden transition-all duration-300 hover:border-primary/30">
                   <div className="relative h-40">
                     <Image
                       src={service.image}

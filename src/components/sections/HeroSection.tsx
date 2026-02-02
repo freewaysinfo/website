@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative bg-background py-sectionMobile md:py-sectionDesktop scroll-mt-24">
+    <section className="relative bg-background py-sectionMobile md:py-sectionDesktop scroll-mt-24 section-frame">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 12 }}
@@ -18,7 +18,7 @@ export const HeroSection: React.FC = () => {
         >
           <div className="text-center lg:text-left">
             <span className="section-badge">Freeways GmbH</span>
-            <h1 className="mt-5 text-4xl sm:text-5xl md:text-6xl font-semibold text-foreground leading-[1.1]">
+            <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-semibold text-foreground leading-[1.15]">
               Zuverlässiger Liefer- & Logistikservice in NRW
             </h1>
             <p className="mt-5 text-base md:text-lg max-w-2xl leading-relaxed">
