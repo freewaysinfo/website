@@ -47,9 +47,9 @@ export function ServiceShowcase() {
   }, []);
 
   return (
-    <Section className="bg-white py-12">
+    <Section className="bg-(--brand-anthracite) py-12">
       <Container>
-        <div className="relative h-[400px] md:h-[500px] w-full rounded-[2.5rem] overflow-hidden shadow-2xl border border-(--brand-border)/50">
+        <div className="relative h-[400px] md:h-[500px] w-full rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 ring-1 ring-white/5">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
