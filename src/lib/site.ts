@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Freeways GmbH",
-  description: "Ihre Freeways GmbH in NRW – Spezialist für hocheffiziente Logistik, Essenslieferungen und Express-Kuriere. Wir bieten zuverlässige Zustellung und professionelle Fahrerbereitstellung (m/w/d) in Köln und ganz Nordrhein-Westfalen.",
+  description: "Freeways GmbH in NRW: Ihr Experte für Logistik, Essenslieferungen & Express-Kuriere. Zuverlässige Zustellung & Fahrerbereitstellung in Köln & ganz NRW.",
   keywords: [
     "Logistik NRW", 
     "Essenslieferung Köln", 
@@ -24,7 +24,7 @@ export const siteConfig = {
     }
   },
   links: {
-    whatsapp: "https://wa.me/4922346808219",
+    whatsapp: "https://wa.me/4917684750669",
     career: "#karriere",
     services: "#services",
     contact: "#kontakt"

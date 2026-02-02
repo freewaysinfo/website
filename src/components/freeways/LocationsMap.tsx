@@ -109,42 +109,44 @@ export function LocationsMap() {
   const activeLocation = locations.find((l) => l.id === activeId);
 
   return (
-    <Section id="standorte" className="bg-white overflow-hidden py-24 border-y border-gray-100">
-      <Container>
+    <Section id="standorte" className="bg-[#0a0a0a] overflow-hidden py-24 border-y border-white/5 relative">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(74,222,128,0.05),transparent_70%)] pointer-events-none" />
+      
+      <Container className="relative z-10">
         <Stack gap={16}>
           <div className="flex flex-col lg:flex-row items-end justify-between gap-8">
             <div className="max-w-2xl">
-              <span className="text-emerald-700 font-bold text-sm uppercase tracking-widest block mb-4">
+              <span className="text-(--brand-green) font-bold text-sm uppercase tracking-widest block mb-4 glow-green">
                 Regionale Präsenz
               </span>
-              <h2 className="text-4xl md:text-5xl font-black text-black tracking-tighter">
-                Ihre Experten für <span className="text-emerald-700 text-glow-green">NRW</span>
+              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter">
+                Ihre Experten für <span className="text-(--brand-green) text-glow-green">NRW</span>
               </h2>
-              <p className="text-gray-500 text-lg md:text-xl mt-6 font-medium leading-relaxed">
+              <p className="text-gray-400 text-lg md:text-xl mt-6 font-medium leading-relaxed">
                 Wir decken die wichtigsten Wirtschaftszentren in Nordrhein-Westfalen ab. Mit lokalen Teams garantieren wir maximale Geschwindigkeit und Flexibilität.
               </p>
             </div>
             <div className="flex gap-4">
-              <div className="px-8 py-5 bg-gray-50 rounded-3xl border border-gray-100 ring-4 ring-gray-50/50 transition-all hover:scale-105">
-                <div className="text-5xl font-black text-black tracking-tighter">8+</div>
-                <div className="text-[10px] text-gray-500 font-black uppercase tracking-[0.2em] mt-2">Standorte</div>
+              <div className="px-8 py-5 bg-white/5 rounded-3xl border border-white/10 ring-4 ring-white/5 transition-all hover:scale-105 hover:bg-white/10">
+                <div className="text-5xl font-black text-white tracking-tighter">8+</div>
+                <div className="text-[10px] text-gray-400 font-black uppercase tracking-[0.2em] mt-2">Standorte</div>
               </div>
-              <div className="px-8 py-5 bg-(--brand-green)/5 rounded-3xl border border-(--brand-green)/10 ring-4 ring-(--brand-green)/5 glow-green transition-all hover:scale-105">
-                <div className="text-5xl font-black text-emerald-700 tracking-tighter">24/7</div>
-                <div className="text-[10px] text-gray-600 font-black uppercase tracking-[0.2em] mt-2">Einsatzbereit</div>
+              <div className="px-8 py-5 bg-(--brand-green)/10 rounded-3xl border border-(--brand-green)/20 ring-4 ring-(--brand-green)/10 glow-green transition-all hover:scale-105">
+                <div className="text-5xl font-black text-(--brand-green) tracking-tighter">24/7</div>
+                <div className="text-[10px] text-gray-300 font-black uppercase tracking-[0.2em] mt-2">Einsatzbereit</div>
               </div>
             </div>
           </div>
 
           <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Map Container */}
-            <div className="lg:col-span-7 relative aspect-square md:aspect-4/3 bg-white rounded-[4rem] p-12 border border-gray-100 shadow-2xl ring-8 ring-gray-50/30 overflow-hidden">
+            <div className="lg:col-span-7 relative aspect-square md:aspect-4/3 bg-[#111] rounded-[4rem] p-12 border border-white/10 shadow-2xl ring-8 ring-white/5 overflow-hidden group">
               {/* Subtle Dot Grid Background */}
-              <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#000_1px,transparent_0)] bg-size-[24px_24px]" />
+              <div className="absolute inset-0 opacity-[0.07] bg-[radial-gradient(#fff_1px,transparent_0)] bg-size-[24px_24px]" />
               
-              {/* Simplified NRW SVG Placeholder/Shape - Increased visibility for light mode */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
-                <svg viewBox="0 0 500 400" className="w-[90%] h-[90%] fill-current text-gray-300">
+              {/* Simplified NRW SVG Placeholder/Shape */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none transition-opacity group-hover:opacity-30">
+                <svg viewBox="0 0 500 400" className="w-[90%] h-[90%] fill-current text-gray-500 drop-shadow-2xl">
                   <path d="M150,50 L350,30 L450,150 L420,300 L250,380 L100,350 L50,200 Z" />
                 </svg>
               </div>
@@ -154,7 +156,7 @@ export function LocationsMap() {
                 <button
                   key={loc.id}
                   onClick={() => setActiveId(loc.id)}
-                  className="absolute group transition-transform hover:scale-110 z-20 cursor-pointer -translate-x-1/2 -translate-y-1/2"
+                  className="absolute group/marker transition-transform hover:scale-110 z-20 cursor-pointer -translate-x-1/2 -translate-y-1/2"
                   style={{ left: `${loc.x}%`, top: `${loc.y}%` }}
                 >
                   <div className="relative">
@@ -167,13 +169,13 @@ export function LocationsMap() {
                       />
                     )}
                     <div
-                      className={`relative w-4 h-4 md:w-5 md:h-5 rounded-full border-2 border-white shadow-xl transition-all duration-500 will-change-transform ${
-                        activeId === loc.id ? "bg-(--brand-green) scale-125 shadow-[0_0_20px_rgba(74,222,128,0.5)]" : "bg-white group-hover:bg-(--brand-green)/50"
+                      className={`relative w-4 h-4 md:w-5 md:h-5 rounded-full border-2 border-[#111] shadow-xl transition-all duration-500 will-change-transform ${
+                        activeId === loc.id ? "bg-(--brand-green) scale-125 shadow-[0_0_20px_rgba(74,222,128,0.8)]" : "bg-white group-hover/marker:bg-(--brand-green) group-hover/marker:scale-110"
                       }`}
                     />
                     
                     {/* Label */}
-                    <div className="absolute top-full mt-4 left-1/2 -translate-x-1/2 whitespace-nowrap bg-[#0f0f0f] px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] text-white shadow-2xl border border-white/10 opacity-0 group-hover:opacity-100 transition-all scale-90 group-hover:scale-100 z-30">
+                    <div className={`absolute top-full mt-4 left-1/2 -translate-x-1/2 whitespace-nowrap bg-black/80 backdrop-blur-md px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] text-white shadow-xl border border-white/10 transition-all z-30 ${activeId === loc.id ? 'opacity-100 scale-100' : 'opacity-0 scale-90 group-hover/marker:opacity-100 group-hover/marker:scale-100'}`}>
                       {loc.name}
                     </div>
                   </div>
@@ -187,44 +189,44 @@ export function LocationsMap() {
                 {activeLocation && (
                   <motion.div
                     key={activeLocation.id}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
-                    className="bg-white p-12 rounded-[3.5rem] shadow-[0_32px_64px_-12px_rgba(0,0,0,0.12)] text-black relative overflow-hidden border border-gray-100 ring-8 ring-gray-50/50"
+                    initial={{ opacity: 0, scale: 0.95, x: 20 }}
+                    animate={{ opacity: 1, scale: 1, x: 0 }}
+                    exit={{ opacity: 0, scale: 0.95, x: -20 }}
+                    transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+                    className="bg-[#111] p-12 rounded-[3.5rem] shadow-[0_32px_64px_-12px_rgba(0,0,0,0.5)] text-white relative overflow-hidden border border-white/10 ring-8 ring-white/5"
                   >
-                    <div className="absolute top-0 right-0 w-80 h-80 bg-(--brand-green)/5 rounded-full blur-[40px] -translate-y-1/2 translate-x-1/2" />
+                    <div className="absolute top-0 right-0 w-80 h-80 bg-(--brand-green)/10 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
                     
                     <div className="relative z-10 flex flex-col gap-10">
                       <div className="flex items-center justify-between">
-                        <div className="p-5 bg-(--brand-green) rounded-[2rem] shadow-xl glow-green">
-                          <activeLocation.icon className="h-10 w-10 text-white" />
+                        <div className="p-5 bg-(--brand-green)/10 rounded-[2rem] shadow-xl ring-1 ring-(--brand-green)/20 text-(--brand-green)">
+                          <activeLocation.icon className="h-10 w-10" />
                         </div>
                         <div className="text-right">
-                          <div className="text-[10px] text-gray-600 uppercase tracking-[0.3em] font-black">Standort</div>
-                          <div className="text-3xl font-black tracking-tight">{activeLocation.name}</div>
+                          <div className="text-[10px] text-gray-500 uppercase tracking-[0.3em] font-black">Standort</div>
+                          <div className="text-3xl font-black tracking-tight text-white">{activeLocation.name}</div>
                         </div>
                       </div>
 
                       <div className="space-y-4">
-                        <div className="text-6xl font-black text-emerald-700 tracking-tighter">
+                        <div className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-linear-to-r from-white to-gray-500 tracking-tighter">
                           {activeLocation.kpi}
                         </div>
-                        <p className="text-xl text-gray-600 font-medium leading-relaxed">
+                        <p className="text-xl text-gray-400 font-medium leading-relaxed">
                           {activeLocation.description}
                         </p>
                       </div>
 
-                      <div className="pt-10 border-t border-gray-100">
-                        <div className="text-[10px] text-gray-600 uppercase font-black mb-4 tracking-[0.2em]">
+                      <div className="pt-10 border-t border-white/10">
+                        <div className="text-[10px] text-(--brand-green) uppercase font-black mb-4 tracking-[0.2em] glow-green">
                           Pain Point gelöst:
                         </div>
-                        <p className="text-2xl font-bold leading-relaxed tracking-tight text-gray-900">
+                        <p className="text-2xl font-bold leading-relaxed tracking-tight text-white">
                           &quot;{activeLocation.painPoint}&quot;
                         </p>
                       </div>
 
-                      <Button className="w-full bg-(--brand-green) hover:bg-(--brand-green)/90 text-white font-bold h-16 rounded-2xl glow-green border-none transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_25px_rgba(74,222,128,0.3)]" asChild>
+                      <Button className="w-full bg-(--brand-green) hover:bg-(--brand-green)/90 text-(--brand-dark) font-black h-16 rounded-2xl glow-green border-none transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(74,222,128,0.3)]" asChild>
                         <a href={siteConfig.links.whatsapp} target="_blank" rel="noopener noreferrer">
                           Jetzt Standort anfragen
                         </a>
@@ -240,3 +242,4 @@ export function LocationsMap() {
     </Section>
   );
 }
+
