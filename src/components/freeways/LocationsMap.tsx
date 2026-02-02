@@ -157,7 +157,7 @@ export function LocationsMap() {
                     <motion.div
                       animate={{ scale: [1, 2.5, 1], opacity: [0.5, 0, 0.5] }}
                       transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                      className={`absolute inset-0 rounded-full ${
+                      className={`absolute inset-0 rounded-full glow-green ${
                         activeId === loc.id ? "bg-(--brand-green)" : "bg-(--brand-dark)"
                       }`}
                     />
@@ -186,7 +186,7 @@ export function LocationsMap() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
                     transition={{ duration: 0.4 }}
-                    className="bg-(--brand-dark) p-10 rounded-[2.5rem] shadow-2xl text-white relative overflow-hidden"
+                    className="bg-(--brand-anthracite) p-10 rounded-[2.5rem] shadow-2xl text-white relative overflow-hidden ring-1 ring-white/10 glow-green"
                   >
                     <div className="absolute top-0 right-0 w-64 h-64 bg-(--brand-green)/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
                     
@@ -219,7 +219,7 @@ export function LocationsMap() {
                         </p>
                       </div>
 
-                      <button className="w-full py-4 mt-4 bg-white text-(--brand-dark) font-bold rounded-xl hover:bg-(--brand-yellow) transition-colors cursor-pointer">
+                      <button className="w-full py-4 mt-4 bg-white text-(--brand-dark) font-bold rounded-xl hover:bg-(--brand-yellow) transition-colors cursor-pointer shadow-lg active:scale-[0.98]">
                         Diesen Standort anfragen
                       </button>
                     </div>

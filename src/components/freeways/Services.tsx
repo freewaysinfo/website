@@ -118,11 +118,11 @@ export function Services() {
                     </CardContent>
                   </Card>
 
-                  <DialogContent className="sm:max-w-[600px] border-none p-0 overflow-hidden rounded-3xl">
-                    <div className="bg-(--brand-dark) p-8 text-white relative">
-                      <div className="relative z-10">
+                  <DialogContent className="sm:max-w-[600px] border-none p-0 overflow-hidden rounded-3xl glow-green shadow-2xl">
+                    <div className="bg-(--brand-anthracite) p-8 text-white relative">
+                      <div className="relative z-10 text-glow-green">
                         <DialogHeader>
-                          <div className="w-12 h-12 rounded-xl bg-(--brand-green) flex items-center justify-center mb-4">
+                          <div className="w-12 h-12 rounded-xl bg-(--brand-green) flex items-center justify-center mb-4 glow-green">
                             <service.icon className="h-6 w-6 text-white" />
                           </div>
                           <DialogTitle className="text-3xl font-bold text-white">{service.title}</DialogTitle>
