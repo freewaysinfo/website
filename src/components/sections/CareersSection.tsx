@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Container } from '../ui/Container';
-import { Button } from '../ui/Button';
+import { Button } from '../ui/button';
 import { motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
 
@@ -12,14 +12,14 @@ export const CareersSection: React.FC = () => {
   };
 
   return (
-    <section id="karriere" className="py-16 md:py-28 bg-amber-400">
-      <Container>
+    <section id="karriere" className="py-20 bg-amber-400">
+      <Container className="max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto"
+          className="text-center"
         >
           <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-6">
             Fahrer (m/w/d) gesucht
@@ -28,7 +28,6 @@ export const CareersSection: React.FC = () => {
             Werden Sie Teil unseres Teams! Wir suchen motivierte Fahrer für flexible Einsätze in ganz NRW. Faire Bezahlung, moderne Fahrzeuge und ein professionelles Arbeitsumfeld warten auf Sie.
           </p>
           <Button
-            variant="primary"
             size="lg"
             onClick={handleWhatsAppClick}
             className="inline-flex items-center space-x-2"

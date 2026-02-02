@@ -8,7 +8,7 @@ interface ContainerProps {
 
 export const Container: React.FC<ContainerProps> = ({ children, className }) => {
   return (
-    <div className={cn('container-custom', className)}>
+    <div className={cn('container', className)}>
       {children}
     </div>
   );

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Container } from '../ui/Container';
-import { Button } from '../ui/Button';
+import { Button } from '../ui/button';
 import { motion } from 'framer-motion';
 
 export const HeroSection: React.FC = () => {
@@ -22,10 +22,10 @@ export const HeroSection: React.FC = () => {
             Freeways GmbH ist Ihr professioneller Partner für Essenslieferung, Kurier- und Logistikdienstleistungen in Nordrhein-Westfalen.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="primary" size="lg">
+            <Button size="lg">
               Jetzt anfragen
             </Button>
-            <Button variant="secondary" size="lg">
+            <Button variant="outline" size="lg">
               Fahrer werden
             </Button>
           </div>

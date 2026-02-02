@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Container } from '../ui/Container';
-import { Button } from '../ui/Button';
+import { Button } from '../ui/button';
 import { Menu, X } from 'lucide-react';
 
 export const Header: React.FC = () => {
@@ -27,12 +27,12 @@ export const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
       }`}
     >
       <Container>
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="text-2xl font-black text-emerald-600">
@@ -55,7 +55,7 @@ export const Header: React.FC = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button variant="primary" size="md">
+            <Button size="default">
               Jetzt anfragen
             </Button>
           </div>
@@ -84,7 +84,7 @@ export const Header: React.FC = () => {
                   {link.label}
                 </a>
               ))}
-              <Button variant="primary" size="md" className="w-full">
+              <Button size="default" className="w-full">
                 Jetzt anfragen
               </Button>
             </nav>
