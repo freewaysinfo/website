@@ -20,7 +20,7 @@ export function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-(--brand-anthracite)/90 backdrop-blur-xl border-b border-white/5 shadow-2xl">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-(--brand-anthracite) border-b border-white/10 shadow-2xl">
       <Container>
         <Stack direction="row" align="center" justify="between" className="h-16 md:h-20">
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity group">
@@ -43,13 +43,13 @@ export function Navbar() {
               <Link 
                 key={item.name}
                 href={item.href} 
-                className="text-sm font-semibold text-gray-300 hover:text-white transition-colors"
+                className="text-sm font-semibold text-white/90 hover:text-white hover:text-glow-green transition-all"
               >
                 {item.name}
               </Link>
             ))}
             
-            <div className="h-6 w-px bg-white/10 mx-2" />
+            <div className="h-6 w-px bg-white/15 mx-2" />
 
             <Link href={siteConfig.contact.phoneUrl} className="text-sm font-bold text-white hover:text-(--brand-yellow) transition-colors">
               {siteConfig.contact.phone}
@@ -63,7 +63,7 @@ export function Navbar() {
           <Button 
             variant="ghost" 
             size="icon" 
-            className="md:hidden text-white hover:bg-white/10 z-50"
+            className="md:hidden text-white hover:bg-white/10 z-50 outline-none"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
           >
@@ -79,8 +79,8 @@ export function Navbar() {
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-40 bg-(--brand-anthracite) flex flex-col pt-24 px-8 md:hidden"
+            transition={{ type: "spring", damping: 30, stiffness: 200 }}
+            className="fixed inset-0 z-40 bg-(--brand-anthracite) flex flex-col pt-24 px-8 md:hidden shadow-2xl"
           >
             <div className="flex flex-col gap-6">
               {menuItems.map((item, i) => (
@@ -93,7 +93,7 @@ export function Navbar() {
                   <Link
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="text-3xl font-bold text-white hover:text-(--brand-green) transition-colors"
+                    className="text-3XL font-bold text-white hover:text-(--brand-green) transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -114,7 +114,7 @@ export function Navbar() {
               >
                 <Link 
                   href={siteConfig.contact.phoneUrl} 
-                  className="text-2xl font-bold text-(--brand-yellow)"
+                  className="text-2xl font-bold text-(--brand-yellow) text-glow-gold"
                 >
                   {siteConfig.contact.phone}
                 </Link>
@@ -141,7 +141,7 @@ export function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="mt-auto pb-12 text-gray-500 text-sm"
+              className="mt-auto pb-12 text-gray-500 text-sm italic"
             >
               © {new Date().getFullYear()} {siteConfig.name} <br />
               Alle Rechte vorbehalten.
