@@ -67,7 +67,7 @@ export function Services() {
                 Unsere Expertise
               </span>
               <h2 className="text-3xl md:text-5xl font-bold text-[#0f0f0f]">Maßgeschneiderte Logistiklösungen</h2>
-              <p className="text-gray-600 text-lg md:text-xl leading-relaxed font-medium">
+              <p className="text-gray-700 text-lg md:text-xl leading-relaxed font-medium">
                 Als spezialisierter Partner in NRW bieten wir Ihnen effiziente und pünktliche Logistiklösungen. Wir verstehen die Anforderungen moderner Lieferketten und setzen auf höchste Qualität.
               </p>
             </div>
@@ -81,6 +81,7 @@ export function Services() {
                 alt="Freeways GmbH food delivery service"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 40vw"
               />
             </motion.div>
           </div>
@@ -105,7 +106,7 @@ export function Services() {
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="grow flex flex-col gap-8 p-8 pt-4">
-                      <p className="text-gray-600 text-lg leading-relaxed font-medium">
+                      <p className="text-gray-700 text-lg leading-relaxed font-medium">
                         {service.description}
                       </p>
                       

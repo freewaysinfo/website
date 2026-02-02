@@ -28,8 +28,10 @@ export function Navbar() {
               <Image 
                 src="/images/logo.png" 
                 alt="Freeways GmbH Logo" 
-                fill 
-                className="object-contain"
+                width={40}
+                height={40}
+                sizes="(max-width: 768px) 32px, 40px"
+                className="object-contain w-full h-full"
                 priority
               />
             </div>
@@ -104,7 +106,7 @@ export function Navbar() {
                     <Link
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className="text-3xl font-bold text-white hover:text-(--brand-green) transition-colors flex items-center justify-between group"
+                      className="text-3xl font-bold text-white hover:text-(--brand-green) transition-colors flex items-center justify-between group py-2"
                     >
                       {item.name}
                       <span className="w-2 h-2 rounded-full bg-(--brand-green) opacity-0 group-hover:opacity-100 glow-green transition-opacity" />
