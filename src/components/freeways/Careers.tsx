@@ -13,7 +13,7 @@ export function Careers() {
   const whatsappUrl = `${siteConfig.links.whatsapp}?text=${encodeURIComponent("Hallo Freeways Team, ich interessiere mich für eine Stelle als Fahrer (m/w/d).")}`;
 
   return (
-    <Section id="karriere" className="bg-(--brand-dark) text-white overflow-hidden relative min-h-[80vh] flex items-center">
+    <Section id="karriere" className="bg-(--brand-anthracite) text-white overflow-hidden relative min-h-[80vh] flex items-center transition-colors duration-700">
       <div className="absolute inset-0 z-0">
         <Image 
           src="/images/career_driver.png"
@@ -21,7 +21,7 @@ export function Careers() {
           fill
           className="object-cover opacity-30 grayscale hover:grayscale-0 transition-all duration-1000"
         />
-        <div className="absolute inset-0 bg-linear-to-r from-(--brand-dark) via-(--brand-dark)/80 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-(--brand-anthracite) via-(--brand-anthracite)/90 to-transparent" />
       </div>
 
       <Container className="relative z-10 w-full">
@@ -76,7 +76,7 @@ export function Careers() {
         transition={{ duration: 8, repeat: Infinity }}
         className="absolute -bottom-20 -left-20 w-96 h-96 bg-(--brand-yellow)/10 rounded-full blur-[100px] z-0" 
       />
-      <div className="absolute top-0 right-0 w-full h-full bg-linear-to-b from-transparent via-(--brand-dark)/50 to-(--brand-dark) pointer-events-none z-0" />
+      <div className="absolute top-0 right-0 w-full h-full bg-linear-to-b from-transparent via-(--brand-anthracite)/50 to-(--brand-anthracite) pointer-events-none z-0" />
     </Section>
   );
 }

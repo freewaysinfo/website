@@ -27,30 +27,30 @@ const benefits = [
 
 export function Benefits() {
   return (
-    <Section id="warum-wir" className="bg-(--brand-light)">
+    <Section id="warum-wir" className="bg-(--brand-anthracite)">
       <Container>
         <Stack direction="row" className="flex-wrap lg:flex-nowrap items-center" gap={16}>
           <div className="lg:w-1/2">
             <span className="text-(--brand-green) font-bold text-sm uppercase tracking-widest mb-4 block">
               Warum Freeways
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold mb-8">Ihr Partner für zuverlässige Logistik</h2>
-            <p className="text-lg md:text-xl text-(--brand-gray) mb-10 leading-relaxed">
+            <h2 className="text-3xl md:text-5xl font-bold mb-8 text-white tracking-tight">Ihr Partner für zuverlässige Logistik</h2>
+            <p className="text-lg md:text-xl text-gray-400 mb-10 leading-relaxed font-medium">
               Wir verbinden langjährige Erfahrung mit modernster Logistik, um Ihren Anforderungen in ganz NRW gerecht zu werden.
             </p>
             
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 py-10 border-y border-(--brand-border)">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 py-10 border-y border-white/10">
               <div className="space-y-1">
-                <div className="text-4xl font-bold text-(--brand-dark)">50+</div>
-                <div className="text-sm font-medium uppercase tracking-wider text-(--brand-gray)">Fahrer im Einsatz</div>
+                <div className="text-4xl font-bold text-white tracking-tight">50+</div>
+                <div className="text-xs font-bold uppercase tracking-widest text-gray-500">Fahrer im Einsatz</div>
               </div>
               <div className="space-y-1">
-                <div className="text-4xl font-bold text-(--brand-dark)">NRW</div>
-                <div className="text-sm font-medium uppercase tracking-wider text-(--brand-gray)">Vollflächig</div>
+                <div className="text-4xl font-bold text-white tracking-tight">NRW</div>
+                <div className="text-xs font-bold uppercase tracking-widest text-gray-500">Vollflächig</div>
               </div>
               <div className="space-y-1">
-                <div className="text-4xl font-bold text-(--brand-dark)">24/7</div>
-                <div className="text-sm font-medium uppercase tracking-wider text-(--brand-gray)">Bereitschaft</div>
+                <div className="text-4xl font-bold text-white tracking-tight text-glow-green">24/7</div>
+                <div className="text-xs font-bold uppercase tracking-widest text-gray-400">Bereitschaft</div>
               </div>
             </div>
           </div>
@@ -64,12 +64,12 @@ export function Benefits() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Stack gap={4}>
-                  <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-(--brand-green)">
-                    <Check className="h-6 w-6 stroke-[3px]" />
+                <Stack gap={5}>
+                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-(--brand-green) shadow-2xl glow-green transition-transform hover:scale-110 duration-500">
+                    <Check className="h-7 w-7 stroke-[3px]" />
                   </div>
-                  <h3 className="text-xl font-bold">{benefit.title}</h3>
-                  <p className="text-(--brand-gray) leading-relaxed">
+                  <h3 className="text-xl font-bold text-white tracking-tight">{benefit.title}</h3>
+                  <p className="text-gray-400 leading-relaxed font-medium">
                     {benefit.description}
                   </p>
                 </Stack>
