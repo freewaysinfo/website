@@ -61,9 +61,9 @@ export function Careers() {
       <motion.div 
         animate={{ opacity: [0.1, 0.2, 0.1], scale: [1, 1.2, 1] }}
         transition={{ duration: 8, repeat: Infinity }}
-        className="absolute -bottom-20 -left-20 w-96 h-96 bg-(--brand-yellow)/10 rounded-full blur-[100px] -z-0" 
+        className="absolute -bottom-20 -left-20 w-96 h-96 bg-(--brand-yellow)/10 rounded-full blur-[100px] z-0" 
       />
-      <div className="absolute top-0 right-0 w-full h-full bg-linear-to-b from-transparent via-(--brand-dark)/50 to-(--brand-dark) pointer-events-none -z-0" />
+      <div className="absolute top-0 right-0 w-full h-full bg-linear-to-b from-transparent via-(--brand-dark)/50 to-(--brand-dark) pointer-events-none z-0" />
     </Section>
   );
 }

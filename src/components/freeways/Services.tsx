@@ -55,7 +55,7 @@ export function Services() {
                       {service.title}
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="flex-grow">
+                  <CardContent className="grow">
                     <p className="text-(--brand-gray) text-lg leading-relaxed">
                       {service.description}
                     </p>
