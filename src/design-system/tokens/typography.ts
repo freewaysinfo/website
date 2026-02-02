@@ -1,6 +1,6 @@
 export const typography = {
   fontFamily: {
-    sans: ["var(--font-outfit)", "ui-sans-serif", "system-ui", "sans-serif"],
+    sans: ["var(--font-body)", "ui-sans-serif", "system-ui", "sans-serif"],
   },
   fontWeight: {
     regular: "400",

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Container } from '../ui/Container';
 import { Button } from '../ui/button';
 import { Menu, X } from 'lucide-react';
@@ -28,15 +29,25 @@ export const Header: React.FC = () => {
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
+        isScrolled
+          ? 'bg-background shadow-md'
+          : 'bg-background/95 backdrop-blur-sm'
       }`}
     >
       <Container>
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-black text-emerald-600">
-              FREEWAYS
+          <Link href="/" className="flex items-center space-x-3">
+            <Image
+              src="/images/freeways-logo.png"
+              alt="Freeways GmbH"
+              width={36}
+              height={36}
+              className="h-9 w-9"
+              priority
+            />
+            <div className="text-lg sm:text-xl font-black text-brand-dark">
+              Freeways GmbH
             </div>
           </Link>
 
@@ -46,7 +57,7 @@ export const Header: React.FC = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-emerald-600 font-medium transition-colors"
+                className="text-muted-foreground hover:text-brand-green font-medium transition-colors"
               >
                 {link.label}
               </a>
@@ -54,15 +65,20 @@ export const Header: React.FC = () => {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button size="default">
-              Jetzt anfragen
+          <div className="hidden md:flex items-center gap-3">
+            <Button variant="ghost" size="sm" asChild>
+              <a href="https://wa.me/4922346808219" target="_blank" rel="noreferrer">
+                WhatsApp
+              </a>
+            </Button>
+            <Button variant="ghost" size="sm" asChild>
+              <a href="tel:+4922346808219">Telefon</a>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-gray-700 hover:text-emerald-600"
+            className="md:hidden p-2 text-muted-foreground hover:text-brand-green"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -72,20 +88,25 @@ export const Header: React.FC = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
+          <div className="md:hidden py-4 border-t border-brand-border">
             <nav className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-gray-700 hover:text-emerald-600 font-medium transition-colors"
+                  className="text-muted-foreground hover:text-brand-green font-medium transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
                 </a>
               ))}
-              <Button size="default" className="w-full">
-                Jetzt anfragen
+              <Button variant="ghost" size="sm" asChild className="w-full justify-start">
+                <a href="https://wa.me/4922346808219" target="_blank" rel="noreferrer">
+                  WhatsApp
+                </a>
+              </Button>
+              <Button variant="ghost" size="sm" asChild className="w-full justify-start">
+                <a href="tel:+4922346808219">Telefon</a>
               </Button>
             </nav>
           </div>

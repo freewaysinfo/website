@@ -5,47 +5,33 @@
 
 /* Design Tokens */
 :root {
-  /* Legacy Colors (for backward compatibility) */
-  --color-primary: #10b981;
-  --color-accent: #fbbf24;
-  --color-background: #ffffff;
-  --color-text: #1f2937;
-  --color-text-muted: #6b7280;
-  
-  /* shadcn/ui Design Tokens - Customized for Freeways */
-  --radius: 0.625rem;
-  --background: 0 0% 100%; /* white */
-  --foreground: 222.2 47.4% 11.2%; /* gray-900 */
+  --brand-green: 142 76% 36%;
+  --brand-yellow: 41 96% 48%;
+  --brand-dark: 222 47% 11%;
+  --brand-gray: 215 16% 47%;
+  --brand-light: 210 40% 98%;
+  --brand-border: 214 32% 91%;
+
+  --radius: 0.75rem;
+  --background: 0 0% 100%;
+  --foreground: var(--brand-dark);
   --card: 0 0% 100%;
-  --card-foreground: 222.2 47.4% 11.2%;
+  --card-foreground: var(--brand-dark);
   --popover: 0 0% 100%;
-  --popover-foreground: 222.2 47.4% 11.2%;
-  --primary: 142.1 76.2% 36.3%; /* emerald-600 */
+  --popover-foreground: var(--brand-dark);
+  --primary: var(--brand-green);
   --primary-foreground: 0 0% 100%;
-  --secondary: 210 40% 96.1%; /* gray-100 */
-  --secondary-foreground: 222.2 47.4% 11.2%;
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  --accent: 37.7 92.1% 50.2%; /* amber-400 */
-  --accent-foreground: 26 83.3% 14.1%; /* amber-900 */
-  --destructive: 0 84.2% 60.2%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: var(--brand-dark);
+  --muted: 210 40% 96%;
+  --muted-foreground: var(--brand-gray);
+  --accent: var(--brand-yellow);
+  --accent-foreground: 26 83% 14%;
+  --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 142.1 76.2% 36.3%; /* emerald-600 */
-  --chart-1: 142.1 76.2% 36.3%;
-  --chart-2: 37.7 92.1% 50.2%;
-  --chart-3: 217.2 91.2% 59.8%;
-  --chart-4: 47.9 95.8% 53.1%;
-  --chart-5: 27.8 87.8% 67.8%;
-  --sidebar: 0 0% 100%;
-  --sidebar-foreground: 222.2 47.4% 11.2%;
-  --sidebar-primary: 142.1 76.2% 36.3%;
-  --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 210 40% 96.1%;
-  --sidebar-accent-foreground: 222.2 47.4% 11.2%;
-  --sidebar-border: 214.3 31.8% 91.4%;
-  --sidebar-ring: 142.1 76.2% 36.3%;
+  --border: var(--brand-border);
+  --input: var(--brand-border);
+  --ring: var(--brand-green);
 }
 
 /* Base Styles */
@@ -60,9 +46,7 @@ html {
 }
 
 body {
-  font-family: var(--font-outfit), system-ui, -apple-system, sans-serif;
-  color: var(--color-text);
-  background-color: var(--color-background);
+  font-family: var(--font-body), system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -70,36 +54,21 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), var(--font-body), system-ui, -apple-system, sans-serif;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
-/* Utilities */
-.container-custom {
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-@media (min-width: 768px) {
-  .container-custom {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
 /* Focus Styles */
 :focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid hsl(var(--primary));
   outline-offset: 2px;
 }
 
 /* Selection */
 ::selection {
-  background-color: var(--color-primary);
+  background-color: hsl(var(--primary));
   color: white;
 }
 
@@ -129,19 +98,6 @@ h1, h2, h3, h4, h5, h6 {
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 .dark {
@@ -164,19 +120,6 @@ h1, h2, h3, h4, h5, h6 {
   --border: 217.2 32.6% 17.5%;
   --input: 217.2 32.6% 17.5%;
   --ring: 142.1 70.6% 45.3%;
-  --chart-1: 142.1 70.6% 45.3%;
-  --chart-2: 37.7 92.1% 50.2%;
-  --chart-3: 217.2 91.2% 59.8%;
-  --chart-4: 47.9 95.8% 53.1%;
-  --chart-5: 27.8 87.8% 67.8%;
-  --sidebar: 222.2 47.4% 11.2%;
-  --sidebar-foreground: 210 40% 98%;
-  --sidebar-primary: 142.1 70.6% 45.3%;
-  --sidebar-primary-foreground: 144.9 80.4% 10%;
-  --sidebar-accent: 217.2 32.6% 17.5%;
-  --sidebar-accent-foreground: 210 40% 98%;
-  --sidebar-border: 217.2 32.6% 17.5%;
-  --sidebar-ring: 142.1 70.6% 45.3%;
 }
 
 @layer base {

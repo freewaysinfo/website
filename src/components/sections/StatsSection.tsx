@@ -3,6 +3,7 @@
 import React from 'react';
 import { Container } from '../ui/Container';
 import { motion } from 'framer-motion';
+import { Badge } from '../ui/badge';
 
 export const StatsSection: React.FC = () => {
   const stats = [
@@ -12,7 +13,7 @@ export const StatsSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-amber-400">
+    <section className="py-sectionMobile md:py-sectionDesktop bg-accent">
       <Container className="max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {stats.map((stat, index) => (
@@ -24,12 +25,12 @@ export const StatsSection: React.FC = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="text-center"
             >
-              <div className="text-5xl md:text-6xl font-black text-gray-900 mb-2">
+              <div className="text-5xl md:text-6xl font-black text-accent-foreground mb-3">
                 {stat.value}
               </div>
-              <div className="text-lg md:text-xl text-gray-800 font-semibold uppercase tracking-wider">
+              <Badge variant="secondary" className="text-sm md:text-base font-semibold uppercase tracking-wider">
                 {stat.label}
-              </div>
+              </Badge>
             </motion.div>
           ))}
         </div>

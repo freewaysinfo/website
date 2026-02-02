@@ -12,7 +12,7 @@ export const CareersSection: React.FC = () => {
   };
 
   return (
-    <section id="karriere" className="py-20 bg-amber-400">
+    <section id="karriere" className="py-sectionMobile md:py-sectionDesktop bg-brand-light">
       <Container className="max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -21,21 +21,22 @@ export const CareersSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-6">
-            Fahrer (m/w/d) gesucht
+          <h2 className="text-4xl md:text-6xl font-black text-foreground mb-6">
+            Fahrer (m/w/d) gesucht – Jetzt bewerben
           </h2>
-          <p className="text-lg md:text-xl text-gray-800 mb-10 leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">
             Werden Sie Teil unseres Teams! Wir suchen motivierte Fahrer für flexible Einsätze in ganz NRW. Faire Bezahlung, moderne Fahrzeuge und ein professionelles Arbeitsumfeld warten auf Sie.
           </p>
           <Button
             size="lg"
+            variant="accent"
             onClick={handleWhatsAppClick}
             className="inline-flex items-center space-x-2"
           >
             <MessageCircle className="w-5 h-5" />
             <span>Jetzt per WhatsApp bewerben</span>
           </Button>
-          <p className="mt-4 text-gray-700 text-sm">
+          <p className="mt-4 text-muted-foreground text-sm">
             Tel: 02234 6808219
           </p>
         </motion.div>

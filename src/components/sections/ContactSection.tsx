@@ -21,19 +21,19 @@ export const ContactSection: React.FC = () => {
     {
       icon: Mail,
       title: 'E-Mail',
-      content: ['info@freeways-gmbh.de'],
-      link: 'mailto:info@freeways-gmbh.de',
+      content: ['info@freeways.de'],
+      link: 'mailto:info@freeways.de',
     },
   ];
 
   return (
-    <section id="kontakt" className="py-16 md:py-28 bg-white">
+    <section id="kontakt" className="py-sectionMobile md:py-sectionDesktop bg-background">
       <Container>
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-6xl font-black text-foreground mb-4">
             Kontakt
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Nehmen Sie Kontakt mit uns auf – wir freuen uns auf Ihre Anfrage
           </p>
         </div>
@@ -48,19 +48,19 @@ export const ContactSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center p-6 bg-gray-50 rounded-xl"
+                className="text-center p-6 bg-brand-light rounded-xl border border-brand-border"
               >
-                <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Icon className="w-6 h-6 text-emerald-600" />
+                <div className="w-12 h-12 bg-background rounded-lg flex items-center justify-center mx-auto mb-4 border border-brand-border">
+                  <Icon className="w-6 h-6 text-brand-green" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">
+                <h3 className="text-lg font-bold text-foreground mb-3">
                   {info.title}
                 </h3>
-                <div className="text-gray-600">
+                <div className="text-muted-foreground">
                   {info.link ? (
                     <a
                       href={info.link}
-                      className="hover:text-emerald-600 transition-colors"
+                      className="hover:text-brand-green transition-colors"
                     >
                       {info.content.map((line, i) => (
                         <div key={i}>{line}</div>
@@ -75,6 +75,18 @@ export const ContactSection: React.FC = () => {
               </motion.div>
             );
           })}
+        </div>
+
+        <div className="mt-12">
+          <div className="overflow-hidden rounded-xl border border-brand-border">
+            <iframe
+              title="Google Maps Freeways GmbH"
+              src="https://www.google.com/maps?q=Wipperf%C3%BCrther%20Str.%2029-31%2C%2051103%20K%C3%B6ln&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-80 md:h-96"
+            />
+          </div>
         </div>
       </Container>
     </section>

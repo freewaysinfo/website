@@ -30,13 +30,13 @@ export const WhyUsSection: React.FC = () => {
   ];
 
   return (
-    <section id="vorteile" className="py-16 md:py-28 bg-gray-50">
+    <section id="vorteile" className="py-sectionMobile md:py-sectionDesktop bg-brand-light">
       <Container>
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-6xl font-black text-foreground mb-4">
             Warum Freeways?
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Ihre Vorteile bei der Zusammenarbeit mit uns
           </p>
         </div>
@@ -51,16 +51,16 @@ export const WhyUsSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex items-start space-x-4 p-6 bg-white rounded-xl"
+                className="flex items-start space-x-4 p-6 bg-background rounded-xl border border-brand-border"
               >
-                <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Icon className="w-6 h-6 text-emerald-600" />
+                <div className="w-12 h-12 bg-brand-light rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Icon className="w-6 h-6 text-brand-green" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-xl font-bold text-foreground mb-2">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed">
                     {benefit.description}
                   </p>
                 </div>
