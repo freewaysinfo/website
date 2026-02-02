@@ -27,7 +27,7 @@ const benefits = [
 
 export function Benefits() {
   return (
-    <Section id="warum-wir" className="bg-(--brand-anthracite)">
+    <Section id="warum-wir" className="bg-(--brand-anthracite) overflow-hidden">
       <Container>
         <Stack direction="row" className="flex-wrap lg:flex-nowrap items-center" gap={16}>
           <div className="lg:w-1/2">
