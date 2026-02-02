@@ -134,31 +134,31 @@ export function Services() {
                       <div className="absolute top-0 right-0 w-64 h-64 bg-(--brand-green)/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
                     </div>
                     
-                    <div className="p-8 bg-white space-y-8">
+                    <div className="p-8 bg-(--brand-anthracite) space-y-8 border-t border-white/5">
                       <div className="space-y-4">
-                        <h4 className="font-bold text-(--brand-dark) text-xl">Überblick</h4>
-                        <p className="text-(--brand-gray) leading-relaxed">
+                        <h4 className="font-bold text-white text-xl">Überblick</h4>
+                        <p className="text-gray-300 leading-relaxed font-medium">
                           {service.fullDescription}
                         </p>
                       </div>
 
                       <div className="space-y-4">
-                        <h4 className="font-bold text-(--brand-dark) text-xl">Ihre Vorteile</h4>
+                        <h4 className="font-bold text-white text-xl">Ihre Vorteile</h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           {service.details.map((detail, i) => (
-                            <div key={i} className="flex items-start gap-3">
-                              <div className="w-5 h-5 rounded-full bg-(--brand-green)/10 flex items-center justify-center shrink-0 mt-1">
-                                <div className="w-2 h-2 rounded-full bg-(--brand-green)" />
+                            <div key={i} className="flex items-start gap-4 p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors group">
+                              <div className="w-5 h-5 rounded-full bg-(--brand-green)/20 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-(--brand-green) transition-colors">
+                                <div className="w-2.5 h-2.5 rounded-full bg-(--brand-green) group-hover:bg-white transition-colors" />
                               </div>
-                              <span className="text-sm text-(--brand-gray) font-medium">{detail}</span>
+                              <span className="text-sm text-gray-200 font-bold tracking-tight">{detail}</span>
                             </div>
                           ))}
                         </div>
                       </div>
 
-                      <div className="pt-4 border-t border-gray-100 flex justify-end">
+                      <div className="pt-6 border-t border-white/10 flex justify-end">
                         <Button 
-                          className="bg-(--brand-green) hover:bg-(--brand-green)/90 text-white rounded-xl px-8"
+                          className="bg-(--brand-green) hover:bg-(--brand-green)/90 text-white rounded-xl px-10 py-6 text-lg font-bold glow-green shadow-lg transition-all active:scale-95"
                           asChild
                         >
                           <a href="#kontakt">Jetzt anfragen</a>
