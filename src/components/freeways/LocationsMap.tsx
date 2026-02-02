@@ -200,7 +200,7 @@ export function LocationsMap() {
                     <button 
                       onClick={() => setActiveId(null)}
                       aria-label="Standort-Details schließen"
-                      className="absolute top-6 right-6 lg:hidden w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors z-20"
+                      className="absolute top-6 right-6 lg:hidden w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors z-50 pointer-events-auto"
                     >
                       <X className="w-5 h-5" />
                     </button>

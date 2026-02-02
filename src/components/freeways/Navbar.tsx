@@ -82,7 +82,7 @@ export function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-[#050505] md:hidden flex flex-col"
+            className="fixed inset-0 z-[100] bg-black md:hidden flex flex-col h-dvh"
           >
             {/* Background Gradient - Reduced opacity */}
             <div className="absolute inset-0 bg-linear-to-b from-(--brand-green)/5 to-transparent pointer-events-none" />
