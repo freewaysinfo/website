@@ -47,77 +47,79 @@ export function ServiceShowcase() {
   }, []);
 
   return (
-    <Section className="bg-(--brand-light) py-0 overflow-hidden">
-      <div className="relative h-[600px] md:h-[800px] w-full flex items-center justify-center">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
-            className="absolute inset-0"
-          >
-            <Image
-              src={slides[currentIndex].image}
-              alt={slides[currentIndex].title}
-              fill
-              className="object-cover"
-              priority
-            />
-            {/* Overlay Gradient */}
-            <div className="absolute inset-0 bg-linear-to-t from-(--brand-dark) via-(--brand-dark)/20 to-transparent" />
-          </motion.div>
-        </AnimatePresence>
-
-        <Container className="relative z-10 h-full flex flex-col justify-end pb-20 md:pb-32">
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-2xl text-white"
-          >
-            <span className="text-(--brand-yellow) font-bold text-sm uppercase tracking-widest mb-4 block">
-              Freeways Performance
-            </span>
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              {slides[currentIndex].title}
-            </h2>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              {slides[currentIndex].description}
-            </p>
-          </motion.div>
-
-          {/* Controls */}
-          <div className="absolute bottom-10 right-10 flex items-center gap-4">
-            <button
-              onClick={prevSlide}
-              className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-(--brand-dark) transition-all cursor-pointer"
-              aria-label="Vorheriges Bild"
+    <Section className="bg-white py-12">
+      <Container>
+        <div className="relative h-[400px] md:h-[500px] w-full rounded-[2.5rem] overflow-hidden shadow-2xl border border-(--brand-border)/50">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8 }}
+              className="absolute inset-0"
             >
-              <ChevronLeft className="h-6 w-6" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-(--brand-dark) transition-all cursor-pointer"
-              aria-label="Nächstes Bild"
+              <Image
+                src={slides[currentIndex].image}
+                alt={slides[currentIndex].title}
+                fill
+                className="object-cover"
+                priority
+              />
+              {/* Overlay Gradient */}
+              <div className="absolute inset-0 bg-linear-to-t from-(--brand-dark)/90 via-(--brand-dark)/20 to-transparent" />
+            </motion.div>
+          </AnimatePresence>
+
+          <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end z-10">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="max-w-xl text-white"
             >
-              <ChevronRight className="h-6 w-6" />
-            </button>
-            <div className="ml-4 flex items-center gap-2">
-              {slides.map((_, i) => (
-                <div
-                  key={i}
-                  className={`h-1 transition-all duration-300 ${
-                    currentIndex === i ? "w-8 bg-(--brand-yellow)" : "w-2 bg-white/20"
-                  }`}
-                />
-              ))}
+              <span className="text-(--brand-yellow) font-bold text-xs uppercase tracking-widest mb-2 block">
+                Visual Showcase
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                {slides[currentIndex].title}
+              </h2>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                {slides[currentIndex].description}
+              </p>
+            </motion.div>
+
+            {/* Controls */}
+            <div className="absolute bottom-8 right-8 flex items-center gap-4 bg-black/20 backdrop-blur-md p-2 rounded-full border border-white/10">
+              <button
+                onClick={prevSlide}
+                className="w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-(--brand-dark) transition-all cursor-pointer"
+                aria-label="Vorheriges Bild"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <div className="flex items-center gap-1.5 px-1">
+                {slides.map((_, i) => (
+                  <div
+                    key={i}
+                    className={`h-1 rounded-full transition-all duration-300 ${
+                      currentIndex === i ? "w-6 bg-(--brand-yellow)" : "w-1.5 bg-white/30"
+                    }`}
+                  />
+                ))}
+              </div>
+              <button
+                onClick={nextSlide}
+                className="w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-(--brand-dark) transition-all cursor-pointer"
+                aria-label="Nächstes Bild"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
             </div>
           </div>
-        </Container>
-      </div>
+        </div>
+      </Container>
     </Section>
   );
 }
