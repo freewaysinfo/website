@@ -219,7 +219,7 @@ export function LocationsMap() {
                         </p>
                       </div>
 
-                      <button className="w-full py-4 mt-4 bg-white text-(--brand-dark) font-bold rounded-xl hover:bg-(--brand-yellow) transition-colors cursor-pointer shadow-lg active:scale-[0.98]">
+                      <button className="w-full py-5 mt-6 bg-(--brand-green) text-white font-bold rounded-xl hover:bg-(--brand-yellow) hover:text-(--brand-dark) transition-all cursor-pointer shadow-lg active:scale-[0.98] glow-green border-none text-lg">
                         Diesen Standort anfragen
                       </button>
                     </div>
