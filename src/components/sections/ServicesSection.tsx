@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { Truck, Package, Users } from 'lucide-react';
 import { Card, CardContent } from '../ui/card';
 import Image from 'next/image';
+import { SectionTitle } from './SectionTitle';
 
 export const ServicesSection: React.FC = () => {
   const services = [
@@ -30,16 +31,11 @@ export const ServicesSection: React.FC = () => {
   ];
 
   return (
-    <section id="leistungen" className="py-sectionMobile md:py-sectionDesktop bg-muted scroll-mt-24 section-frame">
+    <section id="leistungen" className="py-sectionMobile md:py-sectionDesktop bg-background scroll-mt-24 section-frame">
+      <SectionTitle preTitle="Leistungen" title="Unsere Leistungen">
+        Professionelle Lösungen für alle Ihre Liefer- und Logistikbedürfnisse
+      </SectionTitle>
       <Container>
-        <div className="text-center mb-10">
-          <span className="section-badge">Leistungen</span>
-          <h2 className="section-title">Unsere Leistungen</h2>
-          <p className="section-subtitle">
-            Professionelle Lösungen für alle Ihre Liefer- und Logistikbedürfnisse
-          </p>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((service, index) => {
             const Icon = service.icon;

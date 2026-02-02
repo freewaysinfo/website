@@ -4,6 +4,7 @@ import React from 'react';
 import { Container } from '../ui/Container';
 import { motion } from 'framer-motion';
 import { Award, Car, MapPin, CheckCircle } from 'lucide-react';
+import { SectionTitle } from './SectionTitle';
 
 export const WhyUsSection: React.FC = () => {
   const benefits = [
@@ -30,52 +31,37 @@ export const WhyUsSection: React.FC = () => {
   ];
 
   return (
-    <section id="vorteile" className="py-sectionMobile md:py-sectionDesktop bg-background scroll-mt-24 section-frame">
+    <section id="vorteile" className="py-sectionMobile md:py-sectionDesktop bg-muted scroll-mt-24 section-frame">
+      <SectionTitle preTitle="Vorteile" title="Warum Freeways?">
+        Ihre Vorteile bei der Zusammenarbeit mit uns
+      </SectionTitle>
       <Container>
-        <div className="text-center mb-12">
-          <span className="section-badge">Vorteile</span>
-          <h2 className="section-title">Warum Freeways?</h2>
-          <p className="section-subtitle">
-            Ihre Vorteile bei der Zusammenarbeit mit uns
-          </p>
-        </div>
-
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="premium-card p-6">
-            <h3 className="text-xl font-semibold text-foreground mb-3">
-              Verlässliche Abläufe für Ihr Tagesgeschäft
-            </h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Wir kombinieren erfahrene Teams, moderne Fahrzeuge und klare Prozesse, damit Ihre Sendungen termingerecht und zuverlässig ankommen. Freeways ist Ihr Partner für skalierbare Logistiklösungen in NRW.
-            </p>
-          </div>
-          <div className="grid gap-4">
-            {benefits.map((benefit, index) => {
-              const Icon = benefit.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="premium-card flex items-start space-x-4 p-5"
-                >
-                  <div className="w-12 h-12 bg-muted rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {benefit.description}
-                    </p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+          {benefits.map((benefit, index) => {
+            const Icon = benefit.icon;
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="premium-card flex items-start space-x-4 p-6"
+              >
+                <div className="flex h-11 w-11 items-center justify-center rounded-md bg-primary">
+                  <Icon className="h-6 w-6 text-primary-foreground" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {benefit.description}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </Container>
     </section>

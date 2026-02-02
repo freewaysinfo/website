@@ -5,6 +5,7 @@ import { Container } from '../ui/Container';
 import { Button } from '../ui/button';
 import { motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
+import { SectionTitle } from './SectionTitle';
 
 export const CareersSection: React.FC = () => {
   const handleWhatsAppClick = () => {
@@ -12,59 +13,34 @@ export const CareersSection: React.FC = () => {
   };
 
   return (
-    <section id="karriere" className="py-sectionMobile md:py-sectionDesktop bg-background scroll-mt-24 section-frame">
+    <section id="karriere" className="py-sectionMobile md:py-sectionDesktop bg-muted scroll-mt-24 section-frame">
+      <SectionTitle preTitle="Karriere" title="Fahrer (m/w/d) gesucht – Jetzt bewerben">
+        Werden Sie Teil unseres Teams! Wir suchen motivierte Fahrer für flexible Einsätze in ganz NRW. Faire Bezahlung, moderne Fahrzeuge und ein professionelles Arbeitsumfeld warten auf Sie.
+      </SectionTitle>
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="grid gap-10 items-center lg:grid-cols-[1.1fr_0.9fr]"
+          className="flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-border bg-background px-6 py-6 md:px-10"
         >
           <div>
-            <span className="section-badge">Karriere</span>
-            <h2 className="section-title mb-6">
-              Fahrer (m/w/d) gesucht – Jetzt bewerben
-            </h2>
-            <p className="text-base md:text-lg leading-relaxed">
-              Werden Sie Teil unseres Teams! Wir suchen motivierte Fahrer für flexible Einsätze in ganz NRW. Faire Bezahlung, moderne Fahrzeuge und ein professionelles Arbeitsumfeld warten auf Sie.
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <Button
-                size="lg"
-                variant="accent"
-                onClick={handleWhatsAppClick}
-                className="inline-flex items-center space-x-2"
-              >
-                <MessageCircle className="w-5 h-5" />
-                <span>Jetzt per WhatsApp bewerben</span>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <a href="tel:+4922346808219">Telefonisch melden</a>
-              </Button>
-            </div>
-            <p className="mt-4 text-muted-foreground text-sm">
-              Tel: 02234 6808219
-            </p>
+            <div className="text-sm font-semibold text-muted-foreground">Tel: 02234 6808219</div>
           </div>
-          <div className="premium-card p-6">
-            <div className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-              Ihr Einstieg bei Freeways
-            </div>
-            <div className="mt-4 grid gap-3 text-sm text-foreground">
-              <div className="flex items-center justify-between rounded-xl border border-border bg-muted px-4 py-3">
-                <span>Onboarding</span>
-                <span className="text-muted-foreground">2 Tage</span>
-              </div>
-              <div className="flex items-center justify-between rounded-xl border border-border bg-muted px-4 py-3">
-                <span>Einsätze</span>
-                <span className="text-muted-foreground">flexibel</span>
-              </div>
-              <div className="flex items-center justify-between rounded-xl border border-border bg-muted px-4 py-3">
-                <span>Kontakt</span>
-                <span className="text-muted-foreground">direkt per WhatsApp</span>
-              </div>
-            </div>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button
+              size="lg"
+              variant="accent"
+              onClick={handleWhatsAppClick}
+              className="inline-flex items-center space-x-2"
+            >
+              <MessageCircle className="w-5 h-5" />
+              <span>Jetzt per WhatsApp bewerben</span>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <a href="tel:+4922346808219">Telefonisch melden</a>
+            </Button>
           </div>
         </motion.div>
       </Container>

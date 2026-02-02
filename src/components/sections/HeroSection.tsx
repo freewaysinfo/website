@@ -9,22 +9,24 @@ import Image from 'next/image';
 export const HeroSection: React.FC = () => {
   return (
     <section className="relative bg-background py-sectionMobile md:py-sectionDesktop scroll-mt-24 section-frame">
-      <Container>
+      <Container className="flex flex-wrap items-center gap-10">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="grid gap-10 items-center lg:grid-cols-[1.05fr_0.95fr]"
+          className="flex w-full items-center lg:w-1/2"
         >
-          <div className="text-center lg:text-left">
-            <span className="section-badge">Freeways GmbH</span>
-            <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-semibold text-foreground leading-[1.15]">
+          <div className="max-w-2xl text-center lg:text-left">
+            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+              Freeways GmbH
+            </div>
+            <h1 className="mt-4 text-4xl font-semibold leading-snug tracking-tight text-foreground sm:text-5xl lg:text-5xl xl:text-6xl">
               Zuverlässiger Liefer- & Logistikservice in NRW
             </h1>
-            <p className="mt-5 text-base md:text-lg max-w-2xl leading-relaxed">
+            <p className="py-5 text-lg leading-normal text-muted-foreground lg:text-xl">
               Freeways GmbH ist Ihr professioneller Partner für Essenslieferung, Kurier- und Logistikdienstleistungen in Nordrhein-Westfalen.
             </p>
-            <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col items-center space-y-3 sm:flex-row sm:space-x-4 sm:space-y-0 sm:justify-start">
               <Button size="lg" asChild>
                 <a href="#kontakt">Jetzt anfragen</a>
               </Button>
@@ -35,17 +37,19 @@ export const HeroSection: React.FC = () => {
               </Button>
             </div>
           </div>
+        </motion.div>
+        <div className="flex w-full items-center justify-center lg:w-1/2">
           <div className="premium-card overflow-hidden">
             <Image
               src="/images/hero_crew.png"
               alt="Freeways Team im Einsatz"
-              width={960}
-              height={720}
+              width={640}
+              height={640}
+              className="object-cover"
               priority
-              className="h-full w-full object-cover"
             />
           </div>
-        </motion.div>
+        </div>
       </Container>
     </section>
   );
