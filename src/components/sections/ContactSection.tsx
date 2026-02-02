@@ -28,7 +28,7 @@ export const ContactSection: React.FC = () => {
   ];
 
   return (
-    <section id="kontakt" className="py-sectionMobile md:py-sectionDesktop bg-background scroll-mt-24 section-frame">
+    <section id="kontakt" className="py-16 md:py-20 bg-background scroll-mt-24">
       <SectionTitle preTitle="Kontakt" title="Kontakt">
         Nehmen Sie Kontakt mit uns auf – wir freuen uns auf Ihre Anfrage
       </SectionTitle>

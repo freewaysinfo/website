@@ -31,7 +31,7 @@ export const ServicesSection: React.FC = () => {
   ];
 
   return (
-    <section id="leistungen" className="py-sectionMobile md:py-sectionDesktop bg-background scroll-mt-24 section-frame">
+    <section id="leistungen" className="py-16 md:py-20 bg-background scroll-mt-24">
       <SectionTitle preTitle="Leistungen" title="Unsere Leistungen">
         Professionelle Lösungen für alle Ihre Liefer- und Logistikbedürfnisse
       </SectionTitle>

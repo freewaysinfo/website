@@ -13,7 +13,7 @@ export const CareersSection: React.FC = () => {
   };
 
   return (
-    <section id="karriere" className="py-sectionMobile md:py-sectionDesktop bg-muted scroll-mt-24 section-frame">
+    <section id="karriere" className="py-16 md:py-20 bg-muted scroll-mt-24">
       <SectionTitle preTitle="Karriere" title="Fahrer (m/w/d) gesucht – Jetzt bewerben">
         Werden Sie Teil unseres Teams! Wir suchen motivierte Fahrer für flexible Einsätze in ganz NRW. Faire Bezahlung, moderne Fahrzeuge und ein professionelles Arbeitsumfeld warten auf Sie.
       </SectionTitle>

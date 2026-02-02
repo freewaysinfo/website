@@ -72,34 +72,27 @@
 
 /* Design Tokens */
 :root {
-  --brand-green: 142 76% 36%;
-  --brand-yellow: 41 96% 48%;
-  --brand-dark: 222 47% 11%;
-  --brand-gray: 215 16% 47%;
-  --brand-light: 210 40% 98%;
-  --brand-border: 214 32% 91%;
-
   --radius: 0.75rem;
   --background: 0 0% 100%;
-  --foreground: var(--brand-dark);
+  --foreground: 222 47% 11%;
   --card: 0 0% 100%;
-  --card-foreground: var(--brand-dark);
+  --card-foreground: 222 47% 11%;
   --popover: 0 0% 100%;
-  --popover-foreground: var(--brand-dark);
-  --primary: var(--brand-green);
+  --popover-foreground: 222 47% 11%;
+  --primary: 231 84% 56%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 210 40% 96%;
-  --secondary-foreground: var(--brand-dark);
-  --muted: 210 40% 96%;
-  --muted-foreground: var(--brand-gray);
-  --accent: var(--brand-yellow);
+  --secondary: 220 14% 96%;
+  --secondary-foreground: 222 47% 11%;
+  --muted: 220 14% 96%;
+  --muted-foreground: 215 16% 47%;
+  --accent: 45 93% 47%;
   --accent-foreground: 26 83% 14%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
   --success: 142 76% 36%;
-  --border: var(--brand-border);
-  --input: var(--brand-border);
-  --ring: var(--brand-green);
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 231 84% 56%;
 }
 
 /* Base Styles */
@@ -182,7 +175,7 @@ main {
 
 @layer utilities {
   .section-badge {
-    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground;
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary;
   }
   .section-title {
     @apply mt-3 text-3xl sm:text-4xl md:text-5xl font-semibold text-foreground;
@@ -192,8 +185,5 @@ main {
   }
   .premium-card {
     @apply rounded-2xl border border-border bg-background shadow-none;
-  }
-  .section-frame {
-    @apply border-t border-border;
   }
 }

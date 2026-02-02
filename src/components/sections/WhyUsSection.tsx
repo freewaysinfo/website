@@ -31,7 +31,7 @@ export const WhyUsSection: React.FC = () => {
   ];
 
   return (
-    <section id="vorteile" className="py-sectionMobile md:py-sectionDesktop bg-muted scroll-mt-24 section-frame">
+    <section id="vorteile" className="py-16 md:py-20 bg-muted scroll-mt-24">
       <SectionTitle preTitle="Vorteile" title="Warum Freeways?">
         Ihre Vorteile bei der Zusammenarbeit mit uns
       </SectionTitle>
