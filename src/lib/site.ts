@@ -4,7 +4,7 @@ export const siteConfig = {
   contact: {
     phone: "02234 6808219",
     phoneUrl: "tel:022346808219",
-    email: "info@freeways.de",
+    email: "info@freeways.info",
     address: {
       street: "Wipperfürther Str. 29–31",
       zip: "51103",
