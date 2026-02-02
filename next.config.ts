@@ -4,9 +4,6 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   compress: true,
-  experimental: {
-    optimizeCss: true,
-  },
 };
 
 export default nextConfig;
