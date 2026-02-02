@@ -8,12 +8,12 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 export function Contact() {
   return (
-    <Section id="kontakt" className="bg-white py-24 md:py-32 border-t border-gray-50">
+    <Section id="kontakt" className="bg-white py-24 md:py-32 border-t border-gray-50 overflow-hidden">
       <Container>
         <div className="flex flex-col lg:flex-row gap-16">
           <div className="lg:w-1/2">
             <h2 className="text-4xl md:text-6xl font-black mb-8 text-black tracking-tighter">Kontakt</h2>
-            <p className="text-xl text-gray-500 mb-12 leading-relaxed font-medium max-w-lg">
+            <p className="text-xl text-gray-600 mb-12 leading-relaxed font-medium max-w-lg">
               Haben Sie Fragen zu unseren Dienstleistungen oder möchten Sie ein unverbindliches Angebot erhalten? Wir freuen uns auf Ihre Nachricht.
             </p>
             
