@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-muted via-background to-background py-sectionMobile md:py-sectionDesktop">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-muted via-background to-background py-sectionMobile md:py-sectionDesktop scroll-mt-24">
       <Container>
         <motion.div
           initial={{ opacity: 0 }}

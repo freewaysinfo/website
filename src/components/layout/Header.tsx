@@ -35,7 +35,7 @@ export const Header: React.FC = () => {
       }`}
     >
       <Container>
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
             <Image
@@ -52,7 +52,7 @@ export const Header: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6 text-sm">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -65,7 +65,7 @@ export const Header: React.FC = () => {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-3 text-sm">
             <Button variant="ghost" size="sm" asChild>
               <a href="https://wa.me/4922346808219" target="_blank" rel="noreferrer">
                 WhatsApp

@@ -27,7 +27,7 @@ export const ContactSection: React.FC = () => {
   ];
 
   return (
-    <section id="kontakt" className="py-sectionMobile md:py-sectionDesktop bg-background">
+    <section id="kontakt" className="py-sectionMobile md:py-sectionDesktop bg-background scroll-mt-24">
       <Container>
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground mb-4">

@@ -13,7 +13,7 @@ export const StatsSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-10 md:py-12 bg-accent">
+    <section className="py-10 md:py-12 bg-accent scroll-mt-24">
       <Container className="max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {stats.map((stat, index) => (
