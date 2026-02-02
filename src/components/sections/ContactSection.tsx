@@ -37,7 +37,7 @@ export const ContactSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] items-start">
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] items-start">
           <div className="grid gap-6">
             {contactInfo.map((info, index) => {
               const Icon = info.icon;
@@ -79,7 +79,7 @@ export const ContactSection: React.FC = () => {
             })}
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-border bg-background shadow-xl">
+          <div className="premium-card overflow-hidden">
             <iframe
               title="Google Maps Freeways GmbH"
               src="https://www.google.com/maps?q=Wipperf%C3%BCrther%20Str.%2029-31%2C%2051103%20K%C3%B6ln&output=embed"

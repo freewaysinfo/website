@@ -13,10 +13,10 @@ export const StatsSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-14 md:py-20 bg-accent scroll-mt-24">
+    <section className="py-12 md:py-16 bg-muted scroll-mt-24">
       <Container>
-        <div className="rounded-3xl border border-accent-foreground/10 bg-accent/90 px-6 py-10 md:px-12 md:py-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 md:divide-x md:divide-accent-foreground/20">
+        <div className="rounded-2xl border border-border bg-background px-6 py-8 md:px-10 md:py-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 md:divide-x md:divide-border">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -26,10 +26,10 @@ export const StatsSection: React.FC = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="text-center md:px-6"
             >
-              <div className="text-4xl md:text-5xl font-black text-accent-foreground mb-3">
+              <div className="text-3xl md:text-4xl font-semibold text-foreground mb-2">
                 {stat.value}
               </div>
-              <Badge variant="secondary" className="text-xs md:text-sm font-semibold uppercase tracking-wider bg-background/90 text-foreground">
+              <Badge variant="secondary" className="text-xs md:text-sm font-semibold uppercase tracking-wider">
                 {stat.label}
               </Badge>
             </motion.div>

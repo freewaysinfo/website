@@ -40,12 +40,12 @@ export const WhyUsSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] items-start">
-          <div className="premium-card p-8">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
+        <div className="grid gap-6 md:grid-cols-2">
+          <div className="premium-card p-6">
+            <h3 className="text-xl font-semibold text-foreground mb-3">
               Verlässliche Abläufe für Ihr Tagesgeschäft
             </h3>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Wir kombinieren erfahrene Teams, moderne Fahrzeuge und klare Prozesse, damit Ihre Sendungen termingerecht und zuverlässig ankommen. Freeways ist Ihr Partner für skalierbare Logistiklösungen in NRW.
             </p>
           </div>
@@ -65,10 +65,10 @@ export const WhyUsSection: React.FC = () => {
                     <Icon className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">
+                    <h3 className="text-lg font-semibold text-foreground mb-2">
                       {benefit.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       {benefit.description}
                     </p>
                   </div>

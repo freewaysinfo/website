@@ -26,7 +26,7 @@ export const CareersSection: React.FC = () => {
             <h2 className="section-title mb-6">
               Fahrer (m/w/d) gesucht – Jetzt bewerben
             </h2>
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+            <p className="text-base md:text-lg leading-relaxed">
               Werden Sie Teil unseres Teams! Wir suchen motivierte Fahrer für flexible Einsätze in ganz NRW. Faire Bezahlung, moderne Fahrzeuge und ein professionelles Arbeitsumfeld warten auf Sie.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -47,11 +47,11 @@ export const CareersSection: React.FC = () => {
               Tel: 02234 6808219
             </p>
           </div>
-          <div className="premium-card p-8 shadow-xl">
+          <div className="premium-card p-6">
             <div className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
               Ihr Einstieg bei Freeways
             </div>
-            <div className="mt-6 grid gap-4 text-sm text-foreground">
+            <div className="mt-4 grid gap-3 text-sm text-foreground">
               <div className="flex items-center justify-between rounded-xl border border-border bg-muted px-4 py-3">
                 <span>Onboarding</span>
                 <span className="text-muted-foreground">2 Tage</span>
