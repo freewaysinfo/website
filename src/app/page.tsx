@@ -4,6 +4,7 @@ import { Services } from "@/components/freeways/Services";
 import { Benefits } from "@/components/freeways/Benefits";
 import { Careers } from "@/components/freeways/Careers";
 import { Contact } from "@/components/freeways/Contact";
+import { ServiceShowcase } from "@/components/freeways/ServiceShowcase";
 import { Footer } from "@/components/freeways/Footer";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <main className="flex-grow">
         <Hero />
         <Services />
+        <ServiceShowcase />
         <Benefits />
         <Careers />
         <Contact />
