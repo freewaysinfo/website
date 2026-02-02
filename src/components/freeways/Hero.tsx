@@ -38,18 +38,41 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Button size="lg" className="bg-[var(--brand-green)] hover:bg-[var(--brand-green)]/90 text-white px-8">
+            <Button 
+              size="lg" 
+              className="bg-[var(--brand-green)] hover:bg-[var(--brand-green)]/90 text-white px-8"
+              aria-label="Jetzt ein unverbindliches Angebot anfragen"
+            >
               Jetzt anfragen
             </Button>
-            <Button size="lg" variant="outline" className="border-[var(--brand-border)] text-[var(--brand-dark)] px-8" asChild>
-              <a href={siteConfig.links.career}>Fahrer werden</a>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-[var(--brand-border)] text-[var(--brand-dark)] px-8" 
+              asChild
+            >
+              <a href={siteConfig.links.career} aria-label="Informationen für Bewerber und Fahrer anzeigen">
+                Fahrer werden
+              </a>
             </Button>
           </motion.div>
         </Stack>
       </Container>
       
-      {/* Subtle background element */}
-      <div className="absolute top-1/2 -right-20 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--brand-green)]/5 rounded-full blur-3xl -z-10" />
+      {/* Subtle floating background elements */}
+      <motion.div 
+        animate={{ 
+          y: [0, -20, 0],
+          rotate: [0, 5, 0]
+        }}
+        transition={{ 
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+        className="absolute top-1/4 -right-20 w-[400px] h-[400px] bg-[var(--brand-green)]/5 rounded-full blur-3xl -z-10" 
+      />
+      <div className="absolute top-1/2 -right-20 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--brand-yellow)]/5 rounded-full blur-3xl -z-10" />
     </section>
   );
 }

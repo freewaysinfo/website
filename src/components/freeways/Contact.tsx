@@ -67,11 +67,11 @@ export function Contact() {
                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2514.864380894578!2d6.9944747!3d50.9254316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bf26f9a0d8c06b%3A0xc3f8e5b6e6e8e8e!2sWipperf%C3%BCrther%20Str.%2029-31%2C%2051103%20K%C3%B6ln!5e0!3m2!1sde!2sde!4v1710000000000!5m2!1sde!2sde"
                width="100%" 
                height="100%" 
-               style={{ border: 0 }} 
+               title="Freeways GmbH Standort Köln"
                allowFullScreen={true} 
                loading="lazy" 
                referrerPolicy="no-referrer-when-downgrade"
-               className="grayscale contrast-125 opacity-80"
+               className="grayscale contrast-125 opacity-80 border-0"
             />
           </div>
         </div>
