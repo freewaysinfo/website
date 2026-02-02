@@ -138,10 +138,13 @@ export function LocationsMap() {
 
           <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Map Container */}
-            <div className="lg:col-span-7 relative aspect-4/3 bg-gray-50 rounded-[4rem] p-12 border border-gray-100 shadow-2xl ring-8 ring-gray-50/30">
-              {/* Simplified NRW SVG Placeholder/Shape */}
+            <div className="lg:col-span-7 relative aspect-square md:aspect-4/3 bg-white rounded-[4rem] p-12 border border-gray-100 shadow-2xl ring-8 ring-gray-50/30 overflow-hidden">
+              {/* Subtle Dot Grid Background */}
+              <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 0)', backgroundSize: '24px 24px' }} />
+              
+              {/* Simplified NRW SVG Placeholder/Shape - Increased visibility for light mode */}
               <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
-                <svg viewBox="0 0 500 400" className="w-[85%] h-[85%] fill-current text-white">
+                <svg viewBox="0 0 500 400" className="w-[90%] h-[90%] fill-current text-gray-300">
                   <path d="M150,50 L350,30 L450,150 L420,300 L250,380 L100,350 L50,200 Z" />
                 </svg>
               </div>
@@ -151,26 +154,26 @@ export function LocationsMap() {
                 <button
                   key={loc.id}
                   onClick={() => setActiveId(loc.id)}
-                  className="absolute group transition-transform hover:scale-110 z-20 cursor-pointer"
-                  style={{ "--loc-x": `${loc.x}%`, "--loc-y": `${loc.y}%` } as React.CSSProperties}
+                  className="absolute group transition-transform hover:scale-110 z-20 cursor-pointer -translate-x-1/2 -translate-y-1/2"
+                  style={{ left: `${loc.x}%`, top: `${loc.y}%` }}
                 >
-                  <div className="relative left-(--loc-x) top-(--loc-y)">
+                  <div className="relative">
                     {/* Radar Pulse */}
                     <motion.div
                       animate={{ scale: [1, 2.5, 1], opacity: [0.5, 0, 0.5] }}
                       transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                       className={`absolute inset-0 rounded-full glow-green ${
-                        activeId === loc.id ? "bg-(--brand-green)" : "bg-(--brand-dark)"
+                        activeId === loc.id ? "bg-(--brand-green)" : "bg-gray-400"
                       }`}
                     />
                     <div
-                      className={`relative w-5 h-5 rounded-full border-2 border-white shadow-xl transition-all duration-500 ${
-                        activeId === loc.id ? "bg-(--brand-green) scale-125" : "bg-white group-hover:bg-(--brand-green)/50"
+                      className={`relative w-4 h-4 md:w-5 md:h-5 rounded-full border-2 border-white shadow-xl transition-all duration-500 ${
+                        activeId === loc.id ? "bg-(--brand-green) scale-125 shadow-[0_0_20px_rgba(74,222,128,0.5)]" : "bg-white group-hover:bg-(--brand-green)/50"
                       }`}
                     />
                     
                     {/* Label */}
-                    <div className="absolute top-full mt-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] text-black shadow-2xl border border-gray-100 opacity-0 group-hover:opacity-100 transition-all scale-90 group-hover:scale-100">
+                    <div className="absolute top-full mt-4 left-1/2 -translate-x-1/2 whitespace-nowrap bg-[#0f0f0f] px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] text-white shadow-2xl border border-white/10 opacity-0 group-hover:opacity-100 transition-all scale-90 group-hover:scale-100 z-30">
                       {loc.name}
                     </div>
                   </div>
