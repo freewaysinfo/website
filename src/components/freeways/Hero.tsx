@@ -42,7 +42,7 @@ export function Hero() {
             >
               <Button 
                 size="lg" 
-                className="bg-(--brand-green) hover:bg-(--brand-green)/90 text-white px-10 rounded-2xl h-16 text-lg font-bold glow-green border-none transition-all active:scale-95"
+                className="bg-(--brand-green) hover:bg-(--brand-green)/90 text-white px-10 rounded-2xl h-16 text-lg font-bold glow-green border-none transition-all hover:scale-105 active:scale-95 shadow-[0_0_25px_rgba(74,222,128,0.4)]"
                 aria-label="Jetzt ein unverbindliches Angebot anfragen"
               >
                 Jetzt anfragen
@@ -83,15 +83,16 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.5 }}
-              className="absolute -bottom-6 -left-6 bg-(--brand-anthracite) p-8 rounded-2xl shadow-2xl border border-white/5 hidden md:block glow-green ring-1 ring-white/10"
+              className="absolute -bottom-6 -left-6 bg-white/5 backdrop-blur-2xl p-8 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 hidden md:block glow-green ring-1 ring-white/20"
             >
-              <div className="flex items-center gap-5">
-                <div className="w-14 h-14 rounded-full bg-(--brand-green)/10 flex items-center justify-center">
-                  <div className="w-4 h-4 rounded-full bg-(--brand-green) animate-pulse shadow-[0_0_15px_rgba(74,222,128,1)]" />
+              <div className="flex items-center gap-6">
+                <div className="w-16 h-16 rounded-full bg-(--brand-green)/10 flex items-center justify-center relative ring-1 ring-(--brand-green)/20">
+                  <div className="absolute inset-0 rounded-full bg-(--brand-green)/20 animate-ping opacity-30" />
+                  <div className="w-5 h-5 rounded-full bg-(--brand-green) shadow-[0_0_20px_rgba(74,222,128,1)]" />
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-white tracking-tight">24/7</div>
-                  <div className="text-sm text-gray-400 font-bold uppercase tracking-widest">Bereitschaft</div>
+                  <div className="text-4xl font-black text-white tracking-tighter leading-none mb-1">24/7</div>
+                  <div className="text-[10px] text-gray-400 font-black uppercase tracking-[0.2em]">Bereitschaft</div>
                 </div>
               </div>
             </motion.div>

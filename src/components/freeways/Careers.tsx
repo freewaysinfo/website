@@ -31,7 +31,7 @@ export function Careers() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="inline-block px-4 py-2 rounded-full bg-(--brand-yellow) text-(--brand-dark) text-xs font-bold mb-8 uppercase tracking-widest"
+              className="inline-block px-4 py-2 rounded-full bg-(--brand-yellow) text-(--brand-dark) text-[10px] font-black mb-8 uppercase tracking-[0.2em] shadow-[0_0_20px_rgba(212,175,55,0.3)]"
             >
               Karriere bei Freeways
             </motion.div>
@@ -56,7 +56,7 @@ export function Careers() {
             ))}
           </div>
 
-            <Button size="lg" className="bg-(--brand-yellow) hover:bg-(--brand-yellow)/90 text-(--brand-dark) font-bold px-12 h-16 text-lg rounded-2xl shadow-xl shadow-yellow-500/10 transition-all hover:scale-105 active:scale-95" asChild>
+            <Button size="lg" className="bg-(--brand-yellow) hover:bg-(--brand-yellow)/90 text-(--brand-dark) font-bold px-12 h-16 text-lg rounded-2xl shadow-2xl glow-gold transition-all hover:scale-105 active:scale-95 border-none" asChild>
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                 <MessageSquare className="mr-3 h-6 w-6" />
                 Per WhatsApp bewerben
