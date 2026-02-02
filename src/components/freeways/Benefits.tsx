@@ -42,11 +42,11 @@ export function Benefits() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 py-10 border-y border-white/10">
               <div className="space-y-1">
                 <div className="text-4xl font-bold text-white tracking-tight">50+</div>
-                <div className="text-xs font-bold uppercase tracking-widest text-gray-500">Fahrer im Einsatz</div>
+                <div className="text-xs font-bold uppercase tracking-widest text-gray-400">Fahrer im Einsatz</div>
               </div>
               <div className="space-y-1">
                 <div className="text-4xl font-bold text-white tracking-tight">NRW</div>
-                <div className="text-xs font-bold uppercase tracking-widest text-gray-500">Vollflächig</div>
+                <div className="text-xs font-bold uppercase tracking-widest text-gray-400">Vollflächig</div>
               </div>
               <div className="space-y-1">
                 <div className="text-4xl font-bold text-white tracking-tight text-glow-green">24/7</div>

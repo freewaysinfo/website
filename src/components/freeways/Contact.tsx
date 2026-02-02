@@ -23,7 +23,7 @@ export function Contact() {
                   <MapPin className="h-8 w-8" />
                 </div>
                 <div>
-                  <h3 className="font-black text-[10px] uppercase tracking-[0.3em] text-gray-400 mb-2">Anschrift</h3>
+                  <h3 className="font-black text-[10px] uppercase tracking-[0.3em] text-gray-600 mb-2">Anschrift</h3>
                   <p className="text-xl font-bold text-black tracking-tight leading-snug">
                     {siteConfig.contact.address.street}<br />
                     {siteConfig.contact.address.zip} {siteConfig.contact.address.city}
@@ -36,7 +36,7 @@ export function Contact() {
                   <Phone className="h-8 w-8" />
                 </div>
                 <div>
-                  <h3 className="font-black text-[10px] uppercase tracking-[0.3em] text-gray-400 mb-2">Telefon</h3>
+                  <h3 className="font-black text-[10px] uppercase tracking-[0.3em] text-gray-600 mb-2">Telefon</h3>
                   <a href={siteConfig.contact.phoneUrl} className="text-2xl font-black text-black hover:text-(--brand-green) transition-all tracking-tighter block">
                     {siteConfig.contact.phone}
                   </a>
@@ -48,7 +48,7 @@ export function Contact() {
                   <Mail className="h-8 w-8" />
                 </div>
                 <div>
-                  <h3 className="font-black text-[10px] uppercase tracking-[0.3em] text-gray-400 mb-2">E-Mail</h3>
+                  <h3 className="font-black text-[10px] uppercase tracking-[0.3em] text-gray-600 mb-2">E-Mail</h3>
                   <a href={`mailto:${siteConfig.contact.email}`} className="text-xl font-bold text-black hover:text-(--brand-green) transition-all tracking-tight break-all block">
                     {siteConfig.contact.email}
                   </a>

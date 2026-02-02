@@ -63,7 +63,7 @@ export function Services() {
         <Stack gap={16}>
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="w-full lg:w-3/5 space-y-6">
-              <span className="text-(--brand-green) font-bold text-sm uppercase tracking-widest block">
+              <span className="text-emerald-700 font-bold text-sm uppercase tracking-widest block">
                 Unsere Expertise
               </span>
               <h2 className="text-3xl md:text-5xl font-bold text-[#0f0f0f]">Maßgeschneiderte Logistiklösungen</h2>
@@ -159,7 +159,7 @@ export function Services() {
 
                       <div className="pt-6 border-t border-white/10 flex justify-end">
                         <Button 
-                          className="bg-(--brand-green) hover:bg-(--brand-green)/90 text-white rounded-xl px-10 py-6 text-lg font-bold glow-green shadow-lg transition-all active:scale-95"
+                          className="bg-(--brand-green) hover:bg-(--brand-green)/90 text-(--brand-anthracite) rounded-xl px-10 py-6 text-lg font-bold glow-green shadow-lg transition-all active:scale-95"
                           asChild
                         >
                           <a href="#kontakt">Jetzt anfragen</a>

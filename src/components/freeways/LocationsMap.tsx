@@ -114,11 +114,11 @@ export function LocationsMap() {
         <Stack gap={16}>
           <div className="flex flex-col lg:flex-row items-end justify-between gap-8">
             <div className="max-w-2xl">
-              <span className="text-(--brand-green) font-bold text-sm uppercase tracking-widest block mb-4">
+              <span className="text-emerald-700 font-bold text-sm uppercase tracking-widest block mb-4">
                 Regionale Präsenz
               </span>
               <h2 className="text-4xl md:text-5xl font-black text-black tracking-tighter">
-                Ihre Experten für <span className="text-(--brand-green) text-glow-green">NRW</span>
+                Ihre Experten für <span className="text-emerald-700 text-glow-green">NRW</span>
               </h2>
               <p className="text-gray-500 text-lg md:text-xl mt-6 font-medium leading-relaxed">
                 Wir decken die wichtigsten Wirtschaftszentren in Nordrhein-Westfalen ab. Mit lokalen Teams garantieren wir maximale Geschwindigkeit und Flexibilität.
@@ -130,8 +130,8 @@ export function LocationsMap() {
                 <div className="text-[10px] text-gray-500 font-black uppercase tracking-[0.2em] mt-2">Standorte</div>
               </div>
               <div className="px-8 py-5 bg-(--brand-green)/5 rounded-3xl border border-(--brand-green)/10 ring-4 ring-(--brand-green)/5 glow-green transition-all hover:scale-105">
-                <div className="text-5xl font-black text-(--brand-green) tracking-tighter">24/7</div>
-                <div className="text-[10px] text-gray-400 font-black uppercase tracking-[0.2em] mt-2">Einsatzbereit</div>
+                <div className="text-5xl font-black text-emerald-700 tracking-tighter">24/7</div>
+                <div className="text-[10px] text-gray-600 font-black uppercase tracking-[0.2em] mt-2">Einsatzbereit</div>
               </div>
             </div>
           </div>
@@ -201,13 +201,13 @@ export function LocationsMap() {
                           <activeLocation.icon className="h-10 w-10 text-white" />
                         </div>
                         <div className="text-right">
-                          <div className="text-[10px] text-gray-400 uppercase tracking-[0.3em] font-black">Standort</div>
+                          <div className="text-[10px] text-gray-600 uppercase tracking-[0.3em] font-black">Standort</div>
                           <div className="text-3xl font-black tracking-tight">{activeLocation.name}</div>
                         </div>
                       </div>
 
                       <div className="space-y-4">
-                        <div className="text-6xl font-black text-(--brand-green) tracking-tighter">
+                        <div className="text-6xl font-black text-emerald-700 tracking-tighter">
                           {activeLocation.kpi}
                         </div>
                         <p className="text-xl text-gray-600 font-medium leading-relaxed">
@@ -216,7 +216,7 @@ export function LocationsMap() {
                       </div>
 
                       <div className="pt-10 border-t border-gray-100">
-                        <div className="text-[10px] text-gray-400 uppercase font-black mb-4 tracking-[0.2em]">
+                        <div className="text-[10px] text-gray-600 uppercase font-black mb-4 tracking-[0.2em]">
                           Pain Point gelöst:
                         </div>
                         <p className="text-2xl font-bold leading-relaxed tracking-tight text-gray-900">

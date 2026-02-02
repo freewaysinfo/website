@@ -42,7 +42,7 @@ export function Hero() {
             >
               <Button 
                 size="lg" 
-                className="bg-(--brand-green) hover:bg-(--brand-green)/90 text-white px-10 rounded-2xl h-16 text-lg font-bold glow-green border-none transition-all hover:scale-105 active:scale-95 shadow-[0_0_25px_rgba(74,222,128,0.4)]"
+                className="bg-(--brand-green) hover:bg-(--brand-green)/90 text-(--brand-anthracite) px-10 rounded-2xl h-16 text-lg font-bold glow-green border-none transition-all hover:scale-105 active:scale-95 shadow-[0_0_25px_rgba(74,222,128,0.4)]"
                 aria-label="Jetzt ein unverbindliches Angebot anfragen"
               >
                 Jetzt anfragen

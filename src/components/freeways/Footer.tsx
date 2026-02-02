@@ -34,21 +34,21 @@ export function Footer() {
             
             <div className="grid grid-cols-2 md:grid-cols-3 gap-10">
               <Stack gap={5}>
-                <h4 className="font-bold text-xs uppercase tracking-[0.2em] text-gray-500">Leistungen</h4>
+                <h4 className="font-bold text-xs uppercase tracking-[0.2em] text-gray-400">Leistungen</h4>
                 <Link href="/#services" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-3 block">Essenslieferung</Link>
                 <Link href="/#services" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-3 block">Kurierdienst</Link>
                 <Link href="/#services" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-3 block">Logistik</Link>
               </Stack>
               
               <Stack gap={5}>
-                <h4 className="font-bold text-xs uppercase tracking-[0.2em] text-gray-500">Unternehmen</h4>
+                <h4 className="font-bold text-xs uppercase tracking-[0.2em] text-gray-400">Unternehmen</h4>
                 <Link href={siteConfig.links.career} className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-3 block">Karriere</Link>
                 <Link href="/#warum-wir" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-3 block">Über uns</Link>
                 <Link href="/#kontakt" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-3 block">Kontakt</Link>
               </Stack>
 
               <Stack gap={5}>
-                <h4 className="font-bold text-xs uppercase tracking-[0.2em] text-gray-500">Rechtliches</h4>
+                <h4 className="font-bold text-xs uppercase tracking-[0.2em] text-gray-400">Rechtliches</h4>
                 <Link href="/impressum" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-3 block">Impressum</Link>
                 <Link href="/datenschutz" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-3 block">Datenschutz</Link>
               </Stack>

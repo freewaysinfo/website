@@ -101,14 +101,16 @@ export function ServiceShowcase() {
               </button>
               <div className="flex items-center gap-2 px-2">
                 {slides.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setCurrentIndex(i)}
-                    className={`h-1.5 rounded-full transition-all duration-500 ${
-                      currentIndex === i ? "w-10 bg-(--brand-yellow)" : "w-2 bg-white/40 hover:bg-white/60"
-                    }`}
-                    aria-label={`Gehe zu Bild ${i + 1}`}
-                  />
+                    <button
+                      key={i}
+                      onClick={() => setCurrentIndex(i)}
+                      className="group py-5 px-1 cursor-pointer flex items-center"
+                      aria-label={`Gehe zu Bild ${i + 1}`}
+                    >
+                      <div className={`h-1.5 rounded-full transition-all duration-500 ${
+                        currentIndex === i ? "w-10 bg-(--brand-yellow)" : "w-2 bg-white/40 group-hover:bg-white/60"
+                      }`} />
+                    </button>
                 ))}
               </div>
               <button
