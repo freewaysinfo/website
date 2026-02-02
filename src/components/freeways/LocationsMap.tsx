@@ -150,9 +150,9 @@ export function LocationsMap() {
                   key={loc.id}
                   onClick={() => setActiveId(loc.id)}
                   className="absolute group transition-transform hover:scale-110 z-20 cursor-pointer"
-                  style={{ left: `${loc.x}%`, top: `${loc.y}%` }}
+                  style={{ "--loc-x": `${loc.x}%`, "--loc-y": `${loc.y}%` } as React.CSSProperties}
                 >
-                  <div className="relative">
+                  <div className="relative left-(--loc-x) top-(--loc-y)">
                     {/* Radar Pulse */}
                     <motion.div
                       animate={{ scale: [1, 2.5, 1], opacity: [0.5, 0, 0.5] }}
