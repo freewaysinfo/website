@@ -7,12 +7,14 @@ import { ScrollToTop } from "@/components/ui/ScrollToTop";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-body",
+  display: "swap",
 });
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-heading",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
