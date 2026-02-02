@@ -1,6 +1,17 @@
 export const siteConfig = {
   name: "Freeways GmbH",
-  description: "Zuverlässiger Liefer- & Logistikservice in NRW. Professioneller Partner für Essenslieferung, Kurier- und Logistikdienstleistungen.",
+  description: "Ihre Freeways GmbH in NRW – Spezialist für hocheffiziente Logistik, Essenslieferungen und Express-Kuriere. Wir bieten zuverlässige Zustellung und professionelle Fahrerbereitstellung (m/w/d) in Köln und ganz Nordrhein-Westfalen.",
+  keywords: [
+    "Logistik NRW", 
+    "Essenslieferung Köln", 
+    "Kurierdienst NRW", 
+    "Expresslieferung", 
+    "Freeways GmbH", 
+    "Fahrer Jobs NRW", 
+    "Logistikdienstleistungen Köln", 
+    "Cloud Kitchen Logistik", 
+    "Zustellservice"
+  ],
   contact: {
     phone: "02234 6808219",
     phoneUrl: "tel:022346808219",

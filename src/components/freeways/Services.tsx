@@ -4,7 +4,6 @@ import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Stack } from "@/components/layout/Stack";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { siteConfig } from "@/lib/site";
 import { Utensils, Zap, Truck } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
