@@ -4,11 +4,21 @@ import { Container } from "@/components/layout/Container";
 import { Stack } from "@/components/layout/Stack";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const menuItems = [
+    { name: "Leistungen", href: "/#services" },
+    { name: "Vorteile", href: "/#warum-wir" },
+    { name: "Karriere", href: "/#karriere" },
+  ];
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-(--brand-anthracite)/90 backdrop-blur-xl border-b border-white/5 shadow-2xl">
       <Container>
@@ -29,9 +39,15 @@ export function Navbar() {
           </Link>
           
           <nav className="hidden md:flex items-center gap-8">
-            <Link href="/#services" className="text-sm font-semibold text-gray-300 hover:text-white transition-colors">Leistungen</Link>
-            <Link href="/#warum-wir" className="text-sm font-semibold text-gray-300 hover:text-white transition-colors">Vorteile</Link>
-            <Link href="/#karriere" className="text-sm font-semibold text-gray-300 hover:text-white transition-colors">Karriere</Link>
+            {menuItems.map((item) => (
+              <Link 
+                key={item.name}
+                href={item.href} 
+                className="text-sm font-semibold text-gray-300 hover:text-white transition-colors"
+              >
+                {item.name}
+              </Link>
+            ))}
             
             <div className="h-6 w-px bg-white/10 mx-2" />
 
@@ -44,11 +60,95 @@ export function Navbar() {
             </Button>
           </nav>
 
-          <Button variant="ghost" size="icon" className="md:hidden text-white hover:bg-white/10">
-            <Menu className="h-6 w-6" />
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="md:hidden text-white hover:bg-white/10 z-50"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </Stack>
       </Container>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed inset-0 z-40 bg-(--brand-anthracite) flex flex-col pt-24 px-8 md:hidden"
+          >
+            <div className="flex flex-col gap-6">
+              {menuItems.map((item, i) => (
+                <motion.div
+                  key={item.name}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 + i * 0.1 }}
+                >
+                  <Link
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="text-3xl font-bold text-white hover:text-(--brand-green) transition-colors"
+                  >
+                    {item.name}
+                  </Link>
+                </motion.div>
+              ))}
+              
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.4 }}
+                className="h-px bg-white/10 my-4"
+              />
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                <Link 
+                  href={siteConfig.contact.phoneUrl} 
+                  className="text-2xl font-bold text-(--brand-yellow)"
+                >
+                  {siteConfig.contact.phone}
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="mt-4"
+              >
+                <Button 
+                  size="lg" 
+                  className="w-full bg-(--brand-green) hover:bg-(--brand-green)/90 text-white rounded-2xl font-bold glow-green border-none py-8 text-xl"
+                  asChild
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Link href="/#kontakt">Jetzt anfragen</Link>
+                </Button>
+              </motion.div>
+            </div>
+
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8 }}
+              className="mt-auto pb-12 text-gray-500 text-sm"
+            >
+              © {new Date().getFullYear()} {siteConfig.name} <br />
+              Alle Rechte vorbehalten.
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
