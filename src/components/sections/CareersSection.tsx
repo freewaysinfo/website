@@ -12,7 +12,7 @@ export const CareersSection: React.FC = () => {
   };
 
   return (
-    <section id="karriere" className="py-sectionMobile md:py-sectionDesktop bg-brand-light">
+    <section id="karriere" className="py-sectionMobile md:py-sectionDesktop bg-muted">
       <Container className="max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -48,10 +48,10 @@ export const ContactSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center p-6 bg-brand-light rounded-xl border border-brand-border"
+                className="text-center p-6 bg-muted rounded-xl border border-border"
               >
-                <div className="w-12 h-12 bg-background rounded-lg flex items-center justify-center mx-auto mb-4 border border-brand-border">
-                  <Icon className="w-6 h-6 text-brand-green" />
+                <div className="w-12 h-12 bg-background rounded-lg flex items-center justify-center mx-auto mb-4 border border-border">
+                  <Icon className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="text-base font-bold text-foreground mb-3">
                   {info.title}
@@ -60,7 +60,7 @@ export const ContactSection: React.FC = () => {
                   {info.link ? (
                     <a
                       href={info.link}
-                      className="hover:text-brand-green transition-colors"
+                      className="hover:text-primary transition-colors"
                     >
                       {info.content.map((line, i) => (
                         <div key={i}>{line}</div>
@@ -78,7 +78,7 @@ export const ContactSection: React.FC = () => {
         </div>
 
         <div className="mt-12">
-          <div className="overflow-hidden rounded-xl border border-brand-border">
+          <div className="overflow-hidden rounded-xl border border-border">
             <iframe
               title="Google Maps Freeways GmbH"
               src="https://www.google.com/maps?q=Wipperf%C3%BCrther%20Str.%2029-31%2C%2051103%20K%C3%B6ln&output=embed"

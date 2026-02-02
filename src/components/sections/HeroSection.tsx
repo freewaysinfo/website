@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-brand-light via-background to-background py-sectionMobile md:py-sectionDesktop">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-muted via-background to-background py-sectionMobile md:py-sectionDesktop">
       <Container>
         <motion.div
           initial={{ opacity: 0 }}
@@ -35,8 +35,8 @@ export const HeroSection: React.FC = () => {
             </div>
           </div>
           <div className="relative">
-            <div className="absolute -inset-4 rounded-3xl bg-brand-light" aria-hidden="true" />
-            <div className="relative overflow-hidden rounded-3xl border border-brand-border bg-background shadow-xl">
+            <div className="absolute -inset-4 rounded-3xl bg-muted" aria-hidden="true" />
+            <div className="relative overflow-hidden rounded-3xl border border-border bg-background shadow-xl">
               <Image
                 src="/images/hero_crew.png"
                 alt="Freeways Team im Einsatz"

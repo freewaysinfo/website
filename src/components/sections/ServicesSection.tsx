@@ -52,9 +52,9 @@ export const ServicesSection: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="h-full transition-all duration-300 hover:border-brand-green/70 hover:shadow-lg">
+                <Card className="h-full transition-all duration-300 hover:border-primary/40 hover:shadow-lg">
                   <CardContent className="pt-6">
-                    <div className="overflow-hidden rounded-xl border border-brand-border mb-6">
+                    <div className="overflow-hidden rounded-xl border border-border mb-6">
                       <Image
                         src={service.image}
                         alt={service.title}
@@ -63,8 +63,8 @@ export const ServicesSection: React.FC = () => {
                         className="h-40 w-full object-cover"
                       />
                     </div>
-                    <div className="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-brand-green" />
+                    <div className="w-12 h-12 bg-muted rounded-xl flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-primary" />
                     </div>
                     <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
                       {service.title}

@@ -30,7 +30,7 @@ export const WhyUsSection: React.FC = () => {
   ];
 
   return (
-    <section id="vorteile" className="py-sectionMobile md:py-sectionDesktop bg-brand-light">
+    <section id="vorteile" className="py-sectionMobile md:py-sectionDesktop bg-muted">
       <Container>
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground mb-4">
@@ -51,10 +51,10 @@ export const WhyUsSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex items-start space-x-4 p-6 bg-background rounded-xl border border-brand-border"
+                className="flex items-start space-x-4 p-6 bg-background rounded-xl border border-border"
               >
-                <div className="w-12 h-12 bg-brand-light rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Icon className="w-6 h-6 text-brand-green" />
+                <div className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Icon className="w-6 h-6 text-primary" />
                 </div>
                 <div>
                   <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">
