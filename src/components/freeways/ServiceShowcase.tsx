@@ -2,7 +2,6 @@
 
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
-import { Stack } from "@/components/layout/Stack";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
@@ -95,12 +94,14 @@ export function ServiceShowcase() {
             <button
               onClick={prevSlide}
               className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-(--brand-dark) transition-all cursor-pointer"
+              aria-label="Vorheriges Bild"
             >
               <ChevronLeft className="h-6 w-6" />
             </button>
             <button
               onClick={nextSlide}
               className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-(--brand-dark) transition-all cursor-pointer"
+              aria-label="Nächstes Bild"
             >
               <ChevronRight className="h-6 w-6" />
             </button>
