@@ -6,6 +6,8 @@ import { Stack } from "@/components/layout/Stack";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { MapPin, Users, Zap, Clock, ShieldCheck, TrendingUp, type LucideIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/lib/site";
 
 interface Location {
   id: string;
@@ -219,9 +221,11 @@ export function LocationsMap() {
                         </p>
                       </div>
 
-                      <button className="w-full py-5 mt-6 bg-(--brand-green) text-white font-bold rounded-xl hover:bg-(--brand-yellow) hover:text-(--brand-dark) transition-all cursor-pointer shadow-lg active:scale-[0.98] glow-green border-none text-lg">
-                        Diesen Standort anfragen
-                      </button>
+                      <Button className="w-full bg-(--brand-green) hover:bg-(--brand-green)/90 text-white font-bold h-16 rounded-2xl glow-green border-none transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_25px_rgba(74,222,128,0.3)]" asChild>
+                        <a href={siteConfig.links.whatsapp} target="_blank" rel="noopener noreferrer">
+                          Jetzt Standort anfragen
+                        </a>
+                      </Button>
                     </div>
                   </motion.div>
                 )}
