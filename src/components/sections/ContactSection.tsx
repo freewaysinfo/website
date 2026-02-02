@@ -30,13 +30,9 @@ export const ContactSection: React.FC = () => {
     <section id="kontakt" className="py-sectionMobile md:py-sectionDesktop bg-background scroll-mt-24">
       <Container>
         <div className="text-center mb-12">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-            Kontakt
-          </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-black text-foreground mb-4">
-            Kontakt
-          </h2>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+          <span className="section-badge">Kontakt</span>
+          <h2 className="section-title">Kontakt</h2>
+          <p className="section-subtitle">
             Nehmen Sie Kontakt mit uns auf – wir freuen uns auf Ihre Anfrage
           </p>
         </div>
@@ -52,7 +48,7 @@ export const ContactSection: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-start gap-4 rounded-2xl border border-border bg-muted p-6"
+                  className="premium-card flex items-start gap-4 bg-muted p-6"
                 >
                   <div className="w-12 h-12 bg-background rounded-xl flex items-center justify-center border border-border">
                     <Icon className="w-6 h-6 text-primary" />

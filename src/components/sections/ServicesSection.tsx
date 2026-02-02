@@ -33,13 +33,9 @@ export const ServicesSection: React.FC = () => {
     <section id="leistungen" className="py-sectionMobile md:py-sectionDesktop bg-background scroll-mt-24">
       <Container>
         <div className="text-center mb-12">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-            Leistungen
-          </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-black text-foreground mb-4">
-            Unsere Leistungen
-          </h2>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+          <span className="section-badge">Leistungen</span>
+          <h2 className="section-title">Unsere Leistungen</h2>
+          <p className="section-subtitle">
             Professionelle Lösungen für alle Ihre Liefer- und Logistikbedürfnisse
           </p>
         </div>
@@ -55,7 +51,7 @@ export const ServicesSection: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="h-full transition-all duration-300 hover:border-primary/40 hover:shadow-xl">
+                <Card className="premium-card h-full transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-2xl">
                   <CardContent className="pt-6 flex h-full flex-col">
                     <div className="overflow-hidden rounded-xl border border-border mb-6">
                       <Image

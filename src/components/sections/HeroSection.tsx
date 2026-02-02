@@ -21,13 +21,11 @@ export const HeroSection: React.FC = () => {
           className="relative grid gap-12 items-center lg:grid-cols-[1.05fr_0.95fr]"
         >
           <div className="text-center lg:text-left">
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-              Premium B2B Logistik
-            </span>
+            <span className="section-badge">Premium B2B Logistik</span>
             <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-black text-foreground leading-[1.05]">
               Zuverlässiger Liefer- & Logistikservice in NRW
             </h1>
-            <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed">
+            <p className="mt-6 text-base md:text-lg max-w-2xl leading-relaxed">
               Freeways GmbH ist Ihr professioneller Partner für Essenslieferung, Kurier- und Logistikdienstleistungen in Nordrhein-Westfalen.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
