@@ -91,7 +91,7 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 250 }}
-              className="fixed top-0 right-0 w-[80%] h-full z-40 bg-[#0f0f0f] border-l border-white/5 flex flex-col pt-24 px-8 md:hidden shadow-[0_0_50px_rgba(0,0,0,0.8)]"
+              className="fixed top-0 right-0 w-[85%] h-full z-50 bg-[#000000] border-l border-white/10 flex flex-col pt-24 px-8 md:hidden shadow-[-20px_0_50px_rgba(0,0,0,0.9)] overflow-y-auto backdrop-blur-3xl"
             >
               <div className="flex flex-col gap-8">
                 {menuItems.map((item, i) => (
