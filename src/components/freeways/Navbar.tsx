@@ -106,7 +106,7 @@ export function Navbar() {
                     <Link
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className="text-3xl font-bold text-white hover:text-(--brand-green) transition-colors flex items-center justify-between group py-2"
+                      className="text-3xl font-bold text-white hover:text-(--brand-green) transition-colors flex items-center justify-between group py-4"
                     >
                       {item.name}
                       <span className="w-2 h-2 rounded-full bg-(--brand-green) opacity-0 group-hover:opacity-100 glow-green transition-opacity" />

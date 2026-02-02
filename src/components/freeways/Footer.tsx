@@ -35,22 +35,22 @@ export function Footer() {
             <div className="grid grid-cols-2 md:grid-cols-3 gap-10">
               <Stack gap={5}>
                 <h4 className="font-bold text-xs uppercase tracking-[0.2em] text-gray-500">Leistungen</h4>
-                <Link href="/#services" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-1 block">Essenslieferung</Link>
-                <Link href="/#services" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-1 block">Kurierdienst</Link>
-                <Link href="/#services" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-1 block">Logistik</Link>
+                <Link href="/#services" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-3 block">Essenslieferung</Link>
+                <Link href="/#services" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-3 block">Kurierdienst</Link>
+                <Link href="/#services" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-3 block">Logistik</Link>
               </Stack>
               
               <Stack gap={5}>
                 <h4 className="font-bold text-xs uppercase tracking-[0.2em] text-gray-500">Unternehmen</h4>
-                <Link href={siteConfig.links.career} className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-1 block">Karriere</Link>
-                <Link href="/#warum-wir" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-1 block">Über uns</Link>
-                <Link href="/#kontakt" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-1 block">Kontakt</Link>
+                <Link href={siteConfig.links.career} className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-3 block">Karriere</Link>
+                <Link href="/#warum-wir" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-3 block">Über uns</Link>
+                <Link href="/#kontakt" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-3 block">Kontakt</Link>
               </Stack>
 
               <Stack gap={5}>
                 <h4 className="font-bold text-xs uppercase tracking-[0.2em] text-gray-500">Rechtliches</h4>
-                <Link href="/impressum" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-1 block">Impressum</Link>
-                <Link href="/datenschutz" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-1 block">Datenschutz</Link>
+                <Link href="/impressum" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-3 block">Impressum</Link>
+                <Link href="/datenschutz" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold py-3 block">Datenschutz</Link>
               </Stack>
             </div>
           </div>
@@ -58,10 +58,10 @@ export function Footer() {
           <Separator className="bg-white/5" />
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-gray-500">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">
               © {currentYear} {siteConfig.name}. Alle Rechte vorbehalten.
             </p>
-            <div className="flex items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-gray-500">
+            <div className="flex items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-gray-400">
               <span>Made with ❤️ in NRW</span>
             </div>
           </div>

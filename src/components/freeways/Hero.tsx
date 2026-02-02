@@ -14,8 +14,8 @@ export function Hero() {
         <Stack direction="row" align="center" gap={12} className="flex-wrap lg:flex-nowrap">
           <div className="w-full lg:w-1/2 space-y-10">
             <motion.div
-              initial={{ opacity: 0.5, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ x: -20 }}
+              animate={{ x: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white">
@@ -26,9 +26,9 @@ export function Hero() {
             </motion.div>
 
             <motion.p
-              initial={{ opacity: 0.5, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.05, ease: "easeOut" }}
+              initial={{ x: -20 }}
+              animate={{ x: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed font-medium"
             >
               {siteConfig.description}
