@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/site";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -133,6 +134,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased min-h-screen">
         {children}
+        <ScrollToTop />
       </body>
     </html>
   );
