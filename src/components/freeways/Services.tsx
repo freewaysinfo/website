@@ -4,8 +4,10 @@ import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Stack } from "@/components/layout/Stack";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { siteConfig } from "@/lib/site";
 import { Utensils, Zap, Truck } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const services = [
   {
@@ -29,12 +31,29 @@ export function Services() {
   return (
     <Section id="services" className="bg-white">
       <Container>
-        <Stack gap={12}>
-          <div className="max-w-3xl">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Unsere Leistungen</h2>
-            <p className="text-(--brand-gray) text-lg md:text-xl leading-relaxed">
-              Als spezialisierter Partner in NRW bieten wir Ihnen effiziente und pünktliche Logistiklösungen. Wir verstehen die Anforderungen moderner Lieferketten.
-            </p>
+        <Stack gap={16}>
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="w-full lg:w-3/5 space-y-6">
+              <span className="text-(--brand-green) font-bold text-sm uppercase tracking-widest block">
+                Unsere Expertise
+              </span>
+              <h2 className="text-3xl md:text-5xl font-bold">Maßgeschneiderte Logistiklösungen</h2>
+              <p className="text-(--brand-gray) text-lg md:text-xl leading-relaxed">
+                Als spezialisierter Partner in NRW bieten wir Ihnen effiziente und pünktliche Logistiklösungen. Wir verstehen die Anforderungen moderner Lieferketten und setzen auf höchste Qualität.
+              </p>
+            </div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="w-full lg:w-2/5 relative aspect-square rounded-3xl overflow-hidden shadow-xl"
+            >
+              <Image 
+                src="/images/service_delivery.png"
+                alt="Freeways GmbH food delivery service"
+                fill
+                className="object-cover"
+              />
+            </motion.div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

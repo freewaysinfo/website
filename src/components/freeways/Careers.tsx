@@ -7,26 +7,38 @@ import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
 import { MessageSquare, Check } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function Careers() {
   const whatsappUrl = `${siteConfig.links.whatsapp}?text=${encodeURIComponent("Hallo Freeways Team, ich interessiere mich für eine Stelle als Fahrer (m/w/d).")}`;
 
   return (
-    <Section id="karriere" className="bg-(--brand-dark) text-white overflow-hidden relative">
-      <Container className="relative z-10">
-        <Stack align="center" justify="center" className="text-center max-w-4xl mx-auto py-12">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-block px-4 py-2 rounded-full bg-(--brand-yellow) text-(--brand-dark) text-xs font-bold mb-8 uppercase tracking-widest"
-          >
-            Karriere bei Freeways
-          </motion.div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-10 tracking-tight">
-            Bewirb dich jetzt als <br className="hidden sm:block" />
-            <span className="text-(--brand-yellow)">Fahrer (m/w/d)</span>
-          </h2>
+    <Section id="karriere" className="bg-(--brand-dark) text-white overflow-hidden relative min-h-[80vh] flex items-center">
+      <div className="absolute inset-0 z-0">
+        <Image 
+          src="/images/career_driver.png"
+          alt="Freeways GmbH Career background"
+          fill
+          className="object-cover opacity-30 grayscale hover:grayscale-0 transition-all duration-1000"
+        />
+        <div className="absolute inset-0 bg-linear-to-r from-(--brand-dark) via-(--brand-dark)/80 to-transparent" />
+      </div>
+
+      <Container className="relative z-10 w-full">
+        <Stack direction="row" align="center" className="flex-wrap lg:flex-nowrap" gap={12}>
+          <div className="w-full lg:w-3/5">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-block px-4 py-2 rounded-full bg-(--brand-yellow) text-(--brand-dark) text-xs font-bold mb-8 uppercase tracking-widest"
+            >
+              Karriere bei Freeways
+            </motion.div>
+            <h2 className="text-4xl md:text-6xl font-bold mb-10 tracking-tight">
+              Bewirb dich jetzt als <br className="hidden sm:block" />
+              <span className="text-(--brand-yellow)">Fahrer (m/w/d)</span>
+            </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left mb-12 w-full max-w-2xl">
             {[
@@ -44,16 +56,17 @@ export function Careers() {
             ))}
           </div>
 
-          <Button size="lg" className="bg-(--brand-yellow) hover:bg-(--brand-yellow)/90 text-(--brand-dark) font-bold px-12 h-16 text-lg rounded-2xl shadow-xl shadow-yellow-500/10 transition-all hover:scale-105 active:scale-95" asChild>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-              <MessageSquare className="mr-3 h-6 w-6" />
-              Per WhatsApp bewerben
-            </a>
-          </Button>
-          
-          <p className="mt-8 text-gray-500 text-sm">
-            Alternativ erreichst du uns unter: <a href={siteConfig.contact.phoneUrl} className="text-white hover:text-(--brand-yellow)">{siteConfig.contact.phone}</a>
-          </p>
+            <Button size="lg" className="bg-(--brand-yellow) hover:bg-(--brand-yellow)/90 text-(--brand-dark) font-bold px-12 h-16 text-lg rounded-2xl shadow-xl shadow-yellow-500/10 transition-all hover:scale-105 active:scale-95" asChild>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <MessageSquare className="mr-3 h-6 w-6" />
+                Per WhatsApp bewerben
+              </a>
+            </Button>
+            
+            <p className="mt-8 text-gray-400 text-sm">
+              Alternativ erreichst du uns unter: <a href={siteConfig.contact.phoneUrl} className="text-white hover:text-(--brand-yellow) transition-colors">{siteConfig.contact.phone}</a>
+            </p>
+          </div>
         </Stack>
       </Container>
       
