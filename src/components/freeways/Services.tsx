@@ -32,7 +32,7 @@ export function Services() {
         <Stack gap={12}>
           <div className="max-w-3xl">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Unsere Leistungen</h2>
-            <p className="text-[var(--brand-gray)] text-lg md:text-xl leading-relaxed">
+            <p className="text-(--brand-gray) text-lg md:text-xl leading-relaxed">
               Als spezialisierter Partner in NRW bieten wir Ihnen effiziente und pünktliche Logistiklösungen. Wir verstehen die Anforderungen moderner Lieferketten.
             </p>
           </div>
@@ -46,17 +46,17 @@ export function Services() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="h-full border-[var(--brand-border)] hover:border-[var(--brand-green)]/30 transition-all duration-300 shadow-sm hover:shadow-xl group flex flex-col">
+                <Card className="h-full border-(--brand-border) hover:border-(--brand-green)/30 transition-all duration-300 shadow-sm hover:shadow-xl group flex flex-col">
                   <CardHeader>
-                    <div className="w-14 h-14 rounded-xl bg-[var(--brand-green)]/10 flex items-center justify-center mb-6 group-hover:bg-[var(--brand-green)] group-hover:text-white transition-all duration-300">
-                      <service.icon className="h-7 w-7 text-[var(--brand-green)] group-hover:text-white" />
+                    <div className="w-14 h-14 rounded-xl bg-(--brand-green)/10 flex items-center justify-center mb-6 group-hover:bg-(--brand-green) group-hover:text-white transition-all duration-300">
+                      <service.icon className="h-7 w-7 text-(--brand-green) group-hover:text-white" />
                     </div>
-                    <CardTitle className="text-2xl font-bold group-hover:text-[var(--brand-green)] transition-colors">
+                    <CardTitle className="text-2xl font-bold group-hover:text-(--brand-green) transition-colors">
                       {service.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">
-                    <p className="text-[var(--brand-gray)] text-lg leading-relaxed">
+                    <p className="text-(--brand-gray) text-lg leading-relaxed">
                       {service.description}
                     </p>
                   </CardContent>

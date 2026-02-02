@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-20 bg-gradient-to-br from-[var(--brand-light)] via-white to-[var(--brand-green)]/5 overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center pt-20 bg-linear-to-br from-(--brand-light) via-white to-(--brand-green)/5 overflow-hidden">
       <Container className="relative z-10">
         <Stack gap={10} className="max-w-4xl">
           <motion.div
@@ -16,9 +16,9 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-[var(--brand-dark)]">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-(--brand-dark)">
               Zuverlässiger <br className="hidden md:block" />
-              <span className="text-[var(--brand-green)]">Liefer- & Logistikservice</span> <br className="hidden md:block" />
+              <span className="text-(--brand-green)">Liefer- & Logistikservice</span> <br className="hidden md:block" />
               in NRW
             </h1>
           </motion.div>
@@ -27,7 +27,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-            className="text-lg md:text-xl text-[var(--brand-gray)] max-w-2xl leading-relaxed"
+            className="text-lg md:text-xl text-(--brand-gray) max-w-2xl leading-relaxed"
           >
             {siteConfig.description}
           </motion.p>
@@ -40,7 +40,7 @@ export function Hero() {
           >
             <Button 
               size="lg" 
-              className="bg-[var(--brand-green)] hover:bg-[var(--brand-green)]/90 text-white px-8"
+              className="bg-(--brand-green) hover:bg-(--brand-green)/90 text-white px-8"
               aria-label="Jetzt ein unverbindliches Angebot anfragen"
             >
               Jetzt anfragen
@@ -48,7 +48,7 @@ export function Hero() {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-[var(--brand-border)] text-[var(--brand-dark)] px-8" 
+              className="border-(--brand-border) text-(--brand-dark) px-8" 
               asChild
             >
               <a href={siteConfig.links.career} aria-label="Informationen für Bewerber und Fahrer anzeigen">
@@ -70,9 +70,9 @@ export function Hero() {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-1/4 -right-20 w-[400px] h-[400px] bg-[var(--brand-green)]/5 rounded-full blur-3xl -z-10" 
+        className="absolute top-1/4 -right-20 w-[400px] h-[400px] bg-(--brand-green)/5 rounded-full blur-3xl -z-10" 
       />
-      <div className="absolute top-1/2 -right-20 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--brand-yellow)]/5 rounded-full blur-3xl -z-10" />
+      <div className="absolute top-1/2 -right-20 -translate-y-1/2 w-[500px] h-[500px] bg-(--brand-yellow)/5 rounded-full blur-3xl -z-10" />
     </section>
   );
 }

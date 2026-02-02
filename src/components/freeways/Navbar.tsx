@@ -8,21 +8,21 @@ import { Menu } from "lucide-react";
 
 export function Navbar() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-[var(--brand-border)]">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-(--brand-border)]">
       <Container>
         <Stack direction="row" align="center" justify="between" className="h-16 md:h-20">
-          <div className="text-xl md:text-2xl font-bold text-[var(--brand-dark)]">
+          <div className="text-xl md:text-2xl font-bold text-(--brand-dark)]">
             {siteConfig.name}
           </div>
           
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#services" className="text-sm font-medium hover:text-[var(--brand-green)] transition-colors">Leistungen</a>
-            <a href="#warum-wir" className="text-sm font-medium hover:text-[var(--brand-green)] transition-colors">Vorteile</a>
-            <a href="#karriere" className="text-sm font-medium hover:text-[var(--brand-green)] transition-colors">Karriere</a>
+            <a href="#services" className="text-sm font-medium hover:text-(--brand-green)] transition-colors">Leistungen</a>
+            <a href="#warum-wir" className="text-sm font-medium hover:text-(--brand-green)] transition-colors">Vorteile</a>
+            <a href="#karriere" className="text-sm font-medium hover:text-(--brand-green)] transition-colors">Karriere</a>
             <Button variant="outline" size="sm" asChild>
               <a href={siteConfig.contact.phoneUrl}>{siteConfig.contact.phone}</a>
             </Button>
-            <Button size="sm" className="bg-[var(--brand-green)] hover:bg-[var(--brand-green)]/90 text-white">
+            <Button size="sm" className="bg-(--brand-green)] hover:bg-(--brand-green)]/90 text-white">
               Anfragen
             </Button>
           </nav>
