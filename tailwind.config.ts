@@ -60,7 +60,7 @@ const config: Config = {
         containerDesktop: "2.5rem",
       },
       maxWidth: {
-        content: "72rem",
+        content: "80rem",
       },
       borderRadius: {
         lg: "var(--radius)",

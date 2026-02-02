@@ -30,8 +30,8 @@ export const Header: React.FC = () => {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-background shadow-md'
-          : 'bg-background/95 backdrop-blur-sm'
+          ? 'bg-background/90 backdrop-blur-md shadow-sm'
+          : 'bg-transparent'
       }`}
     >
       <Container>
@@ -52,7 +52,7 @@ export const Header: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6 text-sm">
+          <nav className="hidden md:flex items-center space-x-8 text-sm">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -65,7 +65,7 @@ export const Header: React.FC = () => {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:flex items-center gap-3 text-sm">
+          <div className="hidden md:flex items-center gap-2 text-sm">
             <Button variant="ghost" size="sm" asChild>
               <a href="https://wa.me/4922346808219" target="_blank" rel="noreferrer">
                 WhatsApp
@@ -73,6 +73,9 @@ export const Header: React.FC = () => {
             </Button>
             <Button variant="ghost" size="sm" asChild>
               <a href="tel:+4922346808219">Telefon</a>
+            </Button>
+            <Button size="sm" asChild>
+              <a href="#kontakt">Anfrage</a>
             </Button>
           </div>
 

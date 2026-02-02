@@ -33,7 +33,10 @@ export const WhyUsSection: React.FC = () => {
     <section id="vorteile" className="py-sectionMobile md:py-sectionDesktop bg-muted scroll-mt-24">
       <Container>
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground mb-4">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            Vorteile
+          </span>
+          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-black text-foreground mb-4">
             Warum Freeways?
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -51,9 +54,9 @@ export const WhyUsSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex items-start space-x-4 p-6 bg-background rounded-xl border border-border"
+                className="flex items-start space-x-4 p-6 bg-background rounded-2xl border border-border shadow-sm"
               >
-                <div className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-muted rounded-xl flex items-center justify-center flex-shrink-0">
                   <Icon className="w-6 h-6 text-primary" />
                 </div>
                 <div>

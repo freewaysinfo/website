@@ -13,9 +13,9 @@ export const StatsSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-10 md:py-12 bg-accent scroll-mt-24">
-      <Container className="max-w-5xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+    <section className="py-12 md:py-16 bg-accent scroll-mt-24">
+      <Container>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 md:divide-x md:divide-accent-foreground/20">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -23,7 +23,7 @@ export const StatsSection: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-center"
+              className="text-center md:px-6"
             >
               <div className="text-4xl md:text-5xl font-black text-accent-foreground mb-3">
                 {stat.value}
