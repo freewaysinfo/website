@@ -131,6 +131,10 @@ export default function RootLayout({
             })
           }}
         />
+        <link rel="preconnect" href="https://www.google.com" />
+        <link rel="preconnect" href="https://maps.googleapis.com" />
+        <link rel="dns-prefetch" href="https://www.google.com" />
+        <link rel="dns-prefetch" href="https://maps.googleapis.com" />
       </head>
       <body className="antialiased min-h-screen">
         {children}

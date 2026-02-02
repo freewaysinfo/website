@@ -140,7 +140,7 @@ export function LocationsMap() {
             {/* Map Container */}
             <div className="lg:col-span-7 relative aspect-square md:aspect-4/3 bg-white rounded-[4rem] p-12 border border-gray-100 shadow-2xl ring-8 ring-gray-50/30 overflow-hidden">
               {/* Subtle Dot Grid Background */}
-              <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 0)', backgroundSize: '24px 24px' }} />
+              <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#000_1px,transparent_0)] bg-size-[24px_24px]" />
               
               {/* Simplified NRW SVG Placeholder/Shape - Increased visibility for light mode */}
               <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
@@ -158,16 +158,16 @@ export function LocationsMap() {
                   style={{ left: `${loc.x}%`, top: `${loc.y}%` }}
                 >
                   <div className="relative">
-                    {/* Radar Pulse */}
-                    <motion.div
-                      animate={{ scale: [1, 2.5, 1], opacity: [0.5, 0, 0.5] }}
-                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                      className={`absolute inset-0 rounded-full glow-green ${
-                        activeId === loc.id ? "bg-(--brand-green)" : "bg-gray-400"
-                      }`}
-                    />
+                    {/* Radar Pulse - Only animate for active or hovered items */}
+                    {activeId === loc.id && (
+                      <motion.div
+                        animate={{ scale: [1, 2.5, 1], opacity: [0.5, 0, 0.5] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                        className="absolute inset-0 rounded-full glow-green bg-(--brand-green) will-change-transform"
+                      />
+                    )}
                     <div
-                      className={`relative w-4 h-4 md:w-5 md:h-5 rounded-full border-2 border-white shadow-xl transition-all duration-500 ${
+                      className={`relative w-4 h-4 md:w-5 md:h-5 rounded-full border-2 border-white shadow-xl transition-all duration-500 will-change-transform ${
                         activeId === loc.id ? "bg-(--brand-green) scale-125 shadow-[0_0_20px_rgba(74,222,128,0.5)]" : "bg-white group-hover:bg-(--brand-green)/50"
                       }`}
                     />
@@ -193,7 +193,7 @@ export function LocationsMap() {
                     transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
                     className="bg-white p-12 rounded-[3.5rem] shadow-[0_32px_64px_-12px_rgba(0,0,0,0.12)] text-black relative overflow-hidden border border-gray-100 ring-8 ring-gray-50/50"
                   >
-                    <div className="absolute top-0 right-0 w-80 h-80 bg-(--brand-green)/5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
+                    <div className="absolute top-0 right-0 w-80 h-80 bg-(--brand-green)/5 rounded-full blur-[40px] -translate-y-1/2 translate-x-1/2" />
                     
                     <div className="relative z-10 flex flex-col gap-10">
                       <div className="flex items-center justify-between">

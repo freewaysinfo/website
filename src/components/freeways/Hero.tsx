@@ -112,7 +112,7 @@ export function Hero() {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-1/4 -right-20 w-[600px] h-[600px] bg-(--brand-green)/10 rounded-full blur-[120px] -z-10 opacity-30" 
+        className="absolute top-1/4 -right-20 w-[600px] h-[600px] bg-(--brand-green)/10 rounded-full blur-[80px] -z-10 opacity-30 will-change-transform" 
       />
       <div className="absolute bottom-0 -left-20 w-[500px] h-[500px] bg-(--brand-yellow)/5 rounded-full blur-[100px] -z-10 opacity-20" />
     </section>
