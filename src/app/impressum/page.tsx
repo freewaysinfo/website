@@ -13,9 +13,9 @@ export default function Impressum() {
           <Container className="max-w-4xl">
             <h1 className="text-4xl font-bold mb-10">Impressum</h1>
             
-            <div className="space-y-8 text-(--brand-gray)]">
+            <div className="space-y-8 text-(--brand-gray)">
               <div>
-                <h2 className="text-xl font-bold text-(--brand-dark)] mb-4">Angaben gemäß § 5 TMG</h2>
+                <h2 className="text-xl font-bold text-(--brand-dark) mb-4">Angaben gemäß § 5 TMG</h2>
                 <p>
                   {siteConfig.name}<br />
                   {siteConfig.contact.address.street}<br />
@@ -24,12 +24,12 @@ export default function Impressum() {
               </div>
 
               <div>
-                <h2 className="text-xl font-bold text-(--brand-dark)] mb-4">Vertreten durch</h2>
-                <p>Geschäftsführer: [Name des Geschäftsführers]</p>
+                <h2 className="text-xl font-bold text-(--brand-dark) mb-4">Vertreten durch</h2>
+                <p>Geschäftsführer: {siteConfig.legal?.managingDirector}</p>
               </div>
 
               <div>
-                <h2 className="text-xl font-bold text-(--brand-dark)] mb-4">Kontakt</h2>
+                <h2 className="text-xl font-bold text-(--brand-dark) mb-4">Kontakt</h2>
                 <p>
                   Telefon: {siteConfig.contact.phone}<br />
                   E-Mail: {siteConfig.contact.email}
@@ -37,33 +37,33 @@ export default function Impressum() {
               </div>
 
               <div>
-                <h2 className="text-xl font-bold text-(--brand-dark)] mb-4">Registereintrag</h2>
+                <h2 className="text-xl font-bold text-(--brand-dark) mb-4">Registereintrag</h2>
                 <p>
                   Eintragung im Handelsregister.<br />
-                  Registergericht: Amtsgericht Köln<br />
-                  Registernummer: [Eintragen]
+                  Registergericht: {siteConfig.legal?.registerCourt}<br />
+                  Registernummer: {siteConfig.legal?.registerNumber}
                 </p>
               </div>
 
               <div>
-                <h2 className="text-xl font-bold text-(--brand-dark)] mb-4">Umsatzsteuer-ID</h2>
+                <h2 className="text-xl font-bold text-(--brand-dark) mb-4">Umsatzsteuer-ID</h2>
                 <p>
                   Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-                  [Eintragen]
+                  {siteConfig.legal?.vatId}
                 </p>
               </div>
 
               <div>
-                <h2 className="text-xl font-bold text-(--brand-dark)] mb-4">EU-Streitschlichtung</h2>
+                <h2 className="text-xl font-bold text-(--brand-dark) mb-4">EU-Streitschlichtung</h2>
                 <p>
                   Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
-                  <a href="https://ec.europa.eu/consumers/odr/" className="text-(--brand-green)]" target="_blank" rel="noopener noreferrer"> https://ec.europa.eu/consumers/odr/</a>.<br />
+                  <a href="https://ec.europa.eu/consumers/odr/" className="text-(--brand-green)" target="_blank" rel="noopener noreferrer"> https://ec.europa.eu/consumers/odr/</a>.<br />
                   Unsere E-Mail-Adresse finden Sie oben im Impressum.
                 </p>
               </div>
 
               <div>
-                <h2 className="text-xl font-bold text-(--brand-dark)] mb-4">Verbraucher­streit­beilegung/Universal-Schlichtungs­stelle</h2>
+                <h2 className="text-xl font-bold text-(--brand-dark) mb-4">Verbraucher­streit­beilegung/Universal-Schlichtungs­stelle</h2>
                 <p>
                   Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
                 </p>

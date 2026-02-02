@@ -17,6 +17,12 @@ export const siteConfig = {
     career: "#karriere",
     services: "#services",
     contact: "#kontakt"
+  },
+  legal: {
+    managingDirector: "Mohamad Hasan",
+    registerCourt: "Amtsgericht Köln",
+    registerNumber: "HRB 112389",
+    vatId: "DE [Umsatzsteuer-ID]" // Still needs to be filled if available, but staying generic for now or user can provide
   }
 };
 

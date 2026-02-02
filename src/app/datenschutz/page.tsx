@@ -12,7 +12,7 @@ export default function Datenschutz() {
           <Container className="max-w-4xl">
             <h1 className="text-4xl font-bold mb-10">Datenschutzerklärung</h1>
             
-            <div className="space-y-8 text-(--brand-gray)]">
+            <div className="space-y-8 text-(--brand-gray)">
               <section>
                 <h2 className="text-xl font-bold text-(--brand-dark)] mb-4">1. Datenschutz auf einen Blick</h2>
                 <h3 className="font-bold mb-2 text-(--brand-dark)]">Allgemeine Hinweise</h3>
