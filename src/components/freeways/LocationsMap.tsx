@@ -104,7 +104,7 @@ const locations: Location[] = [
 ];
 
 export function LocationsMap() {
-  const [activeId, setActiveId] = useState<string | null>("koeln");
+  const [activeId, setActiveId] = useState<string | null>(null);
 
   const activeLocation = locations.find((l) => l.id === activeId);
 
@@ -184,7 +184,7 @@ export function LocationsMap() {
             </div>
 
             {/* Info Card Container */}
-            <div className={`fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm lg:relative lg:inset-auto lg:bg-transparent lg:backdrop-blur-none lg:p-0 lg:col-span-5 h-full lg:flex lg:flex-col lg:justify-center pointer-events-none lg:pointer-events-auto transition-all ${activeLocation ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0 lg:opacity-100'}`}>
+            <div className={`fixed inset-0 z-[50] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm lg:relative lg:inset-auto lg:bg-transparent lg:backdrop-blur-none lg:p-0 lg:col-span-5 h-full lg:flex lg:flex-col lg:justify-center pointer-events-none lg:pointer-events-auto transition-all ${activeLocation ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0 lg:opacity-100'}`}>
               <AnimatePresence mode="wait">
                 {activeLocation && (
                   <motion.div

@@ -20,7 +20,7 @@ export function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0f0f0f]/95 backdrop-blur-2xl border-b border-white/5 shadow-2xl transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-40 bg-[#0f0f0f]/95 backdrop-blur-2xl border-b border-white/5 shadow-2xl transition-all duration-300">
       <Container>
         <Stack direction="row" align="center" justify="between" className="h-16 md:h-20">
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity group">
@@ -82,10 +82,10 @@ export function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-[#0f0f0f] md:hidden flex flex-col"
+            className="fixed inset-0 z-[60] bg-[#050505] md:hidden flex flex-col"
           >
-            {/* Background Gradient */}
-            <div className="absolute inset-0 bg-linear-to-b from-(--brand-green)/10 to-transparent pointer-events-none" />
+            {/* Background Gradient - Reduced opacity */}
+            <div className="absolute inset-0 bg-linear-to-b from-(--brand-green)/5 to-transparent pointer-events-none" />
             
             <Container className="flex-1 flex flex-col relative z-10 w-full h-full">
               <div className="h-16 flex items-center justify-between border-b border-white/10 mb-8">
