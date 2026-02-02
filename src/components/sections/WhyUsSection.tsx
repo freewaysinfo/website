@@ -40,32 +40,42 @@ export const WhyUsSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {benefits.map((benefit, index) => {
-            const Icon = benefit.icon;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="premium-card flex items-start space-x-4 p-6"
-              >
-                <div className="w-12 h-12 bg-muted rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Icon className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {benefit.description}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
+        <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] items-start">
+          <div className="premium-card p-8">
+            <h3 className="text-2xl font-bold text-foreground mb-4">
+              Verlässliche Abläufe für Ihr Tagesgeschäft
+            </h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Wir kombinieren erfahrene Teams, moderne Fahrzeuge und klare Prozesse, damit Ihre Sendungen termingerecht und zuverlässig ankommen. Freeways ist Ihr Partner für skalierbare Logistiklösungen in NRW.
+            </p>
+          </div>
+          <div className="grid gap-6">
+            {benefits.map((benefit, index) => {
+              const Icon = benefit.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="premium-card flex items-start space-x-4 p-6"
+                >
+                  <div className="w-12 h-12 bg-muted rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </Container>
     </section>

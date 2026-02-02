@@ -5,20 +5,21 @@ import { Container } from '../ui/Container';
 import { Button } from '../ui/button';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { CheckCircle2, MapPin, Truck } from 'lucide-react';
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-muted via-background to-background py-sectionMobile md:py-sectionDesktop scroll-mt-24">
+    <section className="relative overflow-hidden bg-gradient-to-br from-background via-muted to-background py-sectionMobile md:py-sectionDesktop scroll-mt-24">
       <div className="absolute inset-0" aria-hidden="true">
-        <div className="absolute -top-32 right-0 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-accent/20 blur-3xl" />
+        <div className="absolute -top-24 left-1/3 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-accent/20 blur-3xl" />
       </div>
       <Container>
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="relative grid gap-12 items-center lg:grid-cols-[1.05fr_0.95fr]"
+          className="relative grid gap-12 items-center lg:grid-cols-[1.1fr_0.9fr]"
         >
           <div className="text-center lg:text-left">
             <span className="section-badge">Premium B2B Logistik</span>
@@ -28,6 +29,20 @@ export const HeroSection: React.FC = () => {
             <p className="mt-6 text-base md:text-lg max-w-2xl leading-relaxed">
               Freeways GmbH ist Ihr professioneller Partner für Essenslieferung, Kurier- und Logistikdienstleistungen in Nordrhein-Westfalen.
             </p>
+            <div className="mt-6 grid gap-3 text-sm text-muted-foreground">
+              <div className="flex items-center justify-center lg:justify-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-primary" />
+                Zuverlässige Zustellung und feste Ansprechpartner
+              </div>
+              <div className="flex items-center justify-center lg:justify-start gap-2">
+                <Truck className="h-4 w-4 text-primary" />
+                Flexible Einsätze für Gastronomie, Kurier und Logistik
+              </div>
+              <div className="flex items-center justify-center lg:justify-start gap-2">
+                <MapPin className="h-4 w-4 text-primary" />
+                NRW-weit im Einsatz, 7 Tage pro Woche
+              </div>
+            </div>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button size="lg" variant="primary" asChild>
                 <a href="#kontakt">Jetzt anfragen</a>
@@ -38,10 +53,10 @@ export const HeroSection: React.FC = () => {
                 </a>
               </Button>
             </div>
-            <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              <span>NRW-weit</span>
-              <span>7 Tage/Woche</span>
-              <span>50+ Fahrer</span>
+            <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              <span className="rounded-full border border-border bg-background/80 px-3 py-1">50+ Fahrer</span>
+              <span className="rounded-full border border-border bg-background/80 px-3 py-1">NRW-weit</span>
+              <span className="rounded-full border border-border bg-background/80 px-3 py-1">7 Tage/Woche</span>
             </div>
           </div>
           <div className="relative">

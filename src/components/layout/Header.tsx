@@ -46,7 +46,7 @@ export const Header: React.FC = () => {
               className="h-9 w-9"
               priority
             />
-            <div className="text-lg sm:text-xl font-black text-brand-dark">
+            <div className="text-lg sm:text-xl font-black text-foreground">
               Freeways GmbH
             </div>
           </Link>
@@ -57,7 +57,7 @@ export const Header: React.FC = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-muted-foreground hover:text-brand-green font-medium transition-colors"
+                className="text-muted-foreground hover:text-foreground font-medium transition-colors"
               >
                 {link.label}
               </a>
@@ -81,7 +81,7 @@ export const Header: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-muted-foreground hover:text-brand-green"
+            className="md:hidden p-2 text-muted-foreground hover:text-foreground"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >

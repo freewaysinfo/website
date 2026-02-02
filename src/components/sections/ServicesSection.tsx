@@ -40,7 +40,7 @@ export const ServicesSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-6">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
@@ -51,30 +51,33 @@ export const ServicesSection: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="premium-card h-full transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-2xl">
-                  <CardContent className="pt-6 flex h-full flex-col">
-                    <div className="overflow-hidden rounded-xl border border-border mb-6">
+                <Card className="premium-card overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-2xl">
+                  <div className="grid gap-0 lg:grid-cols-[1.2fr_1fr]">
+                    <div className="relative h-56 lg:h-full">
                       <Image
                         src={service.image}
                         alt={service.title}
-                        width={520}
-                        height={320}
-                        className="h-40 w-full object-cover"
+                        fill
+                        className="object-cover"
                       />
                     </div>
-                    <div className="w-12 h-12 bg-muted rounded-xl flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
-                      {service.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed flex-1">
-                      {service.description}
-                    </p>
-                    <div className="mt-6 text-sm font-semibold text-primary">
-                      Mehr erfahren →
-                    </div>
-                  </CardContent>
+                    <CardContent className="flex h-full flex-col justify-between p-8">
+                      <div>
+                        <div className="w-12 h-12 bg-muted rounded-xl flex items-center justify-center mb-4">
+                          <Icon className="w-6 h-6 text-primary" />
+                        </div>
+                        <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                          {service.title}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {service.description}
+                        </p>
+                      </div>
+                      <div className="mt-6 text-sm font-semibold text-primary">
+                        Mehr erfahren →
+                      </div>
+                    </CardContent>
+                  </div>
                 </Card>
               </motion.div>
             );

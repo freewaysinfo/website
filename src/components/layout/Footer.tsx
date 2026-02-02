@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
                 Freeways GmbH
               </div>
             </div>
-            <p className="text-muted-foreground mb-4">
+            <p className="text-muted-foreground mb-4 max-w-sm">
               Ihr professioneller Partner für Liefer- und Logistikdienstleistungen in NRW.
             </p>
           </div>

@@ -13,9 +13,10 @@ export const StatsSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-accent scroll-mt-24">
+    <section className="py-14 md:py-20 bg-accent scroll-mt-24">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 md:divide-x md:divide-accent-foreground/20">
+        <div className="rounded-3xl border border-accent-foreground/10 bg-accent/90 px-6 py-10 md:px-12 md:py-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 md:divide-x md:divide-accent-foreground/20">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -33,6 +34,7 @@ export const StatsSection: React.FC = () => {
               </Badge>
             </motion.div>
           ))}
+          </div>
         </div>
       </Container>
     </section>
