@@ -15,11 +15,11 @@ const buttonVariants = cva(
         link: "text-zinc-900 underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-full px-5 py-2.5 text-sm gap-2",
-        md: "px-7 py-3.5 text-base gap-2.5",
-        lg: "px-9 py-4.5 text-lg gap-3",
-        icon: "h-10 w-10",
+        default: "h-12 px-10 py-3 text-base",
+        sm: "h-10 px-8 text-sm gap-2",
+        md: "h-12 px-10 text-base gap-2.5",
+        lg: "h-16 px-16 text-lg gap-3",
+        icon: "h-12 w-12",
       },
     },
     defaultVariants: {
