@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import { Inter, Poppins } from "next/font/google";
+import "./globals.css";
+import { siteConfig } from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-body",
 });
 
@@ -15,33 +15,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Freeways GmbH | Logistik, Kurier & Essenslieferung in NRW",
-  description:
-    "Freeways GmbH bietet Premium-Logistik, Kurier- und Essenslieferung in NRW. Schnell, zuverlässig, persönlich.",
-  keywords: [
-    "Freeways GmbH",
-    "Logistik",
-    "Kurierdienst",
-    "Essenslieferung",
-    "NRW",
-    "Fahrerbereitstellung",
-  ],
-};
-
-const organizationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "Freeways GmbH",
-  telephone: "+4922346808219",
-  email: "info@freeways.de",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Wipperfürther Str. 29-31",
-    addressLocality: "Köln",
-    postalCode: "51103",
-    addressCountry: "DE",
-  },
-  areaServed: "Nordrhein-Westfalen",
+  title: siteConfig.name + " | Logistik & Lieferdienst in NRW",
+  description: siteConfig.description,
 };
 
 export default function RootLayout({
@@ -50,13 +25,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de" className={`${inter.variable} ${poppins.variable}`}>
-      <body className="antialiased font-body">
+    <html lang="de" className={`${inter.variable} ${poppins.variable} scroll-smooth`}>
+      <body className="antialiased min-h-screen">
         {children}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-        />
       </body>
     </html>
   );

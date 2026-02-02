@@ -1,25 +1,23 @@
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
-import { HeroSection } from '@/components/sections/HeroSection';
-import { ServicesSection } from '@/components/sections/ServicesSection';
-import { WhyUsSection } from '@/components/sections/WhyUsSection';
-import { StatsSection } from '@/components/sections/StatsSection';
-import { CareersSection } from '@/components/sections/CareersSection';
-import { ContactSection } from '@/components/sections/ContactSection';
+import { Navbar } from "@/components/freeways/Navbar";
+import { Hero } from "@/components/freeways/Hero";
+import { Services } from "@/components/freeways/Services";
+import { Benefits } from "@/components/freeways/Benefits";
+import { Careers } from "@/components/freeways/Careers";
+import { Contact } from "@/components/freeways/Contact";
+import { Footer } from "@/components/freeways/Footer";
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <main>
-        <HeroSection />
-        <ServicesSection />
-        <WhyUsSection />
-        <StatsSection />
-        <CareersSection />
-        <ContactSection />
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <main className="flex-grow">
+        <Hero />
+        <Services />
+        <Benefits />
+        <Careers />
+        <Contact />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

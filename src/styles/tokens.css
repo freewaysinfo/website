@@ -1,0 +1,16 @@
+:root {
+  /* Brand Colors */
+  --brand-green: #10b981;    /* Vertrauen / Primary */
+  --brand-yellow: #fbbf24;   /* CTA */
+  --brand-dark: #111827;     /* Headlines */
+  --brand-gray: #4b5563;     /* Text */
+  --brand-light: #f9fafb;    /* Background */
+  --brand-border: #e5e7eb;   /* Divider */
+
+  /* Spacing System */
+  --spacing-section-mobile: 4rem;    /* py-16 */
+  --spacing-section-desktop: 6rem;   /* py-24 */
+  --spacing-container-mobile: 1rem;  /* px-4 */
+  --spacing-container-desktop: 2rem; /* px-8 */
+  --max-width-content: 80rem;        /* 1280px */
+}
