@@ -57,8 +57,8 @@ export function Contact() {
             </Stack>
           </div>
 
-          <div className="lg:w-1/2 min-h-[500px] h-full rounded-[3.5rem] overflow-hidden shadow-2xl border border-gray-100 bg-gray-50 relative ring-8 ring-gray-50/50">
-            <div className="absolute inset-0 flex items-center justify-center text-gray-400 p-8 text-center italic font-medium">
+          <div className="lg:w-1/2 aspect-square lg:aspect-auto min-h-[400px] md:min-h-[600px] rounded-[3.5rem] overflow-hidden shadow-2xl border border-gray-100 bg-gray-50 relative ring-8 ring-gray-50/30">
+            <div className="absolute inset-0 flex items-center justify-center text-gray-400 p-8 text-center italic font-medium z-0">
               Google Maps wird hier geladen... <br />
               (Standort: {siteConfig.contact.address.city})
             </div>
@@ -71,7 +71,7 @@ export function Contact() {
                allowFullScreen={true} 
                loading="lazy" 
                referrerPolicy="no-referrer-when-downgrade"
-               className="opacity-90 border-0 contrast-110 saturate-110 grayscale-50"
+               className="absolute inset-0 w-full h-full border-0 contrast-110 saturate-110 z-10"
             />
           </div>
         </div>
