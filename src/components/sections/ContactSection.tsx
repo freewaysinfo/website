@@ -29,11 +29,11 @@ export const ContactSection: React.FC = () => {
   return (
     <section id="kontakt" className="py-sectionMobile md:py-sectionDesktop bg-background">
       <Container>
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-black text-foreground mb-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground mb-4">
             Kontakt
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
             Nehmen Sie Kontakt mit uns auf – wir freuen uns auf Ihre Anfrage
           </p>
         </div>
@@ -53,10 +53,10 @@ export const ContactSection: React.FC = () => {
                 <div className="w-12 h-12 bg-background rounded-lg flex items-center justify-center mx-auto mb-4 border border-brand-border">
                   <Icon className="w-6 h-6 text-brand-green" />
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-3">
+                <h3 className="text-base font-bold text-foreground mb-3">
                   {info.title}
                 </h3>
-                <div className="text-muted-foreground">
+                <div className="text-sm text-muted-foreground">
                   {info.link ? (
                     <a
                       href={info.link}

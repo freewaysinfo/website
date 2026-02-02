@@ -32,11 +32,11 @@ export const WhyUsSection: React.FC = () => {
   return (
     <section id="vorteile" className="py-sectionMobile md:py-sectionDesktop bg-brand-light">
       <Container>
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-black text-foreground mb-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground mb-4">
             Warum Freeways?
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
             Ihre Vorteile bei der Zusammenarbeit mit uns
           </p>
         </div>
@@ -57,7 +57,7 @@ export const WhyUsSection: React.FC = () => {
                   <Icon className="w-6 h-6 text-brand-green" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">
+                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">
                     {benefit.title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">

@@ -32,11 +32,11 @@ export const ServicesSection: React.FC = () => {
   return (
     <section id="leistungen" className="py-sectionMobile md:py-sectionDesktop bg-background">
       <Container>
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-black text-foreground mb-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground mb-4">
             Unsere Leistungen
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
             Professionelle Lösungen für alle Ihre Liefer- und Logistikbedürfnisse
           </p>
         </div>
@@ -66,7 +66,7 @@ export const ServicesSection: React.FC = () => {
                     <div className="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center mb-4">
                       <Icon className="w-6 h-6 text-brand-green" />
                     </div>
-                    <h3 className="text-2xl font-bold text-foreground mb-4">
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
                       {service.title}
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">

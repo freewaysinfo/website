@@ -21,10 +21,10 @@ export const CareersSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-4xl md:text-6xl font-black text-foreground mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground mb-6">
             Fahrer (m/w/d) gesucht – Jetzt bewerben
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">
+          <p className="text-base md:text-lg text-muted-foreground mb-10 leading-relaxed max-w-3xl mx-auto">
             Werden Sie Teil unseres Teams! Wir suchen motivierte Fahrer für flexible Einsätze in ganz NRW. Faire Bezahlung, moderne Fahrzeuge und ein professionelles Arbeitsumfeld warten auf Sie.
           </p>
           <Button
