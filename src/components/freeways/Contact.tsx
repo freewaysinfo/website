@@ -8,23 +8,23 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 export function Contact() {
   return (
-    <Section id="kontakt" className="bg-white">
+    <Section id="kontakt" className="bg-(--brand-anthracite)">
       <Container>
         <div className="flex flex-col lg:flex-row gap-16">
           <div className="lg:w-1/2">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">Kontakt</h2>
-            <p className="text-lg text-(--brand-gray) mb-10 leading-relaxed">
+            <h2 className="text-3xl md:text-5xl font-bold mb-8 text-white tracking-tight">Kontakt</h2>
+            <p className="text-lg text-gray-400 mb-10 leading-relaxed font-medium">
               Haben Sie Fragen zu unseren Dienstleistungen oder möchten Sie ein unverbindliches Angebot erhalten? Wir freuen uns auf Ihre Nachricht.
             </p>
             
             <Stack gap={8}>
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-(--brand-light) flex items-center justify-center text-(--brand-green) shrink-0">
-                  <MapPin className="h-6 w-6" />
+                <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-(--brand-green) shrink-0 glow-green">
+                  <MapPin className="h-7 w-7" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-1">Anschrift</h3>
-                  <p className="text-(--brand-gray)">
+                  <h3 className="font-bold text-lg mb-1 text-white tracking-tight">Anschrift</h3>
+                  <p className="text-gray-400 font-medium">
                     {siteConfig.contact.address.street}<br />
                     {siteConfig.contact.address.zip} {siteConfig.contact.address.city}, {siteConfig.contact.address.state}
                   </p>
@@ -32,24 +32,24 @@ export function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-(--brand-light) flex items-center justify-center text-(--brand-green) shrink-0">
-                  <Phone className="h-6 w-6" />
+                <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-(--brand-green) shrink-0 glow-green">
+                  <Phone className="h-7 w-7" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-1">Telefon</h3>
-                  <a href={siteConfig.contact.phoneUrl} className="text-(--brand-gray) hover:text-(--brand-green) transition-colors text-lg">
+                  <h3 className="font-bold text-lg mb-1 text-white tracking-tight">Telefon</h3>
+                  <a href={siteConfig.contact.phoneUrl} className="text-gray-400 hover:text-(--brand-green) transition-colors text-lg font-medium">
                     {siteConfig.contact.phone}
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-(--brand-light) flex items-center justify-center text-(--brand-green) shrink-0">
-                  <Mail className="h-6 w-6" />
+                <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-(--brand-green) shrink-0 glow-green">
+                  <Mail className="h-7 w-7" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-1">E-Mail</h3>
-                  <a href={`mailto:${siteConfig.contact.email}`} className="text-(--brand-gray) hover:text-(--brand-green) transition-colors text-lg">
+                  <h3 className="font-bold text-lg mb-1 text-white tracking-tight">E-Mail</h3>
+                  <a href={`mailto:${siteConfig.contact.email}`} className="text-gray-400 hover:text-(--brand-green) transition-colors text-lg font-medium">
                     {siteConfig.contact.email}
                   </a>
                 </div>
@@ -57,10 +57,10 @@ export function Contact() {
             </Stack>
           </div>
 
-          <div className="lg:w-1/2 min-h-[400px] h-full rounded-2xl overflow-hidden shadow-sm border border-(--brand-border) bg-(--brand-light) relative">
-            <div className="absolute inset-0 flex items-center justify-center text-(--brand-gray) p-8 text-center italic">
+          <div className="lg:w-1/2 min-h-[450px] h-full rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 bg-white/5 relative ring-1 ring-white/5">
+            <div className="absolute inset-0 flex items-center justify-center text-gray-500 p-8 text-center italic font-medium">
               Google Maps wird hier geladen... <br />
-              (Lazy loading Maps Embed)
+              (Standort: {siteConfig.contact.address.city})
             </div>
             {/* Real embed would go here with proper API key or static link */}
             <iframe 

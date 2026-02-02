@@ -9,7 +9,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-(--brand-light) py-12 md:py-20 border-t border-(--brand-border)">
+    <footer className="bg-(--brand-anthracite) py-16 md:py-24 border-t border-white/5">
       <Container>
         <Stack gap={10}>
           <div className="flex flex-col md:flex-row justify-between gap-10">
@@ -23,43 +23,43 @@ export function Footer() {
                     className="object-contain"
                   />
                 </div>
-                <div className="text-2xl font-bold text-(--brand-dark)">{siteConfig.name}</div>
+                <div className="text-2xl font-bold text-white tracking-tight">{siteConfig.name}</div>
               </div>
-              <p className="text-(--brand-gray) text-sm leading-relaxed">
+              <p className="text-gray-400 text-sm leading-relaxed font-medium">
                 Ihr professioneller Partner für Liefer- und Logistikdienste in NRW. Qualitativ hochwertige Dienstleistungen seit über 5 Jahren.
               </p>
             </div>
             
             <div className="grid grid-cols-2 md:grid-cols-3 gap-10">
-              <Stack gap={4}>
-                <h4 className="font-bold text-sm uppercase tracking-wider text-(--brand-dark)">Leistungen</h4>
-                <Link href="/#services" className="text-sm text-(--brand-gray) hover:text-(--brand-green)">Essenslieferung</Link>
-                <Link href="/#services" className="text-sm text-(--brand-gray) hover:text-(--brand-green)">Kurierdienst</Link>
-                <Link href="/#services" className="text-sm text-(--brand-gray) hover:text-(--brand-green)">Logistik</Link>
+              <Stack gap={5}>
+                <h4 className="font-bold text-xs uppercase tracking-[0.2em] text-gray-500">Leistungen</h4>
+                <Link href="/#services" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold">Essenslieferung</Link>
+                <Link href="/#services" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold">Kurierdienst</Link>
+                <Link href="/#services" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold">Logistik</Link>
               </Stack>
               
-              <Stack gap={4}>
-                <h4 className="font-bold text-sm uppercase tracking-wider text-(--brand-dark)">Unternehmen</h4>
-                <Link href={siteConfig.links.career} className="text-sm text-(--brand-gray) hover:text-(--brand-green)">Karriere</Link>
-                <Link href="/#warum-wir" className="text-sm text-(--brand-gray) hover:text-(--brand-green)">Über uns</Link>
-                <Link href="/#kontakt" className="text-sm text-(--brand-gray) hover:text-(--brand-green)">Kontakt</Link>
+              <Stack gap={5}>
+                <h4 className="font-bold text-xs uppercase tracking-[0.2em] text-gray-500">Unternehmen</h4>
+                <Link href={siteConfig.links.career} className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold">Karriere</Link>
+                <Link href="/#warum-wir" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold">Über uns</Link>
+                <Link href="/#kontakt" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold">Kontakt</Link>
               </Stack>
 
-              <Stack gap={4}>
-                <h4 className="font-bold text-sm uppercase tracking-wider text-(--brand-dark)">Rechtliches</h4>
-                <a href="/impressum" className="text-sm text-(--brand-gray) hover:text-(--brand-green)">Impressum</a>
-                <a href="/datenschutz" className="text-sm text-(--brand-gray) hover:text-(--brand-green)">Datenschutz</a>
+              <Stack gap={5}>
+                <h4 className="font-bold text-xs uppercase tracking-[0.2em] text-gray-500">Rechtliches</h4>
+                <a href="/impressum" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold">Impressum</a>
+                <a href="/datenschutz" className="text-sm text-gray-400 hover:text-(--brand-green) transition-colors font-bold">Datenschutz</a>
               </Stack>
             </div>
           </div>
 
-          <Separator className="bg-(--brand-border)" />
+          <Separator className="bg-white/5" />
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-xs text-(--brand-gray)">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-gray-600">
               © {currentYear} {siteConfig.name}. Alle Rechte vorbehalten.
             </p>
-            <div className="flex items-center gap-6 text-xs text-(--brand-gray)">
+            <div className="flex items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-gray-600">
               <span>Made with ❤️ in NRW</span>
             </div>
           </div>
