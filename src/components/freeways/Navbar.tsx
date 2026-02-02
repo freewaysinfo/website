@@ -20,7 +20,7 @@ export function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-(--brand-anthracite) border-b border-white/10 shadow-2xl">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-(--brand-anthracite)/85 backdrop-blur-xl border-b border-white/5 shadow-2xl transition-all duration-300">
       <Container>
         <Stack direction="row" align="center" justify="between" className="h-16 md:h-20">
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity group">
@@ -43,13 +43,14 @@ export function Navbar() {
               <Link 
                 key={item.name}
                 href={item.href} 
-                className="text-sm font-semibold text-white/90 hover:text-white hover:text-glow-green transition-all"
+                className="text-sm font-semibold text-white/90 hover:text-white transition-all relative group"
               >
                 {item.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-(--brand-green) transition-all group-hover:w-full glow-green" />
               </Link>
             ))}
             
-            <div className="h-6 w-px bg-white/15 mx-2" />
+            <div className="h-6 w-px bg-white/10 mx-2" />
 
             <Link href={siteConfig.contact.phoneUrl} className="text-sm font-bold text-white hover:text-(--brand-yellow) transition-colors">
               {siteConfig.contact.phone}
@@ -75,78 +76,90 @@ export function Navbar() {
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ type: "spring", damping: 30, stiffness: 200 }}
-            className="fixed inset-0 z-40 bg-(--brand-anthracite) flex flex-col pt-24 px-8 md:hidden shadow-2xl"
-          >
-            <div className="flex flex-col gap-6">
-              {menuItems.map((item, i) => (
-                <motion.div
-                  key={item.name}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 + i * 0.1 }}
-                >
-                  <Link
-                    href={item.href}
-                    onClick={() => setIsOpen(false)}
-                    className="text-3XL font-bold text-white hover:text-(--brand-green) transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                </motion.div>
-              ))}
-              
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.4 }}
-                className="h-px bg-white/10 my-4"
-              />
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-              >
-                <Link 
-                  href={siteConfig.contact.phoneUrl} 
-                  className="text-2xl font-bold text-(--brand-yellow) text-glow-gold"
-                >
-                  {siteConfig.contact.phone}
-                </Link>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-                className="mt-4"
-              >
-                <Button 
-                  size="lg" 
-                  className="w-full bg-(--brand-green) hover:bg-(--brand-green)/90 text-white rounded-2xl font-bold glow-green border-none py-8 text-xl"
-                  asChild
-                  onClick={() => setIsOpen(false)}
-                >
-                  <Link href="/#kontakt">Jetzt anfragen</Link>
-                </Button>
-              </motion.div>
-            </div>
-
+          <>
+            {/* Backdrop for mobile menu to separate it from the header */}
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
-              className="mt-auto pb-12 text-gray-500 text-sm italic"
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-30 md:hidden"
+              onClick={() => setIsOpen(false)}
+            />
+            
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 30, stiffness: 250 }}
+              className="fixed top-0 right-0 w-[80%] h-full z-40 bg-(--brand-anthracite) border-l border-white/5 flex flex-col pt-24 px-8 md:hidden shadow-[0_0_50px_rgba(0,0,0,0.5)]"
             >
-              © {new Date().getFullYear()} {siteConfig.name} <br />
-              Alle Rechte vorbehalten.
+              <div className="flex flex-col gap-8">
+                {menuItems.map((item, i) => (
+                  <motion.div
+                    key={item.name}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 + i * 0.1 }}
+                  >
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="text-3xl font-bold text-white hover:text-(--brand-green) transition-colors flex items-center justify-between group"
+                    >
+                      {item.name}
+                      <span className="w-2 h-2 rounded-full bg-(--brand-green) opacity-0 group-hover:opacity-100 glow-green transition-opacity" />
+                    </Link>
+                  </motion.div>
+                ))}
+                
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.4 }}
+                  className="h-px bg-white/10 my-4"
+                />
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  <Link 
+                    href={siteConfig.contact.phoneUrl} 
+                    className="text-2xl font-bold text-(--brand-yellow) text-glow-gold"
+                  >
+                    {siteConfig.contact.phone}
+                  </Link>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 }}
+                  className="mt-4"
+                >
+                  <Button 
+                    size="lg" 
+                    className="w-full bg-(--brand-green) hover:bg-(--brand-green)/90 text-white rounded-2xl font-bold glow-green border-none py-8 text-xl"
+                    asChild
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <Link href="/#kontakt">Jetzt anfragen</Link>
+                  </Button>
+                </motion.div>
+              </div>
+
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8 }}
+                className="mt-auto pb-12 text-gray-500 text-sm"
+              >
+                © {new Date().getFullYear()} {siteConfig.name} <br />
+                Alle Rechte vorbehalten.
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </>
         )}
       </AnimatePresence>
     </header>
