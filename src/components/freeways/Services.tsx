@@ -5,7 +5,7 @@ import { Section } from "@/components/layout/Section";
 import { Stack } from "@/components/layout/Stack";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Utensils, Zap, Truck, ArrowRight } from "lucide-react";
+import { Utensils, Zap, Truck, ArrowRight, X } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import {
@@ -15,6 +15,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose,
 } from "@/components/ui/dialog";
 
 const services = [
@@ -119,10 +120,15 @@ export function Services() {
                     </CardContent>
                   </Card>
 
-                  <DialogContent className="sm:max-w-[600px] border-none p-0 overflow-hidden rounded-3xl glow-green shadow-2xl">
+                  <DialogContent showCloseButton={false} className="sm:max-w-[600px] border-none p-0 overflow-hidden rounded-3xl glow-green shadow-2xl">
                     <div className="bg-(--brand-anthracite) p-8 text-white relative">
+                      <DialogClose className="absolute top-6 right-6 w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors z-50">
+                        <X className="w-5 h-5" />
+                        <span className="sr-only">Schließen</span>
+                      </DialogClose>
                       <div className="relative z-10 text-glow-green">
                         <DialogHeader>
+
                           <div className="w-12 h-12 rounded-xl bg-(--brand-green) flex items-center justify-center mb-4 glow-green">
                             <service.icon className="h-6 w-6 text-white" />
                           </div>

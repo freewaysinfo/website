@@ -78,91 +78,87 @@ export function Navbar() {
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
-          <>
-            {/* Backdrop for mobile menu to separate it from the header */}
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/80 backdrop-blur-md z-60 md:hidden"
-              onClick={() => setIsOpen(false)}
-            />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-[#0f0f0f] md:hidden flex flex-col"
+          >
+            {/* Background Gradient */}
+            <div className="absolute inset-0 bg-linear-to-b from-(--brand-green)/10 to-transparent pointer-events-none" />
             
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 30, stiffness: 250 }}
-              className="fixed top-0 right-0 w-[85%] h-full z-70 bg-black/95 backdrop-blur-2xl border-l border-white/10 flex flex-col pt-24 px-8 md:hidden shadow-[-20px_0_60px_rgba(0,0,0,1)] overflow-y-auto"
-            >
-              <div className="absolute top-0 left-0 w-1 h-full bg-linear-to-b from-transparent via-(--brand-green)/20 to-transparent blur-sm" />
-              <div className="flex flex-col gap-8">
+            <Container className="flex-1 flex flex-col relative z-10 w-full h-full">
+              <div className="h-16 flex items-center justify-between border-b border-white/10 mb-8">
+                <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2">
+                  <Image 
+                    src="/images/logo.png" 
+                    alt="Freeways Logo" 
+                    width={32} 
+                    height={32} 
+                    className="w-8 h-8"
+                  />
+                  <span className="font-bold text-white text-lg">{siteConfig.name}</span>
+                </Link>
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  onClick={() => setIsOpen(false)}
+                  className="text-gray-400 hover:text-white hover:bg-white/10 rounded-full w-10 h-10"
+                >
+                  <X className="h-6 w-6" />
+                </Button>
+              </div>
+
+              <div className="flex flex-col gap-6 items-center justify-center flex-1">
                 {menuItems.map((item, i) => (
                   <motion.div
                     key={item.name}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 + i * 0.1 }}
+                    className="w-full text-center"
                   >
                     <Link
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className="text-3xl font-bold text-white hover:text-(--brand-green) transition-colors flex items-center justify-between group py-4"
+                      className="block text-4xl font-bold text-white hover:text-(--brand-green) transition-colors py-2 active:scale-95 duration-200"
                     >
                       {item.name}
-                      <span className="w-2 h-2 rounded-full bg-(--brand-green) opacity-0 group-hover:opacity-100 glow-green transition-opacity" />
                     </Link>
                   </motion.div>
                 ))}
-                
+
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
+                  initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.4 }}
-                  className="h-px bg-white/10 my-4"
-                />
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  <Link 
-                    href={siteConfig.contact.phoneUrl} 
-                    className="text-2xl font-bold text-(--brand-yellow) text-glow-gold"
-                  >
-                    {siteConfig.contact.phone}
-                  </Link>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 }}
-                  className="mt-4"
+                  className="w-full max-w-xs mt-8 space-y-6"
                 >
                   <Button 
                     size="lg" 
-                    className="w-full bg-(--brand-green) hover:bg-(--brand-green)/90 text-white rounded-2xl font-black glow-green border-none h-16 text-xl shadow-2xl active:scale-95 transition-all"
+                    className="w-full bg-(--brand-green) hover:bg-(--brand-green)/90 text-(--brand-dark) font-black text-lg h-14 rounded-2xl glow-green border-none shadow-xl"
                     asChild
                     onClick={() => setIsOpen(false)}
                   >
                     <Link href="/#kontakt">Jetzt anfragen</Link>
                   </Button>
+                  
+                  <div className="text-center">
+                    <p className="text-gray-500 text-sm mb-2 uppercase tracking-widest font-bold">Oder anrufen</p>
+                    <a href={siteConfig.contact.phoneUrl} className="text-2xl font-bold text-white hover:text-(--brand-yellow) transition-colors">
+                      {siteConfig.contact.phone}
+                    </a>
+                  </div>
                 </motion.div>
               </div>
 
-              <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.8 }}
-                className="mt-auto pb-12 text-gray-500 text-sm"
-              >
-                © {new Date().getFullYear()} {siteConfig.name} <br />
-                Alle Rechte vorbehalten.
-              </motion.div>
-            </motion.div>
-          </>
+              <div className="py-8 text-center border-t border-white/5">
+                <p className="text-gray-600 text-xs">
+                  © {new Date().getFullYear()} {siteConfig.name}
+                </p>
+              </div>
+            </Container>
+          </motion.div>
         )}
       </AnimatePresence>
     </header>

@@ -5,7 +5,7 @@ import { Section } from "@/components/layout/Section";
 import { Stack } from "@/components/layout/Stack";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { MapPin, Users, Zap, Clock, ShieldCheck, TrendingUp, type LucideIcon } from "lucide-react";
+import { MapPin, Users, Zap, Clock, ShieldCheck, TrendingUp, X, type LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
 
@@ -184,49 +184,59 @@ export function LocationsMap() {
             </div>
 
             {/* Info Card Container */}
-            <div className="lg:col-span-5 h-full flex flex-col justify-center">
+            <div className={`fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm lg:relative lg:inset-auto lg:bg-transparent lg:backdrop-blur-none lg:p-0 lg:col-span-5 h-full lg:flex lg:flex-col lg:justify-center pointer-events-none lg:pointer-events-auto transition-all ${activeLocation ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0 lg:opacity-100'}`}>
               <AnimatePresence mode="wait">
                 {activeLocation && (
                   <motion.div
                     key={activeLocation.id}
-                    initial={{ opacity: 0, scale: 0.95, x: 20 }}
-                    animate={{ opacity: 1, scale: 1, x: 0 }}
-                    exit={{ opacity: 0, scale: 0.95, x: -20 }}
-                    transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
-                    className="bg-[#111] p-12 rounded-[3.5rem] shadow-[0_32px_64px_-12px_rgba(0,0,0,0.5)] text-white relative overflow-hidden border border-white/10 ring-8 ring-white/5"
+                    initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="bg-[#111] w-full max-w-md lg:max-w-none p-10 rounded-[2.5rem] lg:rounded-[3.5rem] shadow-[0_32px_64px_-12px_rgba(0,0,0,0.8)] text-white relative overflow-hidden border border-white/10 ring-1 lg:ring-8 ring-white/5"
+                    onClick={(e) => e.stopPropagation()}
                   >
+                     {/* Close Button for Mobile */}
+                    <button 
+                      onClick={() => setActiveId(null)}
+                      aria-label="Standort-Details schließen"
+                      className="absolute top-6 right-6 lg:hidden w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors z-20"
+                    >
+                      <X className="w-5 h-5" />
+                    </button>
+
                     <div className="absolute top-0 right-0 w-80 h-80 bg-(--brand-green)/10 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
                     
-                    <div className="relative z-10 flex flex-col gap-10">
+                    <div className="relative z-10 flex flex-col gap-8 lg:gap-10">
                       <div className="flex items-center justify-between">
-                        <div className="p-5 bg-(--brand-green)/10 rounded-[2rem] shadow-xl ring-1 ring-(--brand-green)/20 text-(--brand-green)">
-                          <activeLocation.icon className="h-10 w-10" />
+                        <div className="p-4 lg:p-5 bg-(--brand-green)/10 rounded-[1.5rem] lg:rounded-[2rem] shadow-xl ring-1 ring-(--brand-green)/20 text-(--brand-green)">
+                          <activeLocation.icon className="h-8 w-8 lg:h-10 lg:w-10" />
                         </div>
                         <div className="text-right">
                           <div className="text-[10px] text-gray-500 uppercase tracking-[0.3em] font-black">Standort</div>
-                          <div className="text-3xl font-black tracking-tight text-white">{activeLocation.name}</div>
+                          <div className="text-2xl lg:text-3xl font-black tracking-tight text-white">{activeLocation.name}</div>
                         </div>
                       </div>
 
-                      <div className="space-y-4">
-                        <div className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-linear-to-r from-white to-gray-500 tracking-tighter">
+                      <div className="space-y-3 lg:space-y-4">
+                        <div className="text-4xl lg:text-6xl font-black text-transparent bg-clip-text bg-linear-to-r from-white to-gray-500 tracking-tighter">
                           {activeLocation.kpi}
                         </div>
-                        <p className="text-xl text-gray-400 font-medium leading-relaxed">
+                        <p className="text-lg lg:text-xl text-gray-400 font-medium leading-relaxed">
                           {activeLocation.description}
                         </p>
                       </div>
 
-                      <div className="pt-10 border-t border-white/10">
-                        <div className="text-[10px] text-(--brand-green) uppercase font-black mb-4 tracking-[0.2em] glow-green">
+                      <div className="pt-8 lg:pt-10 border-t border-white/10">
+                        <div className="text-[10px] text-(--brand-green) uppercase font-black mb-3 lg:mb-4 tracking-[0.2em] glow-green">
                           Pain Point gelöst:
                         </div>
-                        <p className="text-2xl font-bold leading-relaxed tracking-tight text-white">
+                        <p className="text-xl lg:text-2xl font-bold leading-relaxed tracking-tight text-white">
                           &quot;{activeLocation.painPoint}&quot;
                         </p>
                       </div>
 
-                      <Button className="w-full bg-(--brand-green) hover:bg-(--brand-green)/90 text-(--brand-dark) font-black h-16 rounded-2xl glow-green border-none transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(74,222,128,0.3)]" asChild>
+                      <Button className="w-full bg-(--brand-green) hover:bg-(--brand-green)/90 text-(--brand-dark) font-black h-14 lg:h-16 rounded-2xl glow-green border-none transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(74,222,128,0.3)]" asChild>
                         <a href={siteConfig.links.whatsapp} target="_blank" rel="noopener noreferrer">
                           Jetzt Standort anfragen
                         </a>
@@ -235,6 +245,9 @@ export function LocationsMap() {
                   </motion.div>
                 )}
               </AnimatePresence>
+              
+              {/* Background click to close on mobile */}
+              <div className="absolute inset-0 z-0 lg:hidden" onClick={() => setActiveId(null)} />
             </div>
           </div>
         </Stack>
