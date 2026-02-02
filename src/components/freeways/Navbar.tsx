@@ -20,7 +20,7 @@ export function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-(--brand-anthracite)/85 backdrop-blur-xl border-b border-white/5 shadow-2xl transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0f0f0f]/95 backdrop-blur-2xl border-b border-white/5 shadow-2xl transition-all duration-300">
       <Container>
         <Stack direction="row" align="center" justify="between" className="h-16 md:h-20">
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity group">
@@ -64,11 +64,11 @@ export function Navbar() {
           <Button 
             variant="ghost" 
             size="icon" 
-            className="md:hidden text-white hover:bg-white/10 z-50 outline-none"
+            className="md:hidden text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl w-12 h-12 z-50 outline-none transition-all active:scale-95"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
           >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
           </Button>
         </Stack>
       </Container>
@@ -91,7 +91,7 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 250 }}
-              className="fixed top-0 right-0 w-[80%] h-full z-40 bg-(--brand-anthracite) border-l border-white/5 flex flex-col pt-24 px-8 md:hidden shadow-[0_0_50px_rgba(0,0,0,0.5)]"
+              className="fixed top-0 right-0 w-[80%] h-full z-40 bg-[#0f0f0f] border-l border-white/5 flex flex-col pt-24 px-8 md:hidden shadow-[0_0_50px_rgba(0,0,0,0.8)]"
             >
               <div className="flex flex-col gap-8">
                 {menuItems.map((item, i) => (
