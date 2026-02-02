@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     address: true,
     telephone: true,
   },
-  metadataBase: new URL("https://freeways-logistik.de"),
+  metadataBase: new URL("https://freeways.info"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "de_DE",
-    url: "https://freeways-logistik.de",
+    url: "https://freeways.info",
     title: siteConfig.name + " | Ihr Partner für Logistik & Transport in NRW",
     description: siteConfig.description,
     siteName: siteConfig.name,
