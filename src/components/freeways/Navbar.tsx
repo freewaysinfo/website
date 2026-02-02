@@ -140,7 +140,7 @@ export function Navbar() {
                 >
                   <Button 
                     size="lg" 
-                    className="w-full bg-(--brand-green) hover:bg-(--brand-green)/90 text-white rounded-2xl font-bold glow-green border-none py-8 text-xl"
+                    className="w-full bg-(--brand-green) hover:bg-(--brand-green)/90 text-white rounded-2xl font-black glow-green border-none h-16 text-xl shadow-2xl active:scale-95 transition-all"
                     asChild
                     onClick={() => setIsOpen(false)}
                   >

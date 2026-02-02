@@ -71,7 +71,7 @@ export function Contact() {
                allowFullScreen={true} 
                loading="lazy" 
                referrerPolicy="no-referrer-when-downgrade"
-               className="grayscale opacity-90 border-0 contrast-110"
+               className="opacity-90 border-0 contrast-110 saturate-110 grayscale-50"
             />
           </div>
         </div>
