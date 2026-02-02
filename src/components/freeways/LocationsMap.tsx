@@ -109,7 +109,7 @@ export function LocationsMap() {
   const activeLocation = locations.find((l) => l.id === activeId);
 
   return (
-    <Section id="standorte" className="bg-(--brand-anthracite) overflow-hidden py-24">
+    <Section id="standorte" className="bg-white overflow-hidden py-24 border-y border-gray-100">
       <Container>
         <Stack gap={16}>
           <div className="flex flex-col lg:flex-row items-end justify-between gap-8">
@@ -117,31 +117,31 @@ export function LocationsMap() {
               <span className="text-(--brand-green) font-bold text-sm uppercase tracking-widest block mb-4">
                 Regionale Präsenz
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-white">
+              <h2 className="text-4xl md:text-5xl font-black text-black tracking-tighter">
                 Ihre Experten für <span className="text-(--brand-green) text-glow-green">NRW</span>
               </h2>
-              <p className="text-gray-400 text-lg md:text-xl mt-6 font-medium">
+              <p className="text-gray-500 text-lg md:text-xl mt-6 font-medium leading-relaxed">
                 Wir decken die wichtigsten Wirtschaftszentren in Nordrhein-Westfalen ab. Mit lokalen Teams garantieren wir maximale Geschwindigkeit und Flexibilität.
               </p>
             </div>
             <div className="flex gap-4">
-              <div className="px-8 py-5 bg-white/5 rounded-2xl border border-white/10 ring-1 ring-white/5">
-                <div className="text-4xl font-bold text-white tracking-tight">8+</div>
-                <div className="text-xs text-gray-400 font-bold uppercase tracking-widest mt-1">Standorte</div>
+              <div className="px-8 py-5 bg-gray-50 rounded-3xl border border-gray-100 ring-4 ring-gray-50/50 transition-all hover:scale-105">
+                <div className="text-5xl font-black text-black tracking-tighter">8+</div>
+                <div className="text-[10px] text-gray-500 font-black uppercase tracking-[0.2em] mt-2">Standorte</div>
               </div>
-              <div className="px-8 py-5 bg-white/5 rounded-2xl border border-white/10 ring-1 ring-white/5 glow-green">
-                <div className="text-4xl font-bold text-(--brand-green) tracking-tight">24/7</div>
-                <div className="text-xs text-gray-400 font-bold uppercase tracking-widest mt-1">Einsatzbereit</div>
+              <div className="px-8 py-5 bg-(--brand-green)/5 rounded-3xl border border-(--brand-green)/10 ring-4 ring-(--brand-green)/5 glow-green transition-all hover:scale-105">
+                <div className="text-5xl font-black text-(--brand-green) tracking-tighter">24/7</div>
+                <div className="text-[10px] text-gray-400 font-black uppercase tracking-[0.2em] mt-2">Einsatzbereit</div>
               </div>
             </div>
           </div>
 
           <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Map Container */}
-            <div className="lg:col-span-7 relative aspect-4/3 bg-white/5 rounded-[3.5rem] p-10 border border-white/10 shadow-2xl backdrop-blur-md">
+            <div className="lg:col-span-7 relative aspect-4/3 bg-gray-50 rounded-[4rem] p-12 border border-gray-100 shadow-2xl ring-8 ring-gray-50/30">
               {/* Simplified NRW SVG Placeholder/Shape */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
-                <svg viewBox="0 0 500 400" className="w-[80%] h-[80%] fill-current text-white">
+              <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+                <svg viewBox="0 0 500 400" className="w-[85%] h-[85%] fill-current text-white">
                   <path d="M150,50 L350,30 L450,150 L420,300 L250,380 L100,350 L50,200 Z" />
                 </svg>
               </div>
@@ -164,13 +164,13 @@ export function LocationsMap() {
                       }`}
                     />
                     <div
-                      className={`relative w-4 h-4 rounded-full border-2 border-white shadow-lg transition-colors duration-300 ${
-                        activeId === loc.id ? "bg-(--brand-green)" : "bg-(--brand-dark) group-hover:bg-(--brand-green)/50"
+                      className={`relative w-5 h-5 rounded-full border-2 border-white shadow-xl transition-all duration-500 ${
+                        activeId === loc.id ? "bg-(--brand-green) scale-125" : "bg-white group-hover:bg-(--brand-green)/50"
                       }`}
                     />
                     
                     {/* Label */}
-                    <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 whitespace-nowrap bg-(--brand-anthracite) backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold text-white shadow-2xl border border-white/10 opacity-0 group-hover:opacity-100 transition-all scale-90 group-hover:scale-100">
+                    <div className="absolute top-full mt-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] text-black shadow-2xl border border-gray-100 opacity-0 group-hover:opacity-100 transition-all scale-90 group-hover:scale-100">
                       {loc.name}
                     </div>
                   </div>
@@ -184,39 +184,39 @@ export function LocationsMap() {
                 {activeLocation && (
                   <motion.div
                     key={activeLocation.id}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.4 }}
-                    className="bg-(--brand-anthracite) p-10 rounded-[2.5rem] shadow-2xl text-white relative overflow-hidden ring-1 ring-white/10 glow-green"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+                    className="bg-white p-12 rounded-[3.5rem] shadow-[0_32px_64px_-12px_rgba(0,0,0,0.12)] text-black relative overflow-hidden border border-gray-100 ring-8 ring-gray-50/50"
                   >
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-(--brand-green)/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+                    <div className="absolute top-0 right-0 w-80 h-80 bg-(--brand-green)/5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
                     
-                    <div className="relative z-10 flex flex-col gap-8">
+                    <div className="relative z-10 flex flex-col gap-10">
                       <div className="flex items-center justify-between">
-                        <div className="p-4 bg-(--brand-green) rounded-2xl">
-                          <activeLocation.icon className="h-8 w-8 text-white" />
+                        <div className="p-5 bg-(--brand-green) rounded-[2rem] shadow-xl glow-green">
+                          <activeLocation.icon className="h-10 w-10 text-white" />
                         </div>
                         <div className="text-right">
-                          <div className="text-sm text-gray-400 uppercase tracking-widest font-bold">Standort</div>
-                          <div className="text-2xl font-bold">{activeLocation.name}</div>
+                          <div className="text-[10px] text-gray-400 uppercase tracking-[0.3em] font-black">Standort</div>
+                          <div className="text-3xl font-black tracking-tight">{activeLocation.name}</div>
                         </div>
                       </div>
 
                       <div className="space-y-4">
-                        <div className="text-5xl font-bold text-(--brand-green)">
+                        <div className="text-6xl font-black text-(--brand-green) tracking-tighter">
                           {activeLocation.kpi}
                         </div>
-                        <p className="text-lg text-gray-300">
+                        <p className="text-xl text-gray-600 font-medium leading-relaxed">
                           {activeLocation.description}
                         </p>
                       </div>
 
-                      <div className="pt-8 border-t border-white/10">
-                        <div className="text-sm text-gray-400 uppercase font-bold mb-3 tracking-wide">
-                          Pain Pointgelöst:
+                      <div className="pt-10 border-t border-gray-100">
+                        <div className="text-[10px] text-gray-400 uppercase font-black mb-4 tracking-[0.2em]">
+                          Pain Point gelöst:
                         </div>
-                        <p className="text-xl font-medium leading-relaxed">
+                        <p className="text-2xl font-bold leading-relaxed tracking-tight text-gray-900">
                           &quot;{activeLocation.painPoint}&quot;
                         </p>
                       </div>
