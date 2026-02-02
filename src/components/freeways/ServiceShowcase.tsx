@@ -92,10 +92,10 @@ export function ServiceShowcase() {
             </motion.div>
 
             {/* Controls */}
-            <div className="absolute bottom-10 right-10 flex items-center gap-6 bg-white/10 backdrop-blur-2xl p-3 rounded-3xl border border-white/20 shadow-2xl">
+            <div className="absolute bottom-6 right-1/2 translate-x-1/2 md:translate-x-0 md:bottom-10 md:right-10 flex items-center gap-4 bg-white/10 backdrop-blur-2xl p-2 md:p-3 rounded-2xl md:rounded-3xl border border-white/20 shadow-2xl">
               <button
                 onClick={prevSlide}
-                className="w-12 h-12 rounded-2xl flex items-center justify-center text-white hover:bg-white hover:text-black transition-all cursor-pointer group active:scale-90"
+                className="hidden md:flex w-12 h-12 rounded-2xl items-center justify-center text-white hover:bg-white hover:text-black transition-all cursor-pointer group active:scale-90"
                 aria-label="Vorheriges Bild"
               >
                 <ChevronLeft className="h-6 w-6 group-hover:scale-110 transition-transform" />
@@ -114,7 +114,7 @@ export function ServiceShowcase() {
               </div>
               <button
                 onClick={nextSlide}
-                className="w-12 h-12 rounded-2xl flex items-center justify-center text-white hover:bg-white hover:text-black transition-all cursor-pointer group active:scale-90"
+                className="hidden md:flex w-12 h-12 rounded-2xl items-center justify-center text-white hover:bg-white hover:text-black transition-all cursor-pointer group active:scale-90"
                 aria-label="Nächstes Bild"
               >
                 <ChevronRight className="h-6 w-6 group-hover:scale-110 transition-transform" />
