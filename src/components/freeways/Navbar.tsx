@@ -82,7 +82,7 @@ export function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-30 md:hidden"
+              className="fixed inset-0 bg-black/80 backdrop-blur-md z-[60] md:hidden"
               onClick={() => setIsOpen(false)}
             />
             
@@ -91,7 +91,7 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 250 }}
-              className="fixed top-0 right-0 w-[85%] h-full z-50 bg-[#000000] border-l border-white/10 flex flex-col pt-24 px-8 md:hidden shadow-[-20px_0_50px_rgba(0,0,0,0.9)] overflow-y-auto backdrop-blur-3xl"
+              className="fixed top-0 right-0 w-[85%] h-full z-[70] bg-[#000000] border-l border-white/10 flex flex-col pt-24 px-8 md:hidden shadow-[-20px_0_60px_rgba(0,0,0,1)] overflow-y-auto"
             >
               <div className="flex flex-col gap-8">
                 {menuItems.map((item, i) => (
