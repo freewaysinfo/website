@@ -3,6 +3,7 @@ import { Stack } from "@/components/layout/Stack";
 import { Separator } from "@/components/ui/separator";
 import { siteConfig } from "@/lib/site";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,7 +14,17 @@ export function Footer() {
         <Stack gap={10}>
           <div className="flex flex-col md:flex-row justify-between gap-10">
             <div className="max-w-sm">
-              <div className="text-2xl font-bold text-(--brand-dark) mb-4">{siteConfig.name}</div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="relative w-8 h-8 md:w-10 md:h-10">
+                  <Image 
+                    src="/images/logo.png" 
+                    alt="Freeways GmbH Logo" 
+                    fill 
+                    className="object-contain"
+                  />
+                </div>
+                <div className="text-2xl font-bold text-(--brand-dark)">{siteConfig.name}</div>
+              </div>
               <p className="text-(--brand-gray) text-sm leading-relaxed">
                 Ihr professioneller Partner für Liefer- und Logistikdienste in NRW. Qualitativ hochwertige Dienstleistungen seit über 5 Jahren.
               </p>
