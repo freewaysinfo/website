@@ -66,7 +66,7 @@ export function Navbar() {
           <Button 
             variant="ghost" 
             size="icon" 
-            className="md:hidden text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl w-12 h-12 z-[80] outline-none transition-all active:scale-95"
+            className="md:hidden text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl w-12 h-12 z-80 outline-none transition-all active:scale-95"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
           >
@@ -84,7 +84,7 @@ export function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/80 backdrop-blur-md z-[60] md:hidden"
+              className="fixed inset-0 bg-black/80 backdrop-blur-md z-60 md:hidden"
               onClick={() => setIsOpen(false)}
             />
             
@@ -93,9 +93,9 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 250 }}
-              className="fixed top-0 right-0 w-[85%] h-full z-[70] bg-black/95 backdrop-blur-2xl border-l border-white/10 flex flex-col pt-24 px-8 md:hidden shadow-[-20px_0_60px_rgba(0,0,0,1)] overflow-y-auto"
+              className="fixed top-0 right-0 w-[85%] h-full z-70 bg-black/95 backdrop-blur-2xl border-l border-white/10 flex flex-col pt-24 px-8 md:hidden shadow-[-20px_0_60px_rgba(0,0,0,1)] overflow-y-auto"
             >
-              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-transparent via-(--brand-green)/20 to-transparent blur-sm" />
+              <div className="absolute top-0 left-0 w-1 h-full bg-linear-to-b from-transparent via-(--brand-green)/20 to-transparent blur-sm" />
               <div className="flex flex-col gap-8">
                 {menuItems.map((item, i) => (
                   <motion.div
