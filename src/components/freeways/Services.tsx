@@ -79,7 +79,7 @@ export function Services() {
               >
               <Image 
                 src="/images/service_delivery.png"
-                alt="Freeways GmbH food delivery service"
+                alt="Freeways GmbH Kurierdienst und Essenslieferung"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 40vw"

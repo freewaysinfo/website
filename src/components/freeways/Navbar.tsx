@@ -58,7 +58,7 @@ export function Navbar() {
               {siteConfig.contact.phone}
             </Link>
 
-            <Button size="sm" className="bg-(--brand-green) hover:bg-(--brand-green)/90 text-white rounded-full px-6 font-bold glow-green border-none" asChild>
+            <Button size="sm" className="bg-(--brand-yellow) hover:bg-(--brand-yellow)/90 text-(--brand-anthracite) rounded-full px-6 font-black glow-gold border-none shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all hover:scale-105" asChild>
               <Link href="/#kontakt">Anfragen</Link>
             </Button>
           </nav>
@@ -92,10 +92,11 @@ export function Navbar() {
                 <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2">
                   <Image 
                     src="/images/logo.png" 
-                    alt="Freeways Logo" 
+                    alt="Freeways GmbH Logo" 
                     width={32} 
                     height={32} 
                     className="w-8 h-8"
+                    priority
                   />
                   <span className="font-bold text-white text-lg">{siteConfig.name}</span>
                 </Link>
@@ -136,7 +137,7 @@ export function Navbar() {
                 >
                   <Button 
                     size="lg" 
-                    className="w-full bg-(--brand-green) hover:bg-(--brand-green)/90 text-(--brand-dark) font-black text-lg h-14 rounded-2xl glow-green border-none shadow-xl"
+                    className="w-full bg-(--brand-yellow) hover:bg-(--brand-yellow)/90 text-(--brand-anthracite) font-black text-xl h-16 rounded-2xl glow-gold border-none shadow-[0_0_20px_rgba(212,175,55,0.4)]"
                     asChild
                     onClick={() => setIsOpen(false)}
                   >

@@ -61,7 +61,7 @@ export function ServiceShowcase() {
             >
               <Image
                 src={slides[currentIndex].image}
-                alt={slides[currentIndex].title}
+                alt={`${slides[currentIndex].title} - Freeways GmbH`}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1400px"

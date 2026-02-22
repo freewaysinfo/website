@@ -38,19 +38,21 @@ export function Hero() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="flex flex-col sm:flex-row gap-6"
+              className="flex flex-col sm:flex-row gap-6 mt-8"
             >
               <Button 
                 size="lg" 
-                className="bg-(--brand-green) hover:bg-(--brand-green)/90 text-(--brand-anthracite) px-10 rounded-2xl h-16 text-lg font-bold glow-green border-none transition-all hover:scale-105 active:scale-95 shadow-[0_0_25px_rgba(74,222,128,0.4)]"
-                aria-label="Jetzt ein unverbindliches Angebot anfragen"
+                className="bg-(--brand-yellow) hover:bg-(--brand-yellow)/90 text-(--brand-anthracite) px-10 rounded-2xl h-16 text-lg md:text-xl font-black glow-gold shadow-[0_0_30px_rgba(212,175,55,0.4)] border-none transition-all hover:scale-105 active:scale-95"
+                asChild
               >
-                Jetzt anfragen
+                <a href="#kontakt" aria-label="Jetzt ein unverbindliches Angebot anfragen">
+                  Jetzt anfragen
+                </a>
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-white/10 bg-white/5 text-white hover:bg-white/10 px-10 rounded-2xl h-16 text-lg font-bold transition-all active:scale-95" 
+                className="border-white/20 bg-white/5 text-white hover:bg-white/10 px-10 rounded-2xl h-16 text-lg md:text-xl font-bold transition-all active:scale-95" 
                 asChild
               >
                 <a href={siteConfig.links.career} aria-label="Informationen für Bewerber und Fahrer anzeigen">

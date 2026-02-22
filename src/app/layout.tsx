@@ -3,6 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/site";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
+import { CookieBanner } from "@/components/freeways/CookieBanner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,7 +18,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.name + " | Professionelle Logistik & Lieferdienste in NRW",
+    default: siteConfig.name + " | Logistik & Transport in NRW",
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -27,18 +28,18 @@ export const metadata: Metadata = {
   publisher: siteConfig.name,
   formatDetection: {
     email: false,
-    address: true,
-    telephone: true,
+    address: false,
+    telephone: false,
   },
-  metadataBase: new URL("https://freeways.info"),
+  metadataBase: new URL(siteConfig.url),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "de_DE",
-    url: "https://freeways.info",
-    title: siteConfig.name + " | Ihr Partner für Logistik & Transport in NRW",
+    url: siteConfig.url,
+    title: siteConfig.name + " | Ihr Partner für Logistik & Transport",
     description: siteConfig.description,
     siteName: siteConfig.name,
     images: [
@@ -46,13 +47,13 @@ export const metadata: Metadata = {
         url: "/images/hero_van.png",
         width: 1200,
         height: 630,
-        alt: "Freeways GmbH Logistik Fleet",
+        alt: `${siteConfig.name} - Zuverlässige Logistik in NRW`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.name + " | Logistik & Lieferdienst in NRW",
+    title: siteConfig.name + " | Logistik in NRW",
     description: siteConfig.description,
     images: ["/images/hero_van.png"],
   },
@@ -139,6 +140,7 @@ export default function RootLayout({
       <body className="antialiased min-h-screen">
         {children}
         <ScrollToTop />
+        <CookieBanner />
       </body>
     </html>
   );

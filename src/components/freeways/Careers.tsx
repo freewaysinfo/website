@@ -17,9 +17,10 @@ export function Careers() {
       <div className="absolute inset-0 z-0">
         <Image 
           src="/images/career_driver.png"
-          alt="Freeways GmbH Career background"
+          alt="Freeways GmbH Fahrer Jobs und Karriere in NRW"
           fill
           className="object-cover opacity-30 grayscale hover:grayscale-0 transition-all duration-1000"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-linear-to-r from-(--brand-anthracite) via-(--brand-anthracite)/90 to-transparent" />
       </div>
