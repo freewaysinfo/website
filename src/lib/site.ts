@@ -15,8 +15,8 @@ export const siteConfig = {
     "Zustellservice",
   ],
   contact: {
-    phone: "02234 6808219",
-    phoneUrl: "tel:022346808219",
+    phone: "0172910630",
+    phoneUrl: "tel:0172910630",
     email: "info@freeways.info",
     address: {
       street: "Wipperfürther Str. 29–31",

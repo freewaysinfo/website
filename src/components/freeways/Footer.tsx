@@ -61,6 +61,15 @@ export function Footer() {
             <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">
               © {currentYear} {siteConfig.name}. Alle Rechte vorbehalten.
             </p>
+            <div className="flex flex-wrap justify-center items-center gap-2 md:gap-4 text-[10px] md:text-xs font-bold text-gray-400">
+              <span>ISO 9001</span>
+              <span className="hidden md:inline">•</span>
+              <span>ISO 45001</span>
+              <span className="hidden md:inline">•</span>
+              <span>ISO 14001</span>
+              <span className="hidden md:inline">•</span>
+              <span>ISO 27001</span>
+            </div>
             <div className="flex items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-gray-400">
               <span>Made with ❤️ in NRW</span>
             </div>
