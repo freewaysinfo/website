@@ -5,12 +5,12 @@ import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 
 export function CookieBanner() {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const hasAccepted = localStorage.getItem("cookies_accepted");
-    if (hasAccepted) {
-      setIsVisible(false);
+    if (!hasAccepted) {
+      setTimeout(() => setIsVisible(true), 0);
     }
   }, []);
 

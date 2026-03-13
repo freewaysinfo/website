@@ -5,8 +5,9 @@ import { Navbar } from "@/components/freeways/Navbar";
 import { Hero } from "@/components/freeways/Hero";
 import { Footer } from "@/components/freeways/Footer";
 
+import { Services } from "@/components/freeways/Services";
+
 // Dynamic imports for improved performance
-const Services = dynamic(() => import("@/components/freeways/Services").then((mod) => mod.Services));
 const ServiceShowcase = dynamic(() => import("@/components/freeways/ServiceShowcase").then((mod) => mod.ServiceShowcase));
 const Trust = dynamic(() => import("@/components/freeways/Trust").then((mod) => mod.Trust));
 const Benefits = dynamic(() => import("@/components/freeways/Benefits").then((mod) => mod.Benefits));
