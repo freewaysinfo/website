@@ -5,7 +5,7 @@ import { Section } from "@/components/layout/Section";
 import { Stack } from "@/components/layout/Stack";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { MapPin, Users, Zap, Clock, ShieldCheck, TrendingUp, X, type LucideIcon } from "lucide-react";
+import { MapPin, Users, Zap, Clock, ShieldCheck, TrendingUp, type LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
 
@@ -204,7 +204,7 @@ export function LocationsMap() {
             </div>
 
             {/* Info Card Container */}
-            <div className={`fixed inset-0 z-[50] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm lg:relative lg:inset-auto lg:bg-transparent lg:backdrop-blur-none lg:p-0 lg:col-span-5 h-full lg:flex lg:flex-col lg:justify-center pointer-events-none lg:pointer-events-auto transition-all ${activeLocation ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0 lg:opacity-100'}`}>
+            <div className="w-full lg:col-span-5 flex flex-col justify-center min-h-[450px]">
               <AnimatePresence mode="wait">
                 {activeLocation && (
                   <motion.div
@@ -213,17 +213,8 @@ export function LocationsMap() {
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.95, y: 20 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="bg-[#111] w-full max-w-md lg:max-w-none p-10 rounded-[2.5rem] lg:rounded-[3.5rem] shadow-[0_32px_64px_-12px_rgba(0,0,0,0.8)] text-white relative overflow-hidden border border-white/10 ring-1 lg:ring-8 ring-white/5"
-                    onClick={(e) => e.stopPropagation()}
+                    className="bg-[#111] w-full p-8 md:p-10 rounded-[2.5rem] lg:rounded-[3.5rem] shadow-[0_32px_64px_-12px_rgba(0,0,0,0.8)] text-white relative overflow-hidden border border-white/10 ring-1 lg:ring-8 ring-white/5"
                   >
-                     {/* Close Button for Mobile */}
-                    <button 
-                      onClick={() => setActiveId(null)}
-                      aria-label="Standort-Details schließen"
-                      className="absolute top-6 right-6 lg:hidden w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors z-50 pointer-events-auto"
-                    >
-                      <X className="w-5 h-5" />
-                    </button>
 
                     <div className="absolute top-0 right-0 w-80 h-80 bg-(--brand-green)/10 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
                     
@@ -265,9 +256,6 @@ export function LocationsMap() {
                   </motion.div>
                 )}
               </AnimatePresence>
-              
-              {/* Background click to close on mobile */}
-              <div className="absolute inset-0 z-0 lg:hidden" onClick={() => setActiveId(null)} />
             </div>
           </div>
         </Stack>
